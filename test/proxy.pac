@@ -1,3973 +1,2799 @@
-var FindProxyForURL = function(init, profiles) {
-    return function(url, host) {
-        "use strict";
-        var result = init, scheme = url.substr(0, url.indexOf(":"));
-        do {
-            result = profiles[result];
-            if (typeof result === "function") result = result(url, host, scheme);
-        } while (typeof result !== "string" || result.charCodeAt(0) === 43);
-        return result;
-    };
-}("+\u81ea\u52a8\u5207\u6362", {
-    "+\u81ea\u52a8\u5207\u6362": function(url, host, scheme) {
-        "use strict";
-    },
-    "+__ruleListOf_\u81ea\u52a8\u5207\u6362": function(url, host, scheme) {
-        "use strict";
-        if (/(?:^|\.)www\.exblog\.jp$/.test(host)) return "DIRECT";
-        if (/(?:^|\.).*v6\.facebook\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)site\.locql\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)download\.syniumsoftware\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)haygo\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)f\.cl\.ly$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)myvlog\.im\.tv$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)music\.jwmusic\.org$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)www\.kodingen\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)simplecd\.me$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)static\.soup\.io$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)www\.tripod\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)www\.typepad\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)static\.typepad\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)tax\.nat\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)moe\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)cwb\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)npm\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)yatsen\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)aec\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)mvdis\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)stdtime\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nmmba\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ntdmh\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)grb\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)tpde\.aide\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)matsu-news\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nerhl\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)dapu-house\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)vghtc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)aide\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)hchcc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ntuh\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nhri\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nstm\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ntsec\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ner\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nmtl\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ntl\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)pet\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)khcc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nmmba\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)khms\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)wanfang\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nict\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)arte\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nmh\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nmp\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)tphcc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)iner\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)tncsec\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nspo\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)aide\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ncree\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)vghks\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)tchb\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)pabp\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)itrc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)df\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)womenbusiness\.nyc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)gsn-cert\.nat\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)kk\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)thbstc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)comnews\.gio\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)comnews\.gio\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)klccab\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)yvtc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)aftygh\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)klra\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)lungtanhr\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)taoyuan\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)hcc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nvri\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nmvttc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)kmh\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)patehr\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nerch\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)kmseh\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nertt\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)cycab\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)chukuang\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)gysd\.nyc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)cp-house\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)vghtpe\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)etraining\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)stag\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)bdhr\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)tcsac\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)imagesblog\.gio\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)arte\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)dmtip\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)chccc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)hengchuen\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)hsinchu-cc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)921\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)ncdr\.nat\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)4pppc\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)klsio\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)nici\.nat\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)cromotc\.nat\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)taitung-house\.gov\.tw$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)aliyun\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)baidu\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)chinaso\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)fonts\.googleapis\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)csi\.gstatic\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)fonts\.gstatic\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)haosou\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)jike\.com$/.test(host)) return "DIRECT";
-        if (/^http:\/\/translate\.google\.cn/.test(url)) return "DIRECT";
-        if (/^http:\/\/www\.google\.cn\/maps/.test(url)) return "DIRECT";
-        if (/(?:^|\.)http2\.golang\.org$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)qq\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)sina\.cn$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)sina\.com\.cn$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)sogou\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)so\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)soso\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)yahoo\.cn$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)youdao\.com$/.test(host)) return "DIRECT";
-        if (/(?:^|\.)zhongsou\.com$/.test(host)) return "DIRECT";
-        if (/^https:\/\/autoproxy\.org/.test(url)) return "DIRECT";
-        if (/^http:\/\/ime\.baidu\.jp/.test(url)) return "DIRECT";
-        if (scheme === "http" && url.indexOf(".lsxszzg.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)altrec\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)azubu\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)beeg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)darpa\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fastpic\.ru$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fxnetworks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hulu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("huluim.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.ilovelongtoes\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)metarthunter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)muzu\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.nbc\.com\/live/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)netflix\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pandora\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pandora.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.parkansky\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.pimg\.tw\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pure18\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rdio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cdn.*\.search\.xxx\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)slacker\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)spotify\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)springboardplatform\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)target\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)turntable\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vevo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zattoo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qq\.co\.za$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zozotown\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".0rz.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/0rz\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)0to255\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("1-apple.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)1-apple\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".10conditionsoflove.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)10musume\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("123rf.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".12bet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)12bet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".12vpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)12vpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("141hongkong.com/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".17t17p.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".173ng.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)173ng\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("1984bbs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)1984bbs\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".1984bbs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)1984bbs\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".1bao.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/1bao\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)1pondo\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".1eew.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".2-hand.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".2000fun.com/bbs") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".2008xianzhang.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)2008xianzhang\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".213.so") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("21andy.com/blog") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("24smile.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".2shared.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".315lz.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)32red\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)36rain\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".3boys2girls.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)4bluestones\.biz$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)4chan\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)4shared\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("5i01.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwannation.50webs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)51\.ca$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".5maodang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("64memo") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("64tianwang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("64wiki.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("666kb.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("6park.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)6park\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.6v6dota\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)7capture\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".881903.com/page/zh-tw/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".888.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)881903\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("89-64.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)89-64\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".9001700.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/908taiwan\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/91porn\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".92ccav.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)9bis\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)9bis\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)a-normal-day\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("a5.com.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/aamacau\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cdn.*\.abc\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ablwang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".aboluowang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aboluowang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".aboutgfw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)acgkj\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("actimes.com.au") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aculo\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)addictedtocoffee\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("adultfriendfinder.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("adultkeep.net/peepshow/members/main.htm") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)advanscene\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)advertfan\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aenhancers\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)af\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("aiph.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aiph\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".aisex.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ait\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/aiweiwei\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".aiweiweiblog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aiweiweiblog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.ajsands\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/fbcdn.*\.akamaihd\.net\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)akiba-online\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)al-qimmah\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)alabout\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)alasbarricadas\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("alexlur.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("aliengu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)alkasir\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("allgirlsallowed.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("alliance.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".allinfa.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/allinfa\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)allmovie\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)alternate-tools\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("alvinalexander.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("alwaysdata.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)alwaysdata\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)alwaysdata\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)am730\.com\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("amazon.com/Prisoner-State-Secret-Journal-Premier") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ameblo.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ameblo\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)americangreencard\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)amiblockedornot\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".amnesty.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)amnesty\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".amnestyusa.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)amnestyusa\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".amoiist.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("analyze-v.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)anchorfree\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ancsconf\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)andfaraway\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)android\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)angularjs\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("animecrazy.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)anobii\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".anonymizer.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("anontext.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".answering-islam.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.antd\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)anthonycalzadilla\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".antiwave.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/antiwave\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aobo\.com\.au$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aolchannels\.aol\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.aol.ca/video-detail") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.aol.co.uk/video-detail") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.aol.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)video\.aol\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.aolnews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)aomiwang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.ap.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".apetube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)apiary\.io$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".apigee.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)apigee\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("appledaily.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("archive.is") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)archive\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".arctosia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/arctosia\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)areca-backup\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)army\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("artsy.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".asahichinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)asahichinese\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("asdfg.jp/dabr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/japanfirst\.asianfreeforum\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".asiaharvest.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)asiaharvest\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("asianews.it") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)asianwomensfilm\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)askstudent\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".askynz.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)askynz\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)assembla\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)astonmartinnews\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)astrill\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)atc\.org\.au$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".atchinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/atchinese\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("atgfw.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)atj\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".atlaspost.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)atlaspost\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".atnext.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)atnext\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("avaaz.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)avaaz\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)avast\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".avdb.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)avdb\.in$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".avdb.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)avdb\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)avidemux\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)avoision\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)axureformac\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.baby-kingdom.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("babynet.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("backchina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)backchina\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".backpackers.com.tw/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("backtotiananmen.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("badoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*2\.bahamut\.com\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)baidu\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)baixing\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hen.bao.li") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bannedbook.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bannedbook\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".barenakedislam.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)barnabu\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bayvoice.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bayvoice\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dajusha.baywords.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.bbc\.co\.uk.*chinese/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bbc.co.uk/tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.bbc\.co\.uk.*zhongwen/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*news\.bbc\.co\.uk\/onthisday.*newsid_2496000\/2496277/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("newsforums.bbc.co.uk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bbcchinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bbcchinese\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/bbc\.in/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bbg.gov") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bbsfeed\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbsland.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bcc.com.tw/board") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bcchinese.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bebo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bebo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)beijing1989\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("beijingspring.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)beijingspring\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".berlintwitterwall.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)berlintwitterwall\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bestforchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bestforchina\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bestvpnservice.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bet365\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".betfair.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bettween.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bettween\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)betvictor\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bewww.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".beyondfirewall.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bfnn\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bfsh\.hk\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("biantailajiao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("biantailajiao.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bic2011.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bigfools.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bignews.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bignews\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bigsound.org/portnoy") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bill2-software\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("billypan.com/wiki/%E9%A6%96%E9%A0%81") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)billywr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bipic.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bit.ly") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/bit\.ly/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bitcointalk\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bitshare.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bitshare\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bjzc.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bjzc\.org\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tor.blingblingsquad.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".blinkx.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blinkx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blinw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".blip.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blip\.tv\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".blockcn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blockcn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blogblog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".blogcatalog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blogcatalog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".blogger.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blogger\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blogimg.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.kangye\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bloglines.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloglines\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloglovin\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("rconversation.blogs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https?:\/\/[^\/]+blogspot\.(.*)/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blogtd.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".blogtd.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/blogtd\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloodshed\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bloomberg.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloomberg\.cn$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bloomberg.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloomberg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bloomberg.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloomberg\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bloomfortune\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bnrmetal\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("boardreader.com/thread") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)boardreader\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bonbonme.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)boobstagram\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)book\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)books\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)botanwang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bot.nu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bowenpress.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bowenpress\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dl.box.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dl\.box\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("boxun.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)boxun\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".boxun.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)boxun\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("boxunblog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)boxunblog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".boxunclub.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)br\.st$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)brandonhutchinson\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)braumeister\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".break.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)break\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".breakingtweets.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)breakingtweets\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)breakwall\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".briefdream.com/%E7%B4%A0%E6%A3%BA") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("brightkite.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)brightkite\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("brizzly.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)brizzly\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("broadbook.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ibros.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("brucewang.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bt95\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/btdigg\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".budaedu.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)budaedu\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bullog.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bullog\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".bullogger.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bullogger\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.businessinsider\.com\.au\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/static.*\.businessinsider\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".businessweek.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".businesstimes.com.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/businesstimes\.com\.cn/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bugclub\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)buugaa\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".buzzhand.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("buzzurl.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bwsj.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bx\.tl$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("holz.byethost8.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".c-spanvideo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)c-spanvideo\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)c-est-simple\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cacnw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cactusvpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cactusvpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cafepress.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cahr.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".calameo.com/books") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn.calameo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cn\.calameo\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cams\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cams.org.sg") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("canadameet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/bbs\.cantonese\.asia\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".canyu.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cao.im") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".caobian.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)caobian\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/catcatbox\.com\/forum\.php/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("caochangqing.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)caochangqing\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cari.com.my") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)catch22\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)catfightpayperview\.xxx$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".catholic.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)catholic\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("catholic.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)catholic\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cattt\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cbsnews.com/video") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ccavtop10\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ccdtr.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ccdtr\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ccim.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cclife.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ccthere.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cctongbao.com/article/2078732") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ccue.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ccue.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cgdepot.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cgdepot\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdig\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cdjp.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdjp\.org\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cdnews.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cdp1998.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdp1998\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cdp2006.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdp2006\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cdpa.url.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cdpusa.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cdpweb.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdpweb\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cdpwu.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdpwu\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdw\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cecc.gov") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cecc\.gov$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cellulo\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cenci\.tk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cenews\.eu$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)centralnation\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".centurys.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/centurys\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cfhks.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cftfc.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chandoo\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".change.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/change\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".changp.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)changp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chapm25.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chaturbate.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chengmingmag.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chenguangcheng.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chenguangcheng\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chenpokong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cherrysave\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chhongbi.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/chicagoncmtv\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".china-week.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("china101.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)china101\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)china21\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("china21.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)china21\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".china5000.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaaffairs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinaaffairs\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinaaid\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaaid.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaaid.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaaid.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinacomments.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinacomments\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinachange.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinachannel.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinachannel\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinadigitaltimes.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinadigitaltimes\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinaeweekly.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinaeweekly\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinafreepress\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinagate.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinageeks.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinagfw.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinagfw\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinagreenparty.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinagreenparty\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinahush.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinalawtranslate.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaxchina.com/howto") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinainperspective.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinainperspective.net/ArtShow.aspx?") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinainperspective\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinainperspective.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinainperspective\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinainterimgov\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinalawandpolicy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinamule.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinamule\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinamz.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinarightsia.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinasocialdemocraticparty.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinasocialdemocraticparty\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinasoul.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinasoul\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinatimes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinatweeps.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaway.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinaworker.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinaworker\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinayouth.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinayuanmin.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinayuanmin\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinese-hermit.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinese-memorial.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinesedailynews\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinesen.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chinesen\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinesenewsnet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinesepen.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chinesetalks.net/ch") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chingcheong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chingcheong\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chn.chosun.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("christianstudy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)christianstudy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("christusrex.org/www1/sdc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chrlcg-hk\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chrome\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chromeadblock\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chromium\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chubun.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chuizi.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chuizi\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)christiantimes\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".chrlawyers.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)allaboutalpha\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".circlethebayfortibet.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".citizenlab.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("citizensradio.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("city9x.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".civicparty.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)civicparty\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("civilhrfront.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)civilhrfront\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".civilmedia.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("psiphon.civisec.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cjb\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ck101.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ck101\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)classicalguitarblog\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".clb.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".clipfish.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.cmoinc\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cms\.gov$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cna\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cnavista.com.tw/shop/stores_app") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cnd.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cnd\.org\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wiki.cnitter.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cnn.com/video") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news.cnyes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cochina\.co$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cochina\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".code1984.com/64") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)codeshare\.io$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tosh\.comedycentral\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("comefromchina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)comefromchina\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)compileheart\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)conoyo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".contactmagazine.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".convio.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.cool18\.com\/bbs.*\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".coolaler.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)coolaler\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("coolder.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)coolder\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)coolloud\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("corumcollege.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)couchdbwiki\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cotweet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cpj.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cpj\.org\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("crackle.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)crackle\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("crd-net.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("creaders.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)creaders\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".crossthewall.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)crossthewall\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("csdparty.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)csdparty\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)csuchen\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ctfriend.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cts.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/library\.usc\.cuhk\.edu\.hk\/Default\.aspx.url=dflms%2fsub%2f%2f1%2fdict%2f50/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/mjlsh\.usc\.cuhk\.edu\.hk/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cuhkacs.org/~benng") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cuihua.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cuihua\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cuiweiping.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cuiweiping\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)curvefish\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".culture.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)culture\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".cw.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/forum\.cyberctm\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cyberghostvpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cynscribe\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cytode.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ifan\.cz\.cc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mike\.cz\.cc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nic\.cz\.cc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cl.d0z.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dabr.co.uk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dabr\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dabr.mobi") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dabr\.mobi$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dabr\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dadazim.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dadazim\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dadi360.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dafagood.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dafahao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dalailama\.ru$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dailidaili.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dailidaili\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dailymotion.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dajiyuan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dajiyuan.eu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dalailama.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dalailamaworld.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dalailamaworld\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dalianmeng.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dalianmeng\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".danke4china.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)danke4china\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".danwei.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("daolan.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("daxa.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)daxa\.cn\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn.dayabook.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".daylife.com/topic/dalai_lama") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ddc.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)de-sci\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".de-sci.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lists.debian.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("packages.debian.org/zh-cn/lenny/gpass") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)delcamp\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("delicious.com/GFWbookmark") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".democrats.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)democrats\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)desc\.se\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".destroy-china.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)deutsche-welle\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dev102\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)deviantart\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)deviantart\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)devio\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)devpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.dfanning\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dfas\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".diaoyuislands.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)diaoyuislands\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("static.digg.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/digiland\.tw\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)digitalnomadsproject\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".diigo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)diigo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)furl\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dipity.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)directcreative\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.discogs\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".discuss.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)discuss\.com\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("disp.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dit-inc.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dit-inc\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dizhidizhi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("djangosnippets.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dl-laby\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dlsite\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dmcdn\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dnscrypt\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dns2go\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dnssec\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dojin.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dok-forum.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dolc\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dollf\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".domain.club.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dongde.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dongtaiwang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dongtaiwang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dongtaiwang.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dongtaiwang\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dongyangjing.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dontfilter.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dontmovetochina\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dotplane.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dotplane\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dotsub\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("doubleaf.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dougscripts\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dowei.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)doxygen\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dphk.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dpp.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dpp\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)weigegebyc\.dreamhosters\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)drgan\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dropbox\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dropboxusercontent\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("drsunacademy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".drtuber.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dscn.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dtiblog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dtic\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dtiserv2.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)duckduckgo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".duckload.com/download") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)duckmylife\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".duihua.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)duihua\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)duihuahrjournal\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".duoweitimes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)duoweitimes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("duping.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)duplicati\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dupola.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dupola.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dvorak\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dw.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/dw\.de/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dw-world.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dw-world\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dw-world.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("http://dw-world.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.dwheeler.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dwnews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dwnews\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dwnews.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dwnews\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xys.dxiong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dy24k.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dynawebinc\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dyndns.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dzze.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)e-gold\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".e-gold.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/g\.e-hentai\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("e-info.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".e-traderland.net/board") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".e123.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".eastturkestan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".eastturkistan-gov.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".eastturkistangovernmentinexile.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkjp.easyweb.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ebookbrowse.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ebookee.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ecministry.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.ecstart.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)edgecastcdn\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twimg\\.edgesuite\\.net\\/\\/?appledaily") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("edicypages.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("edoors.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".edubridge.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)edubridge\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)eevpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("efcc.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)efmoe\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)eic-av\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("electionsmeter.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)elgoog\.im$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)elpais\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".eltondisney.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)emacsblog\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".emory.edu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".emule-ed2k.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/emule-ed2k\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".emuparadise.me") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)enewstree\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinese.engadget.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)englishfromengland\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)entermap\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes-bg.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)epochtimes-bg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes-romania.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)epochtimes-romania\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.co.il") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)epochtimes\.co\.il$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.co.kr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)epochtimes\.co\.kr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)epochtimes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.fr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".epochtimes.ie") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimes.se") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("epochtimestr.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)epochweekly\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("erabaru.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".erepublik.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ernestmandel\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)erights\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".etaa.org.au") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("etaiwannews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)etizer\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ettoday.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.eulam.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("eventful.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)exblog\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.exblog\.co\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/blog\.excite\.co\.jp\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)expatshield\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)exploader\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".extremetube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("eyevio.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)eyevio\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".eyny.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ezpc.tk/category/soft") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ezpeer.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".facebook.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)facebook\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https?:\/\/[^\/]+facebook\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)connect\.facebook\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)facebookquotes4u\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)facesofnyfw\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)faiththedog\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fakku.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("falunart.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)falunasia\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("falundafa.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("falundafamuseum.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)falunhr\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fanglizhi\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fangong\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fangongheike.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fanqianghou.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fapdu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fawanghuihui.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fbcdn\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fanqiangyakexi.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fail.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)famunion\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fan-qiang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fangbinxing.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fangbinxing\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fangeming.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fanswong\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fanyue.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".farwestchina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.favotter.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)faststone\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("favstar.fm") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)favstar\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("faydao.com/weblog") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fb\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fb.me") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fb\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fbsbx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fc2.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fc2china.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fc2blog.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.fdbox.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fdc89.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fourface\.nodesnoop\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)feedburner\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)feedzshare\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)feelssh\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("feer.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)feministteacher\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fengzhenghu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fengzhenghu\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fflick.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fgmtv.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fgmtv.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".files2me.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/files2me\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fileserve.com/file") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fillthesquare.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)finalion\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("findbook.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fingerdaily.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("finler.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fireofliberty.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fireofliberty\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".falsefire.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)falsefire\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fleshbot.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)flickr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)staticflickr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("flickrhivemind.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yuming.flnet.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cn\.fmnnow\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.foolsmountain.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.forum4hk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pioneer-worker.forums-free.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/4sq\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fotop\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.foxbusiness.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fringenetwork\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)flecheinthepeche\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)focustaiwan\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".focusvpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fofg\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fooooo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fooooo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("footwiball.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fourthinternational\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)foxdie\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)foxsub\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("foxtang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fqrouter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)franklc\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freakshare.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/freakshare\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)free4u\.com\.ar$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("free-gate.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".free.fr/adsl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)allonlinux\.free\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dimitrik\.free\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kineox.free.fr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)puttycm\.free\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freealim\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("whitebear.freebearblog.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freechal.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freedomhouse.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freedomhouse\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freegao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freegao\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".free-hada-now.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freelotto.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freelotto\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freeman2.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freeopenvpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freemoren.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freemorenews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freenet-china.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freenewscn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freeoz.org/bbs") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freeoz\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.bulbous\.freeserve\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freessh\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("free4u.com.ar") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".free-ssh.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)free-ssh\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freeforums.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freenetproject\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freeoz.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freetibet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freetibet\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/freetibetanheroes\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freewallpaper4\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freewebs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freeweibo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freexinwen.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".freeyoutubeproxy.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freeyoutubeproxy\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("friendfeed.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("friendfeed-media.com/e99a4ebe2fb4c1985c2a58775eb4422961aa5a2e") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/ff\.im/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.zensur\.freerk\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freevpn.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fring.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fring\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)frommel\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".frontlinedefenders.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fscked\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fsurf.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ftchinese.com/story/001054103") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.ftchinese\.com\/.*video/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ftchinese.com/comments") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fuckcnnic.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fuckcnnic\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fuckgfw.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fulue.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".funf.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("funp.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)furinkan\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".futurechinaforum.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)futuremessage\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".fuyin.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fw\.cm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fzh999.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("fzh999.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gabocorp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gaeproxy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)galenwu\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)game735\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gamebase.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gamer\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gamer.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gamez.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gamez\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gaoming.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gaoming\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ganges.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gaopi.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/gaopi\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gaozhisheng.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gaozhisheng.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gardennetworks.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gardennetworks\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("72.52.81.22") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gartlive\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gather\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gaymap\.cc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gazotube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gazotube\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gcc\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gclooney\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gcpnews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gdbt.net/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gdzf.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)geek-art\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("geekerhome.com/2010/03/xixiang-project-cross-gfw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)geekmanuals\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)genuitec\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".geocities.co.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".geocities.com/SiliconValley/Circuit/5683/download.html") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.geocities.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("geocities.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)geohot\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)geometrictools\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)get-digital-help\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".getchu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)getfoxyproxy\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".getfreedur.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)getgom\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".getlantern.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)getlantern\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".getjetso.com/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("getiton.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".getsocialscope.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gfw.org.ua") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ggssl.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ggssl\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ghost\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ghut\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)giga-web\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tw\.gigacircle\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cn\.giganews\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gigporno.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gimpshop\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)girlbanker\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/softwaredownload\.gitbooks\.io\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/gist\.github\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cthlo\.github\.io\/hktv\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)glennhilton\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("globaljihad.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("globalmuseumoncommunism.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)globalrescue\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".globalvoicesonline.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)globalvoicesonline\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gmbd.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gmhz\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gnci\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goagent\.biz$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goagentplus\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("godfootsteps.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)godfootsteps\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gokbayrak.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goldbetsports\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.goldenmelody\.com\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goldwave\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gongmeng.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gongm.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gongminliliang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gongwt.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".goodreads.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goodreads\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".goodreaders.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goodreaders\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goofind\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".googlesile.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gopetition.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gopetition\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gotw\.ca\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("grandtrial.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)graphis\.ne\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gravatar\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("greatfirewall.biz") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greatfirewallofchina\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".greatfirewallofchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greatfirewallofchina\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".greenparty.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greenpeace\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("great-firewall.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("great-roc.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("greatroc.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("greatzhonghua.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".greenpeace.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".greenvpn.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greenvpn\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gs-discuss.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gtricks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("guancha.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gun-world.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gutteruncensored\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gvm\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gzm.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gzone-anime\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)agoogleaday\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chromeexperiments\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chromercise\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)data-vocabulary\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)g\.co$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ggpht\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gmail\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gmodules\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)goo\.gl$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https?:\/\/[^\/]+google\.(.*)/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googleapis\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googleartproject\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlecode\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlecommerce\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googledomains\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googleearth\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googledrive\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlegroups\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlehosted\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlelabs\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlemail\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googleplus\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlesource\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googleusercontent\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)googlevideo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)groups\.google\.cn$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gvt0\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gvt1\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)html5rocks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)panoramio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)recaptcha\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/sipml5\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".appspot.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)appspot\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https?:\/\/[^\/]+appspot\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinaaid.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("echofon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)golang\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greasespot\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.klip\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/ub0\.cc/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wozy.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("anti.anti.cnn.googlepages.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)freegateget\.googlepages\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("myboooks.googlepages.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".googlevideo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gospelherald.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gospelherald\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/hk\.gradconnection\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)graylog2\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("greatfire.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greatfire\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("greatfirewallofchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)greatroc\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gstatic\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("guishan.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)guishan\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gunsamerica\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".gyalwarinpoche.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)h-china\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("h1n1china.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hacken.cc/bbs") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hackthatphone\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hahlo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hakkatv\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hanunyi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/jp\.hao123\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hardsextube\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hasaowall\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("have8.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hdtvb\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)heartyit\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hecaitou.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hecaitou\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hechaji.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hechaji\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)helplinfen\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)helloandroid\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)helloqueer\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hellotxt.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hellotxt\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)htxt\.it\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hellouk.org/forum/lofiversion") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".helpeachpeople.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)helpeachpeople\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".helpzhuling.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)date\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)flightcaster\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)branch\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)awardwinningfjords\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)futureme\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)getcloudapp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cl\.ly$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)getsmartlinks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)git-scm\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lesscss\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)list\.ly$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)maxgif\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)overlapr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)peerpong\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pose\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)samsoff\.es$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sendoid\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)speckleapp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)stuffimreading\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tomayko\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twt\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)views\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("heqinglian.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("here4news.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)heungkongdiscuss\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("app.heywire.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hgseav.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hidden-advent.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hidden-advent\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hidecloud.com/blog/2008/07/29/fuck-beijing-olympics.html") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hidemyass.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hidemyass\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hideipvpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hihiforum.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/hihiforum\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hihistory\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".higfw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)highrockmedia\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hikinggfw\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".himemix.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)himemix\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".himemix.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("times.hinet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hjclub.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hk-pub.com/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/hk-pub\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hk32168.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hk32168\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("app.hkatvnews.com/v3") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkbc.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkbf.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkchurch.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkday.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkdailynews.com.hk/china.php") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkej.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkepc.com/forum/viewthread.php?tid=1153322") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*global\.hkepc\.com.*forum/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkfront.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkgolden.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkgreenradio.org/home") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.hkheadline\.com.*blog/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkheadline.com/instantnews") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkhkhk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkjc.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkjp.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkptu.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkreporter.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hkreporter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hkwcc.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hkzone\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("apps.hloli.net/gfwtube") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hnjhj.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hnjhj\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hola\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hola\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("holyspiritspeaks.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)holyspiritspeaks\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)derekhsu\.homeip\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/homeservershow\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/old\.honeynet\.org\/scans\/scan31\/sub\/doug_eric\/spam_translation\.html/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hongmeimei.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hongzhi\.li$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hootsuite.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hootsuite\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/globalrescue\.hopto\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hotpot.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hotshame.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hotspotshield\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hougaige\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)howtoforge\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hqcdp.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hqcdp\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hrcir.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hrichina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hrichina\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hrw.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hrw\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hsjp\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hsselite\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".htkou.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)htmldog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("huaglad.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".huanghuagang.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)huanghuagang\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".huaren.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)huaren\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("huaxia-news.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("huaxin.ph") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hua-yue.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hugoroy\.eu$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("t.huhaitai.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)huhamhire\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hung-ya\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hungerstrikeforaids\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)huping\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hutianyi\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hutong9.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hwinfo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".hxwq.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hypeshell\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hyperrate\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".i-cable.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)i1\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)i2p2\.de\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)i2runner\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("iask.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iask\.ca$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("iask.bz") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iask\.bz$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ibiblio.org/pub/packages/ccic") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iblogserv-f\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cn\.ibtimes\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blogs.icerocket.com/tag") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".icij.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)icl-fi\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iconpaper\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)icu-project\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("w.idaiwan.com/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("idemocracy.asia") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".identi.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)identi\.ca$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)idiomconnection\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.idlcoyote\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".idouga.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.idsam.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".idv.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ieasynews.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ied2k.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/if\.ttt\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ifanqiang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ifanr.com/857") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ifcss.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ifcss\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ifjc.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/ift\.tt/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)antidrm\.hpg\.ig\.com\.br$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)igfw\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ignitedetroit\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)igvita\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ihakka\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iicns\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)illusionfactory\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ilove80\.be$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)im\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)im88\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)imageflea\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("imageshack.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)imagevenue\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)imagezilla\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.imdb\.com\/name\/nm0482730/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.imdb\.com\/title\/tt0819354\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".img.ly") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)img\.ly$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".imkev.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)imkev\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".imlive.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("immigration.gov.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tech2\.in\.com\/video\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)incredibox\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".initiativesforchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".inmediahk.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)inmediahk\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)innermongolia\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".instagram.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)instagram\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)interfaceaddiction\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)internationalrivers\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/internet\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("internetdefenseleague.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("internetfreedom.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)internetpopculture\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("inxian.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)inxian\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iphone4hongkong\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iphonehacks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iphonix\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ipicture\.ru$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ipobar.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ippotv\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/.*\.iptorrents\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/iptorrents\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ipvanish\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("iredmail.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ironicsoftware\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ironbigfools\.compython\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ironpython\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".beta.iset.com.tw/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("http://beta.iset.com.tw/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.iset.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".islam.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".islamicity.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".isaacmao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)!--isaacmao\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)isgreat\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ismprofessional\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("isohunt.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)israbox\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.istef.info/2007/10/21/myentunnel") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".istockphoto.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("isunaffairs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("isuntv.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("itaboo.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)itaboo\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("download.ithome.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ithelp.ithome.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)itshidden\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".itweet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/itweet\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".iu45.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)iuhrdf\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".iverycd.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lvv2\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ixquick\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".izaobao.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)gmozomg\.izihost\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".izles.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)j\.mp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.jackjia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)japan-whores\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".javbus.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jbtalks.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jbtalks.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jbtalks.my") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jeanyim.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jgoodies\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jiaoyou8\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".jiehua.cz") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hk\.jiepang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tw\.jiepang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jieshibaobao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jinbushe.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jinbushe\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zhao.jinhai.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jingpin.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jingpin\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ac.jiruan.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jitouch\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jkforum.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("research.jmsc.hku.hk/social") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)joachims\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jobso\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)joeedelman\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)journalofdemocracy\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("jpopforum.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)juliereyc\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)junauza\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".junefourth-20.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)junefourth-20\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("justfreevpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("justtristan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("juziyue.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)juziyue\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jwmusic\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".jyxf.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ka-wai\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kagyuoffice.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kagyuoffice\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kaiyuan.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kakao\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kanzhongguo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kanzhongguo.eu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)karayou\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kcsoftwares\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kechara.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".keepandshare.com/visit/visit_page.php?i=688154") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kendincos.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kenengba.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kenengba\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)keontech\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wiki.keso.cn/Home") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".khmusic.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.kimy.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kingdomsalvation.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kinghost.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kingstone.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("killwall.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)killwall\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kissbbao.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".knowledgerush.com/kr/encyclopedia") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kodingen\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kompozer\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)koolsolutions\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".koornk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)koornk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kui.name/event") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kun.im") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kurtmunger\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kusocity.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kwcg\.ca$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kwongwah.com.my") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("kyohk.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".kzeng.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kzeng\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("la-forum.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ladbrokes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)labiennale\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lagranepoca.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lalulalu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.lamenhu\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("laogai.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)laogai\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("laomiu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".laoyang.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/laoyang\.info/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)laptoplockdown\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)laqingdan\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)larsgeorge\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lastfm\.es$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("latelinenews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lazarsearlymusic\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)leecheukyan\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lematin\.ch$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lemonde.fr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lenwhite\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lerosua.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lerosua\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.lester850.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lesoir\.be$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("letscorp.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)letscorp\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("liansi.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lianyue.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)liaowangxizang\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".liaowangxizang.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)liberal\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("libertytimes.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lidecheng.com/blog/fucking-gfw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("limiao.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("abitno.linpie.com/use-ipv6-to-fuck-gfw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)line\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".linglingfa.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lingvodics\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".linkideo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)api\.linksalpha\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)apidocs\.linksalpha\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.linksalpha\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)help\.linksalpha\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)linux-engineer\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)linuxconfig\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)linuxreviews\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("linuxtoy.org/archives/installing-west-chamber-on-ubuntu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lipuman.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)listentoyoutube\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("listorious.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)liudejun\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".liuhanyu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".liujianshu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)liujianshu\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("liuxiaotong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)liuxiaotong\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("liu.lu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".liveleak.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)liveleak\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".livestation.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("livestream.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)livestream\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)livingonline\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)livingstream\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)livevideo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".livevideo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lizhizhuangbi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lkcn.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/localpresshk\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lockdown\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lockestek\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("logbot.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)logiqx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)logmike\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".longhair.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)longtermly\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lookatgame.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/lookatgame\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lookingglasstheatre\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lookpic\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lotuslight.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkreporter.loved.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lrfz\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/lrip\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lsd.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lsd\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lsforum.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lsm\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lsmchinese\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lsmkorean\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ltn.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".lupm.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lupm\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lushstories\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lvhai.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lvhai\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mh4u\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("m-team.cc/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.macrovpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mad-ar\.ch$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/maiplus\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)marc\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("marguerite.su") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)martincartoons\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".maiio.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mail-archive.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".malaysiakini.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)makemymood\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)marines\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*markmail\.org.*message/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)martau\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("maruta.be/forget") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".marxist.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)marxist\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".marxists.org/chinese") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)matainja\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mathiew-badimon\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)matsushimakaede\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/maturejp\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mayimayi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mcadforums\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mcfog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".md-t.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)md-t\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mediafire.com/?") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)meetup\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mefeedia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".megaporn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)megarotic\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("megavideo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)megurineluka\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("meirixiaochao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)melon-peach\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("memedia.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".memehk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)memehk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".memrijttm.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("merit-times.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mesotw.com/bbs") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".metacafe.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)meteorshowersonline\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)metrolife\.ca$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mgoon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mgstage\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mhradio.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/michaelanti\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)michaelmarketl\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("middle-way.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mihk.hk/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mihua.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mimivip.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("minghui.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)minghui\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("minghui-a.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("minghui-b.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("minghui-school.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingjinglishi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mingjinglishi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mingjingnews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mingpao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingpaocanada.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingpaomonthly.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mingpaonews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingpaony.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingpaosf.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingpaotor.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mingpaovan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mininova.org/tor/2593503") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mimivv.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".minzhuhua.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)minzhuhua\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("minzhuzhanxian.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("minzhuzhongguo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)miroguide\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mirrorbooks.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mitbbs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mixero.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mixero\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mixpod.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mixx.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mixx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mizzmona\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mk5000.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mlcool.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mmaaxx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("plurktop.mmdays.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mmmca.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mobatek\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mobile01.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mobileways\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mobypicture.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/moby\.to/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mrdoob\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wiki.moegirl.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("molihua.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mondex\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.monlamit\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("c1522.mooo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)monitorchina\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.morbell.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)morningsun\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)movabletype\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)moviefap\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.moztw\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mp3ye.eu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mp\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mpettis\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mpfinance.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mpinews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mrtweet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mrtweet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news.msn.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("msguancha.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mthruf\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)multiply\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("multiproxy.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.mymaji.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("multiupload.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)muouju\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)muselinks\.co\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)muzi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)muzi\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mx981\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".my-proxy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.my903.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("myactimes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)my-addr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)myaudiocast\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".myav.com.tw/bbs") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bbs\.mychat\.to$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mychinamyhome\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".mychinamyhome.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.mycould\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)myeclipseide\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".myforum.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)myforum\.com\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)myforum\.com\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".myfreshnet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)myparagliding\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mypopescu\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("mysinablog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".myspace.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)naacoalition\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("old.nabble.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)naitik\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)namsisi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nanyang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nanyang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nanyangpost.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nanyangpost\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nanzao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jpl\.nasa\.gov$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pds\.nasa\.gov$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/[^\/]+line\.naver\.jp/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)navicat\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nakido.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nakido\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".naol.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cyberghost.natado.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)national-lottery\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)navy\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nccwatch.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nch.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ncn.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ncn\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)etools\.ncol\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nde.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ndr.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.ned.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nekoslovakia\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("t.neolee.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("netcolony.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bolin.netfirms.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.netlog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("netme.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("networkedblogs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("neverforget8964.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("new-3lunch.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".new-akiba.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".newcenturymc.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/newcenturymc\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("newcenturynews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)newchen\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".newchen.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".newgrounds.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("newlandmagazine.com.au") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news100.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".newscn.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)newscn\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)newsminer\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("newspeak.cc/story") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".newsancai.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)newstapa\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".newtaiwan.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("newtalk.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)newtalk\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("newyorktimes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*hk.*\.nextmedia\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*tw.*\.nextmedia\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("static.apple.nextmedia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nexton-net\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nexttv.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nga\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ngensis.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nicovideo.jp/watch/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nighost\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nintendium.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".dayaarmongol.ning.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/dayaarmongol\.ning\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwanyes.ning.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)njactb\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("njuice.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)njuice\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nlfreevpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nobel\.se$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nobelprize.org/nobel_prizes/peace/laureates/2010") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nobodycanstop.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nobodycanstop\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nokogiri\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nokola\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)noobbox\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)novelasia\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/news\.now\.com\/home/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nownews\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nowtorrents.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".noypf.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)noypf\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)npa\.go\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nps.gov") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nrk.no") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nrk\.no$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nsc\.gov\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ntd\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ntdtv.co") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ntdtv.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ntdtv.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ntdtv.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cbs\.ntu\.edu\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nuexpo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nurgo-software\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nuvid.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nuzcom.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nvquan.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.nyaa\.se/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nydus.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nyt\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nytco\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".nytimes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nytimes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nytimg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("nysingtao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nzchinese\.net\.nz$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("observechina.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("oclp.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)october-review\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("offbeatchina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ogaoga\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twtr2src.ogaoga.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".oikos.com.tw/v4") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".oiktv.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("oizoblog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".okayfreedom.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("old-cat.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)olumpo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".olympicwatch.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("omgili.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)omnitalk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)omnitalk\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.omy.sg") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news.omy.sg") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("showbiz.omy.sg") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".on.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/onedrive\.live\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".onlylady.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("onmoon.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("onmoon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ontrac\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".oopsforum.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("open.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("opendemocracy.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("myopenid.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)myopenid\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("openid.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)openid\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.openinkpot\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".openleaks.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)openleaks\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("openvpn.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)openvpn\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)openwebster\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/help\.opera\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("my.opera.com/dahema") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)demo\.opera-mini\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("opnir.com/215/myentunnel-ssh-autoproxy-cross-gfw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.orchidbbs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)orient-doll\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("orientaldaily.com.my") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)orientaldaily\.com\.my$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)orn\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("t.orzdream.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)t\.orzdream\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tui.orzdream.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)orzistic\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)osfoora\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.osmdroid\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ourdearamy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("oursogo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("oursteps.com.au") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xinqimeng.over-blog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("share.ovi.com/media") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/owl\.li/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/ht\.ly/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/htl\.li/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/mash\.to/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.owind.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.oxid\.it/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("oyax.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ozchinese.com/bbs") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ow\.ly$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.ozchinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ozyoyo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pacificpoker.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".packetix.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("page2rss.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pagodabox\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)paint\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)coveringweb\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".palacemoon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.palmislife.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)paper-replika\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)eriversoft\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("paper.li") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("paperb.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".panluan.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)panluan\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pao-pao\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".parade.com/dictators/2009") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".passiontimes.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pastebin.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pastie.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pastie\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.pathtosharepoint\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pbs.org/wgbh/pages/frontline/gate") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pbs.org/wgbh/pages/frontline/tankman") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pbwiki.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pbworks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)developers\.box\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wiki\.oauth\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wiki\.phonegap\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wiki\.jqueryui\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pbxes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pbxes\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pcdiscuss.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pcdvd.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pchome.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/pcij\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pct\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pdetails.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pdproxy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("peacefire.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("peacehall.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".peeasian.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pekingduck.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pekingduck\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("penchinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)penchinese\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".penchinese.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pengyulong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.pentalogic\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".penthouse.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".peopo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)peopo\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".percy.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".perfectgirls.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("perfectvpn.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("perfspot.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)perlhowto\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("philly.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)photofocus\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)phuquocservices\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".picidae.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)img.*\.picturedip\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("picturesocial.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pidown.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pign.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.pilotmoon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pin6.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pin6\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ping.fm") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ping\.fm\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pinoy-n\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".piposay.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".piring.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pixelqi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)css\.pixnet\.in$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pixnet\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pixnet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)placemix\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/pictures\.playboy\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)playboy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)playpcesor\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("plays.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)m\.plixi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("plm.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("plunder.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".plus28.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".plusbb.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pmates.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)po2b\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)podictionary\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pokerstars.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pokerstars\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.pokerstrategy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("politicalchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)popvote\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("popyard.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)popyard\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".porn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".porn2.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pornbase.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pornhd\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pornhub.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pornmm\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pornoxo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pornrapidshare.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pornrapidshare\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pornstarclub.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".porntube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".pornvisit.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".portablevpn.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".post852.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("postadult.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)powercx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.powerpointninja\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdn\.printfriendly\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pts\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pubu.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("puffinbrowser.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)putty\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/post\.ly/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".posterous.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/posterous\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)post\.anyu\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bralio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)calebelston\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)designerol\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.fizzik\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)nf\.id\.au$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)markmilian\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)log\.riku\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sogrady\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vatn\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)veempiire\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.vegorpedersen\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ventureswell\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)webfee\.tk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)whereiswerner\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bill\.zhong\.pp\.ru$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".power.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)power\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("powerapple.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)abc\.pp\.ru$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("heix.pp.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)prayforchina\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)premeforwindows7\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)presentationzen\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)prestige-av\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("prisoner-state-secret-journal-premier") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)privacybox\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)privateinternetaccess\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("privatepaste.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)privatepaste\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("privatetunnel.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)privatetunnel\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)procopytips\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("provideocoalition.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)prosiben\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("proxifier.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("api.proxlet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)proxomitron\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("proxy.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".proxypy.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)proxypy\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("proxyroad.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("prozz.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("psblog.name") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)psblog\.name$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("psiphon.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ptt.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".puffstore.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pullfolio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)pureconcepts\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)purepdf\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)purevpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".putlocker.com/file") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pwned.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("python.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".python.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/python\.com\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".qanote.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qanote\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("qi-gong.me") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".qidian.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".qienkuen.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qienkuen\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qiwen\.lu$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("qixianglu.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.qmzdd.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".qkshare.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("qoos.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qoos\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*blog\.qooza\.hk.*dafengqixi/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)efksoft\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qstatus\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qtweeter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)qtrac\.eu$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)quadedge\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.getyouram\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hiitch\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("qusi8.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".qvodzy.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*nemesis2\.qx\.net.*pages.*MyEnTunnel/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("qxbbs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".radicalparty.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("radioaustralia.net.au") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("opml.radiotime.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)radiovaticana\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)radiovncr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)raidcall\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".raidtalk.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("rangzen.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/blog\.ranxiang\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ranyunfei.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ranyunfei\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rapbull.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/rapidgator\.net\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rapidshare8\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rapidsharedata.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("rcinet.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".read100.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".readingtimes.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)readingtimes\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)readmoo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".realraptalk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".recordhistory.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("redchinacn.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".redtube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("referer.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)referer\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)reflectivecode\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("relaxbbs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("renminbao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".renyurenquan.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)renyurenquan\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/certificate\.revocationcheck\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("subacme.rerouted.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".reuters.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".revleft.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("retweetist.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)retweetrank\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("revver.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rfa.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rfachina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rfamobile.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rferl\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rfi.fr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rfi\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/rfi\.my\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rhcloud.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/vds\.rightster\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rileyguide.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("riku.me/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ritouki.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rlwlw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rlwlw\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rmjdw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinese.rnw.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rnw.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("robtex.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)robustnessiskey\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rocmp\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rojo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ronjoneswriter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".roodo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rotten.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rsf.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rsf\.org\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rsf-chinese.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rsf-chinese\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rssmeme.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)rssmeme\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rthk.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/rthk\.hk/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rthk.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/rthk\.org\.hk/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("rti.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.ruanyifeng\.com\/blog.*some_ways_to_break_the_great_firewall/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rushbee.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("rutube.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ruyiseek.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".rxhj.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)s-cute\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".s-dragon.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)s1heng\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.s4miniarchive\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)s8forum\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sacom.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sacom\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sadpanda\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".saiq.me") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)saiq\.me\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".salvation.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)salvation\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".samair.ru/proxy/type-01") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sammyjs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sandnoble.com/bookSearch/isbnInquiry.asp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sankaizok\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sanmin.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sapikachu.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savemedia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savetibet.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savetibet.fr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savetibet.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savetibet.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savetibet.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("savevid.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)say2\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.sciencemag\.org\/content\/344\/6187\/953/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".scmp.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".scmpchinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".scribd.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)scriptspot\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("seapuff.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("domainhelp.search.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("secretchina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)secretgarden\.no$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)default\.secureserver\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("securitykiss.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("seesmic.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)seevpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)seezone\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sejie.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sendspace.com/file") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tweets\.seraph\.me\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sesawe.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sesawe\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sesawe.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sethwklein\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.setty.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sevenload.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sevenload\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sex.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sex-11.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sex3\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sex8\.cc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sexandsubmission.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sexhu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sexhuang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sexinsex.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sexinsex\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("67.220.91.18") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("67.220.91.23") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.sf\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sfileydy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sftuk.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sftuk\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shadow.ma") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shadowsocks\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shahamat-english.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".shangfang.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shangfang\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shapeservices.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sharebee.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sharecool\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sharkdolphin\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sharpdaily.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sharpdaily\.com\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sharpdaily.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".shaunthesheep.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shaunthesheep\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sheikyermami.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shellmix\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shenshou.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shenyunperformingarts.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shenzhoufilm.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shenzhoufilm\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shinychan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".shitaotv.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shixiao\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shizhao\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".shizhao.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("shkspr.mobi/dabr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)shodanhq\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".shopping.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".showtime.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ch.shvoong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".shwchurch3.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/shwchurch3\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sidelinesnews\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sidelinessportseatery.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("simplecd.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)simplecd\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("simpleproductivityblog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.sina.com/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.sina.com%2F") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.sina.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dailynews.sina.com/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("dailynews.sina.com%2F") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.sina.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("home.sina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)magazines\.sina\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news.sina.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news.sina.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("singtao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)singtao\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("news.singtao.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdp\.sinica\.edu\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sino-monthly.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sinocast\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sinocism.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sinomontreal.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sinonet.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sinopitt.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sinoants.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sinoants\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sinoquebec.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)site90\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sitebro.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)siteks\.uk\.to$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sitemaps\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sitetag.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sis.xxx") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sis001\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sis001.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sjum\.cn\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)skimtube\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)skybet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/skyhighpremium\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.skykiwi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.skype\.com\/intl\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.skype\.com\/zh-Hant/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)skyvegas\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xskywalker.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xskywalker\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("m.slandr.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)slavasoft\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)slheng\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".slideshare.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.slime.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".slutload.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("smhric.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sndcdn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)so-ga\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".so-ga.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)so-news\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".so-news.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("home.so-net.net.tw/yisa_tsai") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)soc\.mil\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sockslist\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sod.co.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".softether.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)softether\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".softether-download.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)softether-download\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cdn\.softlayer\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sogclub\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sohcradio.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sohcradio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.somee\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sorting-algorithms\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".soumo.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)soup\.io\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".slinkset.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)slickvpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)snapchat\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".snaptu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)snaptu\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sneakme.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)snooper\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sobees.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sobees\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("socialwhale.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".softether.co.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)softwarebychuck\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.sogoo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("soh.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)soh\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sohfrance.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sohfrance\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("chinese.soifind.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sokamonline.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)somee\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".songjianjun.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)songjianjun\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sonidodelaesperanza.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sopcast.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sopcast.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/bbs\.soul-plus\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)soundcloud\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".soundofhope.kr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("soundofhope.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)soundofhope\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)soupofmedia\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sourceforge.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/sourceforge\.net\/p.*\/shadowsocksgui\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("southnews.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sowers.org.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wlx\.sowiki\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)space-scape\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".spankwire.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)spb\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)spencertipping\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("spinejs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sproutcore\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("squarespace.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ssh91\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.stackfile.com/freedur") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)standupfortibet\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("usinfo.state.gov") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".starp2p.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)starp2p\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)startpage\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".state168.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)steel-storm\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sthoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sthoo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".stickam.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("stickeraction.com/sesawe") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)stonegames\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)stoneip\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)storagenewsletter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".stoptibetcrisis.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)stoptibetcrisis\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)storify\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)stoweboyd\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)streamingthe\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn.streetvoice.com/article") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn.streetvoice.com/diary") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn2.streetvoice.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tw.streetvoice.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)strongvpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".student.tw/db") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)studentsforafreetibet\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("stupidvideos.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sugarsync.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sugarsync\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("summify.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sun1911.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".suoluo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("api.supertweet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.supertweet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".surfeasy.com.au") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)surrenderat20\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)svwind\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sweux\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)swift-tools\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sydneytoday.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sylfoundation.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)syncback\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sysadmin1138\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("sysresccd.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".sytes.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.syx86.com/2009/09/puff") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.syx86.cn/2009/09/puff") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".szbbs.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)szetowah\.org\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".t35.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".t66y.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)t66y\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)t88\.ca$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".taa-usa.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/taa-usa\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.tablesgenerator\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tabtter.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tacem.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tafaward\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tagwalk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tagwalk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taipei.gov.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".taipeisociety.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taipeisociety\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".taiwandaily.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taiwantt\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taiwandaily\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwankiss.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwannation.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwannation.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taiwannews\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.taiwanonline\.cc\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwantp.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwanus.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwanyes.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("taiwan-sex.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".talk853.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tamiaode\.tk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tanc\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tangben.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".taolun.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taolun\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.taragana.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taup\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.taup\.org\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".taweet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)taweet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tbpic\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tbsec\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tbsn\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tbsseattle.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tchrd.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*tcno\.net.*doc.*tor/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)teamseesmic\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".teashark.com/download.html") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)techlifeweb\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)techparaiso\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)teck\.in\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".telecomspace.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)telegraph\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tenacy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)theampfactory\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)theappleblog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)theatrum-belli\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thebodyshop-usa\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("theblemish.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thebcomplex\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".thechinabeat.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.thechinastory\.org\/yearbooks\/yearbook-2012\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thedieline\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thedw\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thegatesnotes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/thegioitinhoc\.vn\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".thehots.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thehousenews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thehun\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thelifeyoucansave\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thelius\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thepiratebay.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("theqii.info/blog") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thereallove.kr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thesartorialist\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thespeeder.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/thestandnews\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thetibetpost\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thetrotskymovie.com/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thevivekspot.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thewgo\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".thinkingtaiwan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".thisav.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/thisav\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("thkphoto.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thomasbernhard\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("threatchaos.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)throughnightsfire\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".thumbzilla.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thywords\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tiananmenmother.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tiananmenuniv\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tiananmenuniv\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tiandixing\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tianhuayuan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tiantibooks.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tianzhu.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibet.at") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibet.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibet.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibet\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibet.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibet\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tibet.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tibetalk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibetanyouthcongress.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibetanyouthcongress\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibetcorps.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tibetfund.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibetjustice.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tibetoffice.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tibetonline.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibetonline\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibetonline\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibetonline.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tibetsun.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tibetwrites\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".time.com/time/time100/leaders/profile/rebel") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".time.com/time/specials/packages/article/0,28804") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".time.com/time/magazine") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.tiney\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tinychat.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tinypaste\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tidyread\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tistory.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tkcs-collins\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tkforum\.tk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tmagazine.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tmagazine\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tmi\.me/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tnaflix.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tnaflix\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("togetter.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tokyo-247.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tokyo-hot.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tokyocn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tono-oka.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tonyyan.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".toodoc.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("toonel.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".topnews.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)topshare\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".topshareware.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)topstyle4\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)topsy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("topsy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tora.to") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".torproject.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)torproject\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("torrentcrazy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)torrentcrazy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)torrentproject\.se$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)torvpn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("touch99.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)toutfr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tpi.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tpi\.org\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)transgressionism\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)transparency\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)travelinlocal\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)treemall\.com\.tw$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("trendsmap.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)trendsmap\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".trialofccp.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)trialofccp\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tripod\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".trouw.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".trt.net.tr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("trtc.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("trulyergonomic.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)trustedbi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".truth101.co.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/truth101\.co\.tv/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)truthcn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".truveo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tsemtulku.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tsquare.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/www\.tsu\.org\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tsunagarumon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/www\.tsuru-bird\.net\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tsctv.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tt-rss\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tt1069\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tttan\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tttan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bb.ttv.com.tw/bb") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tuanzt.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tube8.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tube8\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tubecao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tubewolf\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tuidang.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tuidang.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("bbs.tuitui.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tumutanzi\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tunein.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tunein\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tunnelbear\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".turbobit.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/turbobit\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)turningtorso\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tuxtraining\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)301works\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)365singles\.com\.ar$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)all-that-is-interesting\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)art-or-porn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)news\.atebits\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tumblr\.awflasher\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)badassjs\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)basetimesheightdividedby2\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)benjaminste\.in$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.birdhouseapp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bobulate\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bonjourlesgeeks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bookshelfporn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.boxcar\.io$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.bitly\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chevronwp7\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)clientsfromhell\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)codeboxapp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cookingtothegoodlife\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cubicle17\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)photos\.dailyme\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)davidslog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.davidziegler\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.dayoneapp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)drewolanoff\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.dribbble\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)chaos\.e-spacy\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)eamonnbrennan\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)everyday-carry\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)eyespirit\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)life\.fly4ever\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fredwilson\.vc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)fuckgfw\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)geekmade\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)generesis\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)news\.ghostery\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)givemesomethingtoread\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.gowalla\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)heiyo\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hellonewyork\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.hotpotato\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ialmostlaugh\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.ifttt\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.instagram\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.instapaper\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)interestinglaugh\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.iphone-dev\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)jayparkinsonmd\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.joeyrobert\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)kt\.kcome\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)my\.keso\.cn$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.kickstarter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.kl\.am$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.klip\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)t\.kun\.im$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.lightbox\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)littlebigdetails\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lovequicksilver\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)lyricsquote\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)madmenunbuttoned\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)marco\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)minimalmac\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mixedmedialabs\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)modfetish\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.mongodb\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)navigeaters\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)london\.neighborhoodr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.path\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)parislemon\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.pikchur\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.rockmelt\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.romanandreg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)solozorro\.tk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.sparrowmailapp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)stuffimreading\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.summify\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thedailywh\.at$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)theinternetwishlist\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thisiswhyyouarefat\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.tiffanyarment\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tjholowaychuk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tomsc\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.topify\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)thehungrydudes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tumblweed\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)status\.twhirl\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.usa\.gov$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)photo\.utom\.us$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)v-state\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wellplacedpixels\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)whydidyoubuymethat\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wordboner\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wordsandturds\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)worstthingieverate\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xmusic\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xuzhuoer\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)bd\.zhe\.la$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)cocoa\.zonble\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tv.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.tv\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tv\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tv-intros\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tvants.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("forum.tvb.com/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tvboxnow.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tvider.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tvunetworks\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tw-npo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twapperkeeper.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twapperkeeper\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twaud\.io$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twaud.io") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twbbs.net.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twbbs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twbbs.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twblogger\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tweepmag.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tweepml.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweepml\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tweetbackup.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetbackup\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tweetboard.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetboard\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tweetboner.biz") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetboner\.biz$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tweetdeck.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetdeck\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/deck\.ly/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)mtw\.tl$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetedtimes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetmylast\.fm$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tweetphoto.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetphoto\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetrans\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tweetree.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetree\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweetwally\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tweetymail.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twftp\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twibase.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twibble.de") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twibble\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twibbon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twibs\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twicsy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twifan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/twifan\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twiffo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twiffo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twilog.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twimbow.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twimbow\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twindexx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twipple.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twipple\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twip\.me\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twistar.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twister\.net\.co$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twisternow.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twistory.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitbrowser.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitcause\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitgether\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twiggit\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitgoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitiq.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitiq\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitlonger.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitlonger\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/tl\.gd\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitoaster.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitoaster\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitonmsn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitpic.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitpic\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitreferral.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twit2d.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twit2d\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitstat.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitstat\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)dotheyfolloweachother\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)firstfivefollowers\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)retweeteffect\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweeplike\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tweepguide\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)turbotwitter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitvid.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitvid\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("199.59.148.20") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)t\.co$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".t.co") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/twt\.tl/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twittbot.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitter.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitter\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twttr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https?:\/\/[^\/]+twitter\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitter4j\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twittercounter.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twittercounter\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitterfeed.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twittergadget.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twittergadget\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitterkr.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitterkr\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twittermail\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twittertim.es") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twittertim\.es$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twitthat.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitturk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitturly.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twitturly\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twitzap.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twiyia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twstar\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twtkr.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/twtkr\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twimg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twtrland.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("twurl.nl") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".twyac.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)twyac\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".tycool.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tycool\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tzangms\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)typepad\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.expofutures\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)legaltech\.law\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)latimesblogs\.latimes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blog\.palm\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)blogs\.tampabay\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)contests\.twilio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("embr.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)embr\.in$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("guomin.us/login") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)uberproxy\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".srcf.ucam.org/salon/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ucdc1998\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/hum.*\.uchicago\.edu\/faculty\/ywang\/history\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)uderzo\.it$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)udn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".udn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ufreevpn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ugo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)uhrp\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("uighurbiz.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ulike.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ukliferadio.co.uk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ukliferadio\.co\.uk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ultravpn.fr") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ultravpn\.fr$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ultraxs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)unblock\.cn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)unblocksit\.es$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("uncyclomedia.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("uncyclopedia.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/uncyclopedia\.tw/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)unholyknight\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uni.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("unicode.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uniteddaily.com.my/index.php?") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".unix100.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)unknownspace\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("unpo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)uocn\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tor.updatestar.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".upholdjustice.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".upload4u.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/uploaded\.net\/file\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uploaded.to/file") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/uploaded\.to\/file/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uploadstation.com/file") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.urbanoutfitters.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("myshare.url.com.tw/") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)urlborg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)urlparser\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("us.to") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)usacn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("beta.usejump.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)usfk\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("earthquake.usgs.gov/eqcenter/recenteqsww/Maps/10/105_30.php") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)usmc\.mil$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ustream.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ustream\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ustwrap\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("usus.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uushare.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/uushare\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uwants.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uwants.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/uyghur-j\.org\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".uyghurcanadiansociety.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)uyghurcongress\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)uyghuramerican\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("uygur.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/uymaarip\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("v70.us") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/v7976888\.info\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vaayoo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)value-domain\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".van698.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vanemu.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vanilla-jp.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("vansky.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vapurl\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vcf-online\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vcfbuilder\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".velkaepocha.sk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".venbbs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".venchina.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("veoh.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".verizon.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)verybs\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vft.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("videobam.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)videobam\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".videomo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vidoemo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)viki\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("vimeo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vimgolf\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vimperator\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vincnd\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vinniev\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/ny\.visiontimes\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vjmedia.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vllcs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vmixcore\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn.voa.mobi") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tw.voa.mobi") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".voachineseblog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)voachineseblog\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("voagd.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("voacantonese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)voacantonese\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("voachinese.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)voachinese\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("voatibetan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)voatibetan\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".voanews.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("vocn.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vot.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vot\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.voy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.vpncup\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("vpnbook.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("vpnfire.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vpngate\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".vpngate.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vpngate\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vpnpop\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vpnpronet\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)vtunnel\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)w\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("lists.w3.org/archives/public") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)waffle1999\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wahas.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".waigaobu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("waikeung.org/php_wind") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".waiwaier.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/waiwaier\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wallornot.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wallpapercasa\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)www\.wan-press\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wanderinghorse\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wangafu\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wangjinbo\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wangjinbo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wanglixiong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wangruoshui.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.wangruowang.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("want-daily.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wapedia.mobi/zhsimp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)waselpro\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wattpad.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wattpad\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".makzhou.warehouse333.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("washeng.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)watchmygf\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wav\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wdf5.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wearn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wearn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hudatoriq\.web\.id$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)web2project\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("webbang.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("weblagu.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)webmproject\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("webs-tv.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("webshots.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("websitepulse.com/help/testtools.china-test.html") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("webworkerdaily.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("weeewooo.net/hss/hotspot_cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".weekmag.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wefong.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("weiboleak.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("weijingsheng.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".weiming.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("weiquanwang.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/weisuo\.ws/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wengewang.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wengewang.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wengewang\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wenhui.ch") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wenku\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/blog\.wenweipo\.com\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wenxuecity.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wenyunchao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wenyunchao\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("westca.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)westca\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)westernwolves\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hkg.westkit.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.wet123.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wepn\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wetpussygames.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wetplace.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wexiaobo.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wexiaobo\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wezhiyong.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wezone\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wforum.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wforum\.com\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".whatblocked.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)whatblocked\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".whippedass.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/who\.is\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("whylover.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)whyx\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/evchk\.wikia\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("cn.uncyclopedia.wikia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.uncyclopedia.wikia.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikileaks\.ch$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikileaks\.de$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikileaks\.eu$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikileaks\.lu$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wikileaks.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikileaks\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikileaks\.pl$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)collateralmurder\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)collateralmurder\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wikilivres.info/wiki/%E9%9B%B6%E5%85%AB%E5%AE%AA%E7%AB%A0") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikimapia\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)secure\.wikimedia\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikimedia\.org\.mo$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikinews.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wikiwiki\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)sports\.williamhill\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)willw\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)windowsphoneme\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("winwhispers.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wiredbytes\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wiredpen\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wireshark\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wisevid.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wisevid\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".witnessleeteaching.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".witopia.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wnacg.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wo.tc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)woeser\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/woesermiddle-way\.net\//.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wolfax.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wolfax\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".womensrightsofchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)womensrightsofchina\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("woopie.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)woopie\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("woopie.tv") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)woopie\.tv$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)workatruna\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".worldcat.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("worldjournal.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wordpress.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*\.wordpress\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wp\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("woxinghuiguo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wow-life.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wowlegacy\.ml$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wpoforum.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wpoforum\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wqlhw.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wqyd.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wqyd\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wrchina.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wretch.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wsj.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wsj.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wtfpeople.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wuala.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wuerkaixi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wufi.org.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wuguoguang\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wujie.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wujieliulan.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)wujieliulan\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wukangrui.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wwitv.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("wzyboy.im/post/160") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".x-berry.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)x-art\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)x-wall\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("x1949x.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("x365x.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xanga.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xbabe\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xbookcn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xbookcn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xcafe\.in$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("x.xcity.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xcritic.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/cdn.*\.xda-developers\.com/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("destiny.xfiles.to/ubbthreads") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xfm.pp.ru") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xgmyd.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xh4n.cn/blog") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xhamster.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("one.xthost.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xiaochuncnjp.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("s.xiaod.in") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xiaohexie.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xiaoma\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xiaohexie\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xiezhua.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xing.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xing\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xinmiao.com.hk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xinmiao\.com\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xinsheng.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xinshijue.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xinhuanet.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/xinyubbs\.net/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xizang-zhiye.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xjp.cc") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xjp\.cc$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xlfmwz\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xml-training-guide\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xmovies.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xnxx\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xpdo.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xpud\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)k2\.xrea\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xtube\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.xuite.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("vlog.xuite.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xuzhiyong.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xuchao\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xuchao.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xuchao\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xvedios.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xvideos.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".xxbbx.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)xxxx\.com\.au$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xys.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xysblogs.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xyy69.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xyy69.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("page.bid.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blogs.yahoo.co.jp") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("buy.yahoo.com.tw/gdsale") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.knowledge.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.myblog.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)hk\.news\.yahoo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.rd.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.search.yahoo.com/search") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("hk.video.news.yahoo.com/video") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("meme.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tw.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("tw.myblog.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tw\.news\.yahoo\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("pulse.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("upcoming.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("video.yahoo.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yahoo\.com\.hk$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yam.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yam\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yasni.co.uk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yasukuni\.or\.jp$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ydy.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yeelou\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yeeyi.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yegle.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yegle\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yfrog.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yhcw\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yi.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yibada.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yidio.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yidio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yilubbs.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("xa.yimg.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yipub.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yipub\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yogichen.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yogichen\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yong.hu") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yorkbbs.ca") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youxu\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yyii.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yyii\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yzzk.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yzzk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".youjizz.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youjizz\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("youmaker.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("youpai.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youpai\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".your-freedom.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yourepeat\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".yousendit.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yousendit\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("youthbao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".youthnetradio.org/tmit/forum") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.youthwant.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("share.youthwant.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("topic.youthwant.com.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".youporn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youporn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youtu\.be$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".youtube.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youtube\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youtube-nocookie\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".youtubecn.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("youversion.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)youversion\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("blog.youxu.info/2010/03/14/west-chamber") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ytimg\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ytht.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yuanming.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yunchao\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yvesgeleyn\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("yx51.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)yymaya\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zacebook.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zannel\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)tap11\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zaobao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zaobao.com.sg") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zaobao\.com\.sg$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zaozon.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zarias\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.zaurus.org.uk") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zdnet.com.tw/news/software/0,2000085678,20111187,00") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zengjinyan.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zeutch\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("www.zfreet.com/post/usejump-browns.html") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zgzcjj.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zhanbin.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zhanbin\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zhenghui.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zhenlibu.info") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zhenlibu\.info$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zhinengluyou.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zhongguotese\.net$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zhongmeng\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zhreader\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zhuichaguoji.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zhuichaguoji\.org$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".ziddu.com/download") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zillionk\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zinio.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zinio\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)ziplib\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zkaip.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zkaip\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zlib\.net\/$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zmw.cn") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zomobo.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zonaeuropa.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zonaeuropa\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zootool\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zoozle.net") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("writer.zoho.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zshare.net/download") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zsrhao.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zuo.la") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zuo\.la$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zuobiao\.me$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".zuola.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zuola\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/(?:^|\.)zvereff\.com$/.test(host)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zyzc9.com") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("freenet") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("q=freedom") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("q%3Dfreedom") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("remembering_tiananmen_20_years") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*safeweb/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("q=triangle") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("q%3DTriangle") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ultrareach") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("ultrasurf") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zhengjian") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E7%BD%A2%E8%AF%BE") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%8D%9A%E8%AE%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%A4%A7%E7%BA%AA%E5%85%83/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E9%92%93%E9%B1%BC%E5%B2%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E5%8A%A8%E6%80%81%E7%BD%91") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%A4%9A%E7%B6%AD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%A4%9A%E7%BB%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*freegate/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%B3%95%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E6%B3%95%E8%BD%AE%E5%A4%A7%E6%B3%95") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E6%B3%95%E8%BC%AA%E5%8A%9F") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E6%B3%95%E8%BD%AE%E5%8A%9F") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E8%83%A1%E6%B5%B7%E5%B3%B0") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E8%83%A1%E6%B5%B7%E6%B8%85") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E8%8A%B1%E8%8A%B1%E5%85%AC%E5%AD%90/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%BC%CD%D4%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%BC%D3%C3%DC%B4%FA%C0%ED/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%8A%A0%E5%AF%86%E4%BB%A3%E7%90%86/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%B1%9F%E6%B5%81%E6%B0%93/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E7%9C%8B%E4%B8%AD%E5%9B%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%85%AD%E5%9B%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E5%88%98%E6%99%93%E6%B3%A2") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E7%BE%8E%E5%9B%BD%E4%B9%8B%E9%9F%B3") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E6%B0%91%E8%BF%9B%E5%85%9A") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E6%B0%91%E8%BF%90") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E8%89%B2%E6%83%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("%E7%8E%8B%E4%B8%B9") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E7%BD%91%E7%89%B9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E7%8E%8B%E5%B8%8C%E5%93%B2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E9%AD%8F%E4%BA%AC%E7%94%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%96%87%E5%AD%97%E7%8B%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%88%91%E7%9A%84%E5%A5%8B%E6%96%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%97%A0%E7%95%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E9%82%AA%E6%81%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%B4%97%E8%84%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%96%B0%E5%94%90%E4%BA%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E6%96%B0%E8%AF%AD%E4%B8%9D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E5%AD%A6%E8%BF%90/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E4%B8%AD%E5%8A%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E4%B8%AD%E5%9B%BD%E8%AE%BA%E5%9D%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*search.*%E4%B8%AD%E5%AE%A3%E9%83%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/upload\.wikimedia\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^https:\/\/.*\.wikipedia\.org/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wikipedia.org/wiki/Dalai_Lama") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf(".wikipedia.org/wiki/Dalai-Lama") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*ar\.wikipedia\.org.*%D8%AF%D8%A7%D9%84%D8%A7%D9%8A_%D9%84%D8%A7%D9%85%D8%A7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh-yue.wikipedia.org/wiki/%E5%8A%89%E6%9B%89%E6%B3%A2") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Anti-communism") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Book_burning") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Censorship_in_the_People%27s_Republic_of_China") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Charter_08") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Chen_Guangcheng") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Deep_packet_inspection") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Freegate") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Golden_Shield_Project") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Great_Firewall_of_China") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Hong_Kong") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Huang_Qi") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Internet_censorship") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Java_Anon_Proxy") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Liu_Xiaobo") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Shi_Tao") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Students_for_a_Free_Tibet") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Tank_man") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Tiananmen_Papers") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Tiananmen_Square_protests_of_1989") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("en.wikipedia.org/wiki/Tibetan_independence_movement") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/Wikipedia:%E9%A0%81%E9%9D%A2%E5%AD%98%E5%BB%A2%E8%A8%8E%E8%AB%96") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.m.wikipedia.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikisource.org") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*2012%E5%B9%B4%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E8%85%90%E8%B4%A5%E6%A1%88%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*2014%E5%B9%B4%E6%98%86%E6%98%8E%E7%81%AB%E8%BD%A6%E7%AB%99%E6%9A%B4%E5%8A%9B%E6%81%90%E6%80%96%E8%A2%AD%E5%87%BB%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*512%E5%A4%A7%E5%9C%B0%E9%9C%87/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*08%E5%AE%AA%E7%AB%A0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*1959%E5%B9%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*1989%E5%B9%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*610%E8%BE%A6%E5%85%AC%E5%AE%A4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*Anti-CNN/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%98%BF%E5%BA%95%E5%B3%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%98%BF%E6%B2%9B%C2%B7%E9%98%BF%E6%97%BA%E6%99%8B%E7%BE%8E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%89%BE%E6%9C%AA%E6%9C%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%AB%E4%B9%9D%E5%AD%A6%E8%BF%90/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%AB%E6%80%9D%E5%B7%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8F%AD%E7%A6%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%B2%8D%E5%BD%A4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%AE%91%E5%BD%A4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8C%97%E4%BA%AC%E9%AB%98%E6%A0%A1%E5%AD%A6%E7%94%9F%E8%87%AA%E6%B2%BB%E8%81%94%E5%90%88%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8C%97%E4%BA%AC%E4%B9%8B%E6%98%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%96%84%E7%86%99%E6%9D%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8D%9A%E8%AE%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B8%83%E6%8B%89%E6%A0%BC%E4%B9%8B%E6%98%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9F%B4%E7%8E%B2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BB%93%E5%A4%AE%E5%98%89%E6%8E%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9B%B9%E9%95%B7%E9%9D%92/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%99%88%E5%85%89%E8%AF%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%A5%9A%E5%B8%83%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%e5%a4%a7%e5%8f%82%e8%80%83_\(%e7%bd%91%e7%bb%9c%e6%9d%82%e5%bf%97\)/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E7%B4%80%E5%85%83/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E7%BA%AA%E5%85%83%E6%97%B6%E6%8A%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%BE%BE%E8%B5%96%E5%96%87%E5%98%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%BE%BE%E5%85%B0%E8%90%A8%E6%8B%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%81%94%E8%98%AD%E8%96%A9%E6%8B%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%BE%BE%E5%B0%94%E7%BD%95%E6%B4%BB%E4%BD%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E8%B5%A6%E5%9B%BD%E9%99%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E8%B5%A6%E5%9C%8B%E9%9A%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E5%B1%A0%E6%9D%80%E5%88%97%E8%A1%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E8%97%8F%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A7%E6%98%AD%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%B9%E5%A2%9E%E5%98%89%E6%8E%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%81%E5%AD%90%E9%9C%96/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%9C%E9%A3%8E-21%E4%B8%AD%E7%A8%8B%E5%BC%B9%E9%81%93%E5%AF%BC%E5%BC%B9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%B1%E9%A2%A8-31%E6%B4%B2%E9%9A%9B%E5%BD%88%E9%81%93%E5%B0%8E%E5%BD%88/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%B1%E7%AA%81%E5%8E%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%9C%E7%AA%81%E5%8E%A5%E6%96%AF%E5%9D%A6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%9A%E7%BB%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%9A%E7%B6%AD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BF%84%E7%BE%85%E6%96%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B3%95%E6%8B%89%E5%88%A9%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8F%8D%E5%8D%8E%E5%8A%BF%E5%8A%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B9%E5%8A%B1%E4%B9%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B9%E5%8B%B5%E4%B9%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B9%E8%88%9F%E5%AD%90/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%84%A4%E9%9D%92/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B0%81%E4%BB%8E%E5%BE%B7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B0%81%E5%BE%9E%E5%BE%B7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%86%AF%E6%AD%A3%E8%99%8E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%82%85%E9%93%81%E5%B1%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%99%B6%E5%80%AB%E8%B5%A4%E5%B7%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%AB%98%E6%99%BA%E6%99%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9B%B4%E7%99%BB%E7%A2%BA%E5%90%89%E5%B0%BC%E7%91%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%99%B6%E4%B8%BE%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%94%B9%E9%9D%A9%E5%8E%86%E7%A8%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%94%98%E4%B8%B9%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%AB%98%E8%A1%8C%E5%81%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%99%B6%E5%BD%93%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%A0%BC%E9%B2%81%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*GFW/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%B1%E5%8C%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%AC%E5%85%B1%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*Google%E5%AE%A1%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-cn/%E8%B0%B7%E6%AD%8C%E9%80%80%E5%87%BA%E4%B8%AD%E5%9B%BD%E4%BA%8B%E4%BB%B6") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E8%B0%B7%E6%AD%8C%E9%80%80%E5%87%BA%E4%B8%AD%E5%9B%BD%E4%BA%8B%E4%BB%B6") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E5%B9%BF%E5%B7%9E%E5%B8%82%E6%96%B0%E5%A1%98%E4%BA%8B%E4%BB%B6") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9B%BD%E4%BF%9D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%83%AD%E4%BC%AF%E9%9B%84/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9B%BD%E9%99%85%E7%89%B9%E8%B5%A6%E7%BB%84%E7%BB%87/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9B%BD%E5%86%85%E5%AE%89%E5%85%A8%E4%BF%9D%E5%8D%AB%E6%94%AF%E9%98%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9C%8B%E5%8B%99%E9%99%A2%E9%98%B2%E7%AF%84%E5%92%8C%E8%99%95%E7%90%86%E9%82%AA%E6%95%99%E5%95%8F%E9%A1%8C%E8%BE%A6%E5%85%AC%E5%AE%A4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%9F%A9%E4%B8%9C%E6%96%B9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B4%BA%E5%9B%BD%E5%BC%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BD%95%E4%BF%8A%E4%BB%81/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B2%B3%E6%AE%87/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B4%AA%E5%93%B2%E5%8B%9D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BE%AF%E5%BE%B7%E5%BB%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BE%AF%E8%B5%9B%E5%9B%A0%E6%B1%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BE%AF%E5%BE%B7%E5%81%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E4%BD%B3_%281973%E5%B9%B4%29/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E4%BD%B3_%28%E7%A4%BE%E6%B4%BB%E5%8B%95%E5%AE%B6%29/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E4%BD%B3_%28%E7%A4%BE%E6%9C%83%E6%B4%BB%E5%8B%95%E5%AE%B6%29/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E9%94%A6%E6%B6%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E5%B9%B3_%28%E4%BD%9C%E5%AE%B6%29/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%91%BC%E5%9C%96%E5%85%8B%E5%9C%96/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E6%B8%A9%E4%BD%93%E5%88%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%83%A1%E8%80%80%E9%82%A6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8D%8E%E5%9B%BD%E9%94%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%8F%AF%E5%9C%8B%E9%8B%92/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8D%8E%E5%A4%8F%E6%96%87%E6%91%98/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%8A%B1%E5%9B%AD%E8%BD%AF%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%8A%B1%E5%9B%AD%E7%BD%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%BB%84%E7%90%A6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%BB%83%E7%90%A6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%BB%83%E9%9B%80%E8%A1%8C%E5%8B%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%BB%84%E4%B8%87%E9%87%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%BB%83%E6%9B%89%E6%95%8F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9B%9E%E8%89%AF%E7%8E%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%9C%8D%E8%8B%B1%E6%9D%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AF%82%E8%AD%B7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%BF%80%E6%B5%81%E4%B8%AD%E5%9B%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%98%89%E9%9D%96/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AE%B6%E4%B9%90%E7%A6%8F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B3%88%E6%85%B6%E6%9E%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B4%BE%E5%BA%86%E6%9E%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BB%BA%E5%9B%BD%E9%97%A8%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A7%9C%E7%BB%B4%E5%B9%B3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B1%9F%E6%B3%BD%E6%B0%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B1%9F%E6%BE%A4%E6%B0%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%87%91%E7%9B%BE%E5%B7%A5%E7%A8%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%BD%F0%B6%DC%B9%A4%B3%CC/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B9%9D%E8%AF%84%E5%85%B1%E4%BA%A7%E5%85%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B9%9D%E8%A9%95%E5%85%B1%E7%94%A2%E9%BB%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B7%A8%E6%B5%AA2%E5%9E%8B%E6%BD%9C%E5%B0%84%E5%BC%B9%E9%81%93%E5%AF%BC%E5%BC%B9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A6%BA%E5%9B%8A%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BB%9D%E9%A3%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%8B%89%E5%8D%9C%E6%A5%9E%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%8B%89%E8%90%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%BB%8E%E5%AE%89%E5%8F%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E9%95%BF%E6%98%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E9%95%B7%E6%98%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E6%B4%AA%E5%BF%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E5%85%8B%E5%BC%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E9%B5%AC/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E9%B9%8F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E7%91%9E%E7%8E%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E7%91%9E%E7%92%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E6%85%8E%E4%B9%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BC%A4%E5%8F%A3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E5%B0%8F%E7%90%B3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E8%8B%B1%E6%B5%A9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E6%BA%90%E6%BD%AE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%8E%E5%8D%93%E4%BA%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BB%96%E4%BA%A6%E6%AD%A6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%93%AE%E8%8A%B1%E7%94%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%A2%81%E5%9B%BD%E9%9B%84/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%A2%81%E5%9C%8B%E9%9B%84/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%9B%B6%E5%85%AB%E5%AE%AA%E7%AB%A0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BB%A4%E8%B0%B7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BB%A4%E8%AE%A1%E5%88%92/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%88%98%E5%AE%BE%E9%9B%81/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8A%89%E5%89%9B_\(%E6%B0%91%E9%81%8B%E4%BA%BA%E5%A3%AB\)/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%88%98%E6%85%A7%E5%8D%BF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8A%89%E6%85%A7%E5%8D%BF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%88%98%E6%B7%87/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%AD%E5%9B%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh-yue\.wikipedia\.org.*%E5%85%AD%E5%9B%9B%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8A%89%E6%9B%89%E6%B3%A2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%88%98%E5%BB%B6%E4%B8%9C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%88%98%E4%BA%91%E5%B1%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BE%85%E5%B9%B9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BE%85%E5%B9%B2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B4%9B%E6%A1%91%E6%A3%AE%E6%A0%BC/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%B6%A0%E5%A3%A9%C2%B7%E8%8A%B1%E5%AD%A3%E8%AD%B7%E8%88%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BB%BF%E5%9D%9D%C2%B7%E8%8A%B1%E5%AD%A3%E6%8A%A4%E8%88%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%e7%bb%bf%e5%9d%9d%e5%a8%98") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%A6%AC%E4%B8%89%E5%AE%B6%E5%A5%B3%E5%AD%90%E5%8B%9E%E6%95%99%E6%89%80/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%A6%AC%E8%8B%B1%E4%B9%9D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%B0%91%E4%B8%BB%E5%9F%BA%E9%87%91%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%95%8F%E6%84%9F%E4%BA%BA%E5%A3%AB/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B0%91%E9%96%93%E4%BA%BA%E6%AC%8A%E9%99%A3%E7%B7%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%95%8F%E7%8F%A0%E6%9E%97%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B0%91%E4%B8%BB%E5%A5%B3%E7%A5%9E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B0%91%E4%B8%BB%E9%BB%A8_\(%E9%A6%99%E6%B8%AF\)/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B0%91%E4%B8%BB%E6%AD%8C%E8%81%B2%E7%8D%BB%E4%B8%AD%E8%8F%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%8C%89%E8%8E%89%E8%8A%B1%E9%9D%A9%E5%91%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8D%97%E6%96%B9%E9%83%BD%E5%B8%82%E6%8A%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E5%86%85%E8%92%99%E5%8F%A4%E6%8A%97%E8%AE%AE") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-hk/%E5%86%85%E8%92%99%E5%8F%A4%E6%8A%97%E8%AE%AE") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-tw/%E5%86%85%E8%92%99%E5%8F%A4%E6%8A%97%E8%AE%AE") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%86%85%E8%92%99%E5%8F%A4%E4%BA%BA%E6%B0%91%E5%85%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%A7%E8%92%99%E5%8F%A4%E4%BA%BA%E6%B0%91%E9%BB%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AE%81%E7%8E%9B%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%89%9B%E5%8D%9A%E7%BD%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%AF%BA%E8%B4%9D%E5%B0%94%E5%92%8C%E5%B9%B3%E5%A5%96/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%8C%AA%E5%A8%81/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%9B%98%E5%8F%A4%E4%B9%90%E9%98%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BD%AD%E4%B8%BD%E5%AA%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%A0%B4%E7%BD%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B5%A6%E5%BF%97%E5%BC%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%83%E4%B8%80%E9%81%8A%E8%A1%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%A7%A6%E5%9F%8E%E7%9B%91%E7%8B%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B8%85%E6%9C%9D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%85%A8%E7%90%83%E8%97%8F%E4%BA%BA%E7%89%B9%E5%88%AB%E5%A4%A7%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%C8%BC%C9%D5%C6%BF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%87%83%E7%83%A7%E7%93%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%83%AD%E6%AF%94%E5%A8%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%86%B1%E6%AF%94%E5%A9%AD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%91%9E%E5%85%B8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%90%A8%E8%BF%A6%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%89%E5%B9%B4%E8%87%AA%E7%84%B6%E7%81%BE%E5%AE%B3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%89%E9%80%80/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%89%B2%E6%8B%89%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9C%A3%E9%9B%84%E7%94%98%E5%9C%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%9B%9B%E9%9B%AA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-cn/%E4%B8%96%E7%95%8C%E5%90%84%E6%94%BF%E6%9D%83%E5%8F%97%E6%89%BF%E8%AE%A4%E7%8A%B6%E5%86%B5%E5%88%97%E8%A1%A8") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E%E5%AF%BC%E6%8A%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E5%A4%A7%E4%BC%9A!--Shi Jie Wei Wu Er Qing Nian Dai Biao Da Hui/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%96%E7%95%8C%E7%BB%B4%E5%90%BE%E5%B0%94%E9%9D%92%E5%B9%B4%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%96%E7%95%8C%E7%B6%AD%E5%90%BE%E7%88%BE%E4%BB%A3%E8%A1%A8%E5%A4%A7%E6%9C%83/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8D%81%E5%9B%9B%E4%B8%96%E8%BE%BE%E8%B5%96/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B8%88%E6%B6%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B8%AB%E6%BF%A4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%87%8A%E6%98%9F%E4%BA%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%9F%B3%E6%B2%B9%E5%B8%AE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8F%B8%E5%BE%92%E5%8D%8E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8F%B8%E5%BE%92%E8%8F%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9B%9B%E4%BA%94%E8%A1%8C%E5%8B%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AE%8B%E5%BD%AC%E5%BD%AC/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AE%8B%E4%BB%BB%E7%A9%B7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AE%8B%E4%BB%BB%E7%AA%AE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%8B%8F%E5%AE%B6%E5%B1%AF%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AD%99%E6%96%87%E5%B9%BF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A1%94%E5%B0%94%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%8F%B0%E7%81%A3%E7%8D%A8%E7%AB%8B%E5%BB%BA%E5%9C%8B%E8%81%AF%E7%9B%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%AA%E5%AD%90%E5%85%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%AA%E5%AD%90%E5%85%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-cn/%E5%A4%AA%E5%AD%90%E5%85%9A") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B0%AD%E4%BD%9C%E4%BA%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%94%90%E6%9F%8F%E6%A1%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh/%E9%99%B6%E9%A9%B7%E9%A9%B9") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%97%A8%E5%B9%BF%E5%9C%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%97%A8%E6%B0%91%E4%B8%BB%E5%A4%A7%E5%AD%A6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%97%A8%E6%AF%8D%E4%BA%B2%E8%BF%90%E5%8A%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%96%80%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%97%A8%E6%96%87%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%96%80%E6%96%87%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E5%AE%89%E9%97%A8%E8%87%AA%E7%84%9A%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%A9%E8%91%AC/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-cn/Tor") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/zh-hk/Twitter") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%87%E9%87%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%89%9B.*%E6%94%BF%E6%B2%BB%E4%BA%BA%E7%89%A9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%88%9A.*%E6%94%BF%E6%B2%BB%E4%BA%BA%E7%89%A9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%86%9B%E6%B6%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E6%A8%82%E6%B3%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E7%AB%8B%E5%86%9B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%B2%90%E5%B1%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%8D%83%E6%BA%90/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E6%B7%91%E5%8D%8E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E7%BB%B4%E6%9E%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E6%9C%89%E6%89%8D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%AD%8F%E4%BA%AC%E7%94%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B1%B6%E5%B7%9D%E5%A4%A7%E5%9C%B0%E9%9C%87/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E7%82%B3%E7%AB%A0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E4%B9%90%E6%B3%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%8A%9B%E9%9B%84/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BD%91%E7%BB%9C%E8%AF%84%E8%AE%BA%E5%91%98/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E7%8E%8B%E5%A7%93") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B1%AA%E6%B4%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%8E%8B%E5%85%86%E5%9B%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%94%AF%E8%89%B2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A8%81%E8%A7%86%E8%85%90%E8%B4%A5%E6%A1%88/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B8%A9%E5%AE%B6%E5%AE%9D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B8%A9%E5%A6%82%E6%98%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%B8%A9%E4%BA%91%E6%9D%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E7%8B%B1") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E7%8D%84") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%90%B4%E9%82%A6%E5%9B%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%88%91%E7%9A%84%E5%A5%8B%E6%96%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%90%BE%E5%B0%94%E5%BC%80%E5%B8%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%90%BE%E7%88%BE%E9%96%8B%E5%B8%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%97%A0%E5%9B%BD%E7%95%8C%E8%AE%B0%E8%80%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%90%B4%E5%BC%98%E8%BE%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%97%A0%E7%95%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%83%8F%E5%9D%8E%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E4%B8%83%C2%B7%E4%BA%94%E6%9A%B4%E5%8A%9B%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BA%94%E6%AF%9B%E8%9B%8B%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A5%BF%E5%8D%95%E6%B0%91%E4%B8%BB%E5%A2%99/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%BF%92%E8%BF%91%E5%B9%B3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B9%A0%E8%BF%91%E5%B9%B3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A5%BF%E5%8E%A2%E8%AE%A1%E5%88%92/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A5%BF%E8%97%8F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B9%A0%E4%BB%B2%E5%8B%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%A4%8F%E7%91%AA%E5%B7%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%A6%99%E6%B8%AF%E7%8D%A8%E7%AB%8B%E9%81%8B%E5%8B%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%A6%99%E6%B8%AF%E6%B0%91%E4%B8%BB%E9%BB%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%A6%99%E6%B8%AF.*%E6%B0%91%E4%B8%BB%E6%B4%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%A6%99%E6%B8%AF%E4%BA%BA%E6%AC%8A%E7%9B%A3%E5%AF%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B0%8F%E6%98%AD%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B0%A2%E5%BD%A6%E9%A3%9E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%BE%9B%E7%81%8F%E5%B9%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B0%E7%96%86%E7%8B%AC%E7%AB%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B0%E7%96%86%E7%8D%A8%E7%AB%8B/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B0%E5%94%90%E4%BA%BA%E9%9B%BB%E8%A6%96%E5%8F%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%96%B0%E9%97%BB%E8%87%AA%E7%94%B1%E6%8E%A0%E5%A4%BA%E8%80%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%98%9F%E4%BA%91%E6%B3%95%E5%B8%88/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%86%8A%E7%84%B1/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BE%90%E6%89%8D%E5%8E%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%AE%B8%E5%AE%B6%E5%B1%AF/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%9B%AA%E5%B1%B1%E7%8D%85%E5%AD%90%E6%97%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A9%A2%E5%95%8F%E8%99%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%9A%B4%E5%AE%B6%E5%85%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%A5%E5%AE%B6%E5%85%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%98%8E%E6%98%8E%E5%A4%8D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9D%A8%E4%BD%B3%E8%A2%AD%E8%AD%A6%E6%A1%88/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%A5%8A%E5%BB%BA%E5%88%A9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%9A%81%E5%8A%9B%E7%A5%9E/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%9B%8D%E5%92%8C%E5%AE%AB/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%B9%BD%E7%81%B5%E7%BD%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BD%99%E6%9D%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BF%9E%E4%B8%BD%E8%90%8D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E9%9B%A8%E5%82%98%E9%9D%A9%E5%91%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%BF%9E%E6%AD%A3%E5%A3%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A2%81%E7%BA%A2%E5%86%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%A2%81%E7%B4%85%E5%86%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%97%8F%E4%BC%A0%E4%BD%9B%E6%95%99/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9B%BE%E5%BA%86%E7%BA%A2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%9B%BE%E6%85%B6%E7%B4%85/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E6%89%8E%E4%BB%80%E4%BC%A6%E5%B8%83%E5%AF%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%A0%E5%BE%B7%E6%B1%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%A0%E9%AB%98%E4%B8%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%B5%E9%AB%98%E9%BA%97/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%AB%A0%E5%98%89%E5%91%BC%E5%9B%BE%E5%85%8B%E5%9B%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%A0%E7%AB%8B%E6%98%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%A0%E5%9F%B9%E8%8E%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%B5%E6%96%87%E5%85%89/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%AB%A0%E8%A9%92%E5%92%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%AB%A0%E8%AF%92%E5%92%8C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%A0%E9%92%B0/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%BC%B5%E9%88%BA/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B5%B5%E7%B4%AB%E9%98%B3/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%B6%99%E7%B4%AB%E9%99%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%93%B2%E5%B8%83%E5%B0%8A%E4%B8%B9%E5%B7%B4%E5%91%BC%E5%9B%BE%E5%85%8B%E5%9B%BE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E7%9C%9F%E5%96%84%E5%BF%8D/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%AE%A3%E4%BC%A0%E9%83%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E6%8C%81%E4%B8%8D%E5%90%8C%E6%94%BF%E8%A6%8B%E8%80%85%E5%90%8D%E5%96%AE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%E5%B0%81%E9%94%81%E7%BB%B4%E5%9F%BA%E5%AA%92%E4%BD%93%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%E5%B0%81%E9%94%81%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E4%BA%8B%E4%BB%B6/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E5%A4%A7%E9%99%B8%E7%B6%B2%E8%B7%AF%E5%B0%81%E9%8E%96/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E7%94%B5%E8%A7%86%E5%AE%A1%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E6%B3%9B%E8%93%9D%E8%81%94%E7%9B%9F/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E5%85%B1%E7%94%A2%E9%BB/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E5%9F%BA%E7%9D%A3%E6%95%99%E5%8D%8F%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E5%AE%B6%E5%BA%AD%E6%95%99%E4%BC%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E8%81%AF%E9%82%A6%E4%B8%BB%E7%BE%A9/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E4%BA%BA%E6%AC%8A%E6%B0%91%E9%81%8B%E4%BF%A1%E6%81%AF%E4%B8%AD%E5%BF%83/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E6%B0%91%E4%B8%BB%E5%85%9A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E6%B0%91%E4%B8%BB%E8%BF%90%E5%8A%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E6%B0%91%E4%B8%BB%E9%81%8B%E5%8B%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E8%8C%89%E8%8E%89%E8%8A%B1%E9%9D%A9%E5%91%BD/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD.*%E5%9B%BD%E4%BA%BA%E6%9D%83/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E7%BD%91%E7%BB%9C%E8%BD%AF%E4%BB%B6%E8%BF%87%E6%BB%A4%E5%85%B3%E9%94%AE%E5%AD%97%E5%88%97%E8%A1%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%9C%8B%E7%B6%B2%E8%B7%AF%E5%AF%A9%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E8%A2%AB%E5%B0%81%E9%94%81%E7%BD%91%E7%AB%99%E5%88%97%E8%A1%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E4%BA%BA%E6%AC%8A/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E5%AF%A9%E6%9F%A5%E8%BE%AD%E5%BD%99%E5%88%97%E8%A1%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%AE%AA%E6%B3%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E5%A4%A7%E6%9C%83/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E6%B2%BB%E8%97%8F%E6%AD%B7%E5%8F%B2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%B8%BD%E7%B5%B1%E5%BA%9C/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E7%B6%B2%E7%B5%A1%E5%AF%A9%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E6%B0%91%E4%B8%BB%E9%81%8B%E5%8B%95/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E5%AE%97%E6%95%99/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E6%96%87%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%A4%AE%E8%AD%A6%E8%A1%9B%E5%B1%80/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E5%A4%AE%E6%96%87%E5%8C%96%E9%9D%A9%E5%91%BD%E5%B0%8F%E7%BB%84/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E4%B8%AD%E8%8B%B1%E7%BA%8C%E8%A8%82%E8%97%8F%E5%8D%B0%E6%A2%9D%E7%B4%84/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%91%A8%E6%BB%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%91%A8%E6%B0%B8%E5%BA%B7/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%BD%AC%E6%B3%95%E8%BD%AE/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%87%AA%E7%94%B1%E9%97%A8/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E8%87%AA%E7%94%B1%E4%BA%9A%E6%B4%B2/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikipedia\.org.*%E5%AE%97%E5%96%80%E5%B7%B4/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (/^http:\/\/.*zh\.wikibooks\.org.*%E7%AA%81%E7%A0%B4%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5/.test(url)) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("gov.tw") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("174.142.105.153") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        if (scheme === "http" && url.indexOf("69.65.19.160") >= 0) return "+\u65f6\u7a7a\u96a7\u9053";
-        return "DIRECT";
-    },
-    "+\u65f6\u7a7a\u96a7\u9053": function(url, host, scheme) {
-        "use strict";
-        if (host === "[::1]" || host === "localhost" || host === "127.0.0.1") return "DIRECT";
-        return "PROXY 61.183.128.2:5011";
-    },
-    "+GoAgent": function(url, host, scheme) {
-        "use strict";
-        if (host === "[::1]" || host === "localhost" || host === "127.0.0.1") return "DIRECT";
-        return "PROXY 127.0.0.1:8087";
-    },
-    "+ADfree": function(url, host, scheme) {
-        "use strict";
-        if (host === "[::1]" || host === "localhost" || host === "127.0.0.1") return "DIRECT";
-        return "PROXY yk.pp.navi.youku.com:80";
+// Generated by gfwlist2pac
+// https://github.com/clowwindy/gfwlist2pac
+
+var proxy = "PROXY 61.183.128.2:5010";
+
+var domains = {
+  "4shared.com": 1, 
+  "gimpshop.com": 1, 
+  "bitcointalk.org": 1, 
+  "transparency.org": 1, 
+  "mingpaovan.com": 1, 
+  "wikinews.org": 1, 
+  "joachims.org": 1, 
+  "maiio.net": 1, 
+  "idv.tw": 1, 
+  "mail-archive.com": 1, 
+  "surfeasy.com.au": 1, 
+  "hihistory.net": 1, 
+  "directcreative.com": 1, 
+  "alexlur.org": 1, 
+  "finalion.jp": 1, 
+  "nrk.no": 1, 
+  "nyt.com": 1, 
+  "uberproxy.net": 1, 
+  "getgom.com": 1, 
+  "givemesomethingtoread.com": 1, 
+  "yahoo.com.tw": 1, 
+  "robtex.com": 1, 
+  "thelifeyoucansave.com": 1, 
+  "perfspot.com": 1, 
+  "ugo.com": 1, 
+  "army.mil": 1, 
+  "amoiist.com": 1, 
+  "uderzo.it": 1, 
+  "zillionk.com": 1, 
+  "placemix.com": 1, 
+  "twitstat.com": 1, 
+  "erabaru.net": 1, 
+  "zhongmeng.org": 1, 
+  "thinkingtaiwan.com": 1, 
+  "wo.tc": 1, 
+  "youtu.be": 1, 
+  "prozz.net": 1, 
+  "s-dragon.org": 1, 
+  "tiananmenuniv.com": 1, 
+  "freemorenews.com": 1, 
+  "penchinese.net": 1, 
+  "mesotw.com": 1, 
+  "meetup.com": 1, 
+  "favotter.net": 1, 
+  "privacybox.de": 1, 
+  "liaowangxizang.net": 1, 
+  "firstfivefollowers.com": 1, 
+  "beyondfirewall.com": 1, 
+  "rfamobile.org": 1, 
+  "chosun.com": 1, 
+  "tw-npo.org": 1, 
+  "xanga.com": 1, 
+  "ontrac.com": 1, 
+  "vimperator.org": 1, 
+  "dalailama.com": 1, 
+  "bigsound.org": 1, 
+  "gtricks.com": 1, 
+  "fizzik.com": 1, 
+  "bbg.gov": 1, 
+  "imagezilla.net": 1, 
+  "sipml5.org": 1, 
+  "myforum.com.hk": 1, 
+  "imlive.com": 1, 
+  "webshots.com": 1, 
+  "ptt.cc": 1, 
+  "lsforum.net": 1, 
+  "bigfools.com": 1, 
+  "ziplib.com": 1, 
+  "makemymood.com": 1, 
+  "huhamhire.com": 1, 
+  "foxdie.us": 1, 
+  "juliereyc.com": 1, 
+  "5i01.com": 1, 
+  "beijingspring.com": 1, 
+  "drewolanoff.com": 1, 
+  "post852.com": 1, 
+  "twiffo.com": 1, 
+  "blinkx.com": 1, 
+  "michaelmarketl.com": 1, 
+  "views.fm": 1, 
+  "kcome.org": 1, 
+  "acgkj.com": 1, 
+  "branch.com": 1, 
+  "soupofmedia.com": 1, 
+  "html5rocks.com": 1, 
+  "po2b.com": 1, 
+  "slideshare.net": 1, 
+  "dyndns.org": 1, 
+  "wikileaks.lu": 1, 
+  "sohcradio.com": 1, 
+  "allgirlsallowed.org": 1, 
+  "pts.org.tw": 1, 
+  "twitonmsn.com": 1, 
+  "5maodang.com": 1, 
+  "idouga.com": 1, 
+  "whyx.org": 1, 
+  "peacehall.com": 1, 
+  "instapaper.com": 1, 
+  "rdio.com": 1, 
+  "pure18.com": 1, 
+  "greatfirewallofchina.org": 1, 
+  "lagranepoca.com": 1, 
+  "rfa.org": 1, 
+  "sokamonline.com": 1, 
+  "im.tv": 1, 
+  "hulu.com": 1, 
+  "twiyia.com": 1, 
+  "sethwklein.net": 1, 
+  "dupola.com": 1, 
+  "ccim.org": 1, 
+  "dupola.net": 1, 
+  "circlethebayfortibet.org": 1, 
+  "coolaler.com": 1, 
+  "ngensis.com": 1, 
+  "googlepages.com": 1, 
+  "cams.org.sg": 1, 
+  "mp": 1, 
+  "freeweibo.com": 1, 
+  "novelasia.com": 1, 
+  "v70.us": 1, 
+  "zfreet.com": 1, 
+  "fgmtv.org": 1, 
+  "rssmeme.com": 1, 
+  "futuremessage.org": 1, 
+  "wsj.com": 1, 
+  "ieasynews.net": 1, 
+  "antd.org": 1, 
+  "openleaks.org": 1, 
+  "benjaminste.in": 1, 
+  "asahichinese.com": 1, 
+  "twicsy.com": 1, 
+  "sweux.com": 1, 
+  "lkcn.net": 1, 
+  "woxinghuiguo.com": 1, 
+  "wefong.com": 1, 
+  "astrill.com": 1, 
+  "livingstream.com": 1, 
+  "shangfang.org": 1, 
+  "hkzone.org": 1, 
+  "samsoff.es": 1, 
+  "dxiong.com": 1, 
+  "twip.me": 1, 
+  "zannel.com": 1, 
+  "gaopi.net": 1, 
+  "emacsblog.org": 1, 
+  "tokyocn.com": 1, 
+  "chinaaid.org": 1, 
+  "wangruowang.org": 1, 
+  "internetfreedom.org": 1, 
+  "linpie.com": 1, 
+  "fc2.com": 1, 
+  "ghostery.com": 1, 
+  "dy24k.info": 1, 
+  "bestforchina.org": 1, 
+  "m-team.cc": 1, 
+  "e-hentai.org": 1, 
+  "cna.com.tw": 1, 
+  "setty.com.tw": 1, 
+  "wikipedia.org": 1, 
+  "sorting-algorithms.com": 1, 
+  "kusocity.com": 1, 
+  "twttr.com": 1, 
+  "post.ly": 1, 
+  "backchina.com": 1, 
+  "thespeeder.com": 1, 
+  "tuidang.net": 1, 
+  "chapm25.com": 1, 
+  "sinopitt.info": 1, 
+  "mongodb.org": 1, 
+  "gvt0.com": 1, 
+  "orzistic.org": 1, 
+  "mingpaocanada.com": 1, 
+  "golang.org": 1, 
+  "betfair.com": 1, 
+  "witnessleeteaching.com": 1, 
+  "oursogo.com": 1, 
+  "art-or-porn.com": 1, 
+  "omy.sg": 1, 
+  "middle-way.net": 1, 
+  "ap.org": 1, 
+  "dajiyuan.com": 1, 
+  "laqingdan.net": 1, 
+  "youmaker.com": 1, 
+  "focustaiwan.tw": 1, 
+  "anonymizer.com": 1, 
+  "cnavista.com.tw": 1, 
+  "emuparadise.me": 1, 
+  "nuvid.com": 1, 
+  "syx86.com": 1, 
+  "engadget.com": 1, 
+  "fangong.org": 1, 
+  "matsushimakaede.com": 1, 
+  "kickstarter.com": 1, 
+  "gokbayrak.com": 1, 
+  "plm.org.hk": 1, 
+  "falsefire.com": 1, 
+  "fuckgfw.com": 1, 
+  "topnews.in": 1, 
+  "ihakka.net": 1, 
+  "hkatvnews.com": 1, 
+  "dfas.mil": 1, 
+  "pullfolio.com": 1, 
+  "avdb.tv": 1, 
+  "yousendit.com": 1, 
+  "excite.co.jp": 1, 
+  "ifjc.org": 1, 
+  "freetibet.net": 1, 
+  "lupm.org": 1, 
+  "vllcs.org": 1, 
+  "tweetdeck.com": 1, 
+  "t35.com": 1, 
+  "asianfreeforum.com": 1, 
+  "cacnw.com": 1, 
+  "plunder.com": 1, 
+  "pbworks.com": 1, 
+  "digiland.tw": 1, 
+  "freerk.com": 1, 
+  "networkedblogs.com": 1, 
+  "hahlo.com": 1, 
+  "theampfactory.com": 1, 
+  "gvm.com.tw": 1, 
+  "raidtalk.com.tw": 1, 
+  "coolder.com": 1, 
+  "civilhrfront.org": 1, 
+  "myfreshnet.com": 1, 
+  "rnw.nl": 1, 
+  "apiary.io": 1, 
+  "e-gold.com": 1, 
+  "jitouch.com": 1, 
+  "youtubecn.com": 1, 
+  "livingonline.us": 1, 
+  "pct.org.tw": 1, 
+  "fringenetwork.com": 1, 
+  "deck.ly": 1, 
+  "spinejs.com": 1, 
+  "tvants.com": 1, 
+  "kagyuoffice.org.tw": 1, 
+  "ventureswell.com": 1, 
+  "womensrightsofchina.org": 1, 
+  "smhric.org": 1, 
+  "mash.to": 1, 
+  "ifanqiang.com": 1, 
+  "tibetoffice.org": 1, 
+  "quadedge.com": 1, 
+  "openid.net": 1, 
+  "rangzen.org": 1, 
+  "page2rss.com": 1, 
+  "morbell.com": 1, 
+  "boxcar.io": 1, 
+  "freedomhouse.org": 1, 
+  "footwiball.com": 1, 
+  "tinypaste.com": 1, 
+  "shixiao.org": 1, 
+  "ecstart.com": 1, 
+  "googleartproject.com": 1, 
+  "megarotic.com": 1, 
+  "soundofhope.kr": 1, 
+  "tweetrans.com": 1, 
+  "sod.co.jp": 1, 
+  "usa.gov": 1, 
+  "twbbs.tw": 1, 
+  "chromeadblock.com": 1, 
+  "rocmp.org": 1, 
+  "gardennetworks.org": 1, 
+  "njuice.com": 1, 
+  "dailyme.com": 1, 
+  "oclp.hk": 1, 
+  "search.com": 1, 
+  "hkhkhk.com": 1, 
+  "puffstore.com": 1, 
+  "advanscene.com": 1, 
+  "onlylady.cn": 1, 
+  "miroguide.com": 1, 
+  "cool18.com": 1, 
+  "centurys.net": 1, 
+  "cdpwu.org": 1, 
+  "sidelinesnews.com": 1, 
+  "myav.com.tw": 1, 
+  "dw-world.com": 1, 
+  "fangbinxing.com": 1, 
+  "xuchao.org": 1, 
+  "usfk.mil": 1, 
+  "brandonhutchinson.com": 1, 
+  "photofocus.com": 1, 
+  "rapidsharedata.com": 1, 
+  "qmzdd.com": 1, 
+  "foxbusiness.com": 1, 
+  "diigo.com": 1, 
+  "rightster.com": 1, 
+  "freeoz.org": 1, 
+  "blogimg.jp": 1, 
+  "twitterkr.com": 1, 
+  "tanc.org": 1, 
+  "anontext.com": 1, 
+  "twurl.nl": 1, 
+  "pilotmoon.com": 1, 
+  "fulue.com": 1, 
+  "turningtorso.com": 1, 
+  "bx.tl": 1, 
+  "sytes.net": 1, 
+  "mk5000.com": 1, 
+  "americangreencard.com": 1, 
+  "zhenghui.org": 1, 
+  "cao.im": 1, 
+  "50webs.com": 1, 
+  "vtunnel.com": 1, 
+  "nintendium.com": 1, 
+  "iuhrdf.org": 1, 
+  "xiezhua.com": 1, 
+  "sex8.cc": 1, 
+  "thedw.us": 1, 
+  "markmail.org": 1, 
+  "radioaustralia.net.au": 1, 
+  "seevpn.com": 1, 
+  "rileyguide.com": 1, 
+  "908taiwan.org": 1, 
+  "lerosua.org": 1, 
+  "twitgoo.com": 1, 
+  "businessinsider.com.au": 1, 
+  "facesofnyfw.com": 1, 
+  "echofon.com": 1, 
+  "pdetails.com": 1, 
+  "natado.com": 1, 
+  "fbsbx.com": 1, 
+  "redchinacn.org": 1, 
+  "cl.ly": 1, 
+  "fourthinternational.org": 1, 
+  "globalrescue.net": 1, 
+  "slinkset.com": 1, 
+  "chinaxchina.com": 1, 
+  "chinasocialdemocraticparty.com": 1, 
+  "marines.mil": 1, 
+  "chinese-hermit.net": 1, 
+  "nextmedia.com": 1, 
+  "jiruan.net": 1, 
+  "calameo.com": 1, 
+  "wattpad.com": 1, 
+  "tweetboner.biz": 1, 
+  "godfootsteps.org": 1, 
+  "dipity.com": 1, 
+  "wordsandturds.com": 1, 
+  "cnn.com": 1, 
+  "dvorak.org": 1, 
+  "suoluo.org": 1, 
+  "fly4ever.me": 1, 
+  "ntdtv.org": 1, 
+  "lsm.org": 1, 
+  "nytimes.com": 1, 
+  "summify.com": 1, 
+  "geohot.com": 1, 
+  "xinmiao.com.hk": 1, 
+  "orientaldaily.com.my": 1, 
+  "retweetist.com": 1, 
+  "uniteddaily.com.my": 1, 
+  "westkit.net": 1, 
+  "bill2-software.com": 1, 
+  "weeewooo.net": 1, 
+  "nydus.ca": 1, 
+  "brizzly.com": 1, 
+  "uncyclopedia.info": 1, 
+  "duihuahrjournal.org": 1, 
+  "wallpapercasa.com": 1, 
+  "bonbonme.com": 1, 
+  "kzeng.info": 1, 
+  "ezpc.tk": 1, 
+  "justfreevpn.com": 1, 
+  "taipei.gov.tw": 1, 
+  "fxnetworks.com": 1, 
+  "chinasoul.org": 1, 
+  "csdparty.com": 1, 
+  "labiennale.org": 1, 
+  "cpj.org": 1, 
+  "fw.cm": 1, 
+  "sogclub.com": 1, 
+  "iset.com.tw": 1, 
+  "pornrapidshare.com": 1, 
+  "qtweeter.com": 1, 
+  "fuckcnnic.net": 1, 
+  "92ccav.com": 1, 
+  "yimg.com": 1, 
+  "eriversoft.com": 1, 
+  "hrcir.com": 1, 
+  "emule-ed2k.com": 1, 
+  "ghost.org": 1, 
+  "s4miniarchive.com": 1, 
+  "twhirl.org": 1, 
+  "vevo.com": 1, 
+  "gaozhisheng.net": 1, 
+  "huaxia-news.com": 1, 
+  "giga-web.jp": 1, 
+  "googlehosted.com": 1, 
+  "broadbook.com": 1, 
+  "goldwave.com": 1, 
+  "dok-forum.net": 1, 
+  "ied2k.net": 1, 
+  "chinesen.de": 1, 
+  "myactimes.com": 1, 
+  "skykiwi.com": 1, 
+  "hugoroy.eu": 1, 
+  "conoyo.com": 1, 
+  "izaobao.us": 1, 
+  "alwaysdata.net": 1, 
+  "i-cable.com": 1, 
+  "xvideos.com": 1, 
+  "wdf5.com": 1, 
+  "iicns.com": 1, 
+  "foolsmountain.com": 1, 
+  "akiba-online.com": 1, 
+  "torrentcrazy.com": 1, 
+  "so-net.net.tw": 1, 
+  "xinsheng.net": 1, 
+  "scmp.com": 1, 
+  "zozotown.com": 1, 
+  "shopping.com": 1, 
+  "thehungrydudes.com": 1, 
+  "xjp.cc": 1, 
+  "wp.com": 1, 
+  "matainja.com": 1, 
+  "supertweet.net": 1, 
+  "ghut.org": 1, 
+  "geometrictools.com": 1, 
+  "ibros.org": 1, 
+  "fangeming.com": 1, 
+  "shellmix.com": 1, 
+  "gov.tw": 1, 
+  "icl-fi.org": 1, 
+  "a-normal-day.com": 1, 
+  "a5.com.ru": 1, 
+  "apetube.com": 1, 
+  "biantailajiao.com": 1, 
+  "assembla.com": 1, 
+  "lookatgame.com": 1, 
+  "philly.com": 1, 
+  "basetimesheightdividedby2.com": 1, 
+  "laogai.org": 1, 
+  "mingpaonews.com": 1, 
+  "gopetition.com": 1, 
+  "longtermly.net": 1, 
+  "gongwt.com": 1, 
+  "fooooo.com": 1, 
+  "gamebase.com.tw": 1, 
+  "in.com": 1, 
+  "vidoemo.com": 1, 
+  "xrea.com": 1, 
+  "gnci.org.hk": 1, 
+  "morningsun.org": 1, 
+  "tibetalk.com": 1, 
+  "blogtd.org": 1, 
+  "helpzhuling.org": 1, 
+  "htmldog.com": 1, 
+  "mimivip.com": 1, 
+  "htl.li": 1, 
+  "tap11.com": 1, 
+  "yilubbs.com": 1, 
+  "sugarsync.com": 1, 
+  "pengyulong.com": 1, 
+  "provideocoalition.com": 1, 
+  "fan-qiang.com": 1, 
+  "twt.tl": 1, 
+  "ithome.com.tw": 1, 
+  "taolun.info": 1, 
+  "chinainperspective.com": 1, 
+  "cms.gov": 1, 
+  "lookpic.com": 1, 
+  "ultravpn.fr": 1, 
+  "webs-tv.net": 1, 
+  "hakkatv.org.tw": 1, 
+  "wretch.cc": 1, 
+  "urbanoutfitters.com": 1, 
+  "mobileways.de": 1, 
+  "tbsn.org": 1, 
+  "nde.de": 1, 
+  "c-est-simple.com": 1, 
+  "elgoog.im": 1, 
+  "plays.com.tw": 1, 
+  "journalofdemocracy.org": 1, 
+  "destroy-china.jp": 1, 
+  "cookingtothegoodlife.com": 1, 
+  "taiwandaily.net": 1, 
+  "bloomberg.de": 1, 
+  "catcatbox.com": 1, 
+  "thevivekspot.com": 1, 
+  "mingpaomonthly.com": 1, 
+  "plus28.com": 1, 
+  "tunnelbear.com": 1, 
+  "line.me": 1, 
+  "twt.fm": 1, 
+  "twipple.jp": 1, 
+  "premeforwindows7.com": 1, 
+  "ladbrokes.com": 1, 
+  "bookshelfporn.com": 1, 
+  "wikimapia.org": 1, 
+  "catfightpayperview.xxx": 1, 
+  "dw.de": 1, 
+  "bloodshed.net": 1, 
+  "catholic.org.hk": 1, 
+  "chuizi.net": 1, 
+  "uygur.org": 1, 
+  "googlesile.com": 1, 
+  "ka-wai.com": 1, 
+  "wujie.net": 1, 
+  "hkepc.com": 1, 
+  "bjzc.org": 1, 
+  "nexton-net.jp": 1, 
+  "entermap.com": 1, 
+  "brightkite.com": 1, 
+  "twistory.net": 1, 
+  "bwsj.hk": 1, 
+  "pdproxy.com": 1, 
+  "ustream.tv": 1, 
+  "lyricsquote.com": 1, 
+  "psblog.name": 1, 
+  "flightcaster.com": 1, 
+  "10conditionsoflove.com": 1, 
+  "mad-ar.ch": 1, 
+  "gdzf.org": 1, 
+  "reuters.com": 1, 
+  "unblock.cn.com": 1, 
+  "whereiswerner.com": 1, 
+  "cdpweb.org": 1, 
+  "gitbooks.io": 1, 
+  "nuzcom.com": 1, 
+  "want-daily.com": 1, 
+  "cahr.org.tw": 1, 
+  "cuiweiping.net": 1, 
+  "baby-kingdom.com": 1, 
+  "dotplane.com": 1, 
+  "ccdtr.org": 1, 
+  "wikileaks.pl": 1, 
+  "bot.nu": 1, 
+  "dalianmeng.org": 1, 
+  "vansky.com": 1, 
+  "latimes.com": 1, 
+  "google.co.jp": 1, 
+  "tvunetworks.com": 1, 
+  "futurechinaforum.org": 1, 
+  "hikinggfw.org": 1, 
+  "qoos.com": 1, 
+  "target.com": 1, 
+  "chinarightsia.org": 1, 
+  "guomin.us": 1, 
+  "mizzmona.com": 1, 
+  "billywr.com": 1, 
+  "twittertim.es": 1, 
+  "toodoc.com": 1, 
+  "yam.com": 1, 
+  "porn.com": 1, 
+  "stoptibetcrisis.net": 1, 
+  "xuchao.net": 1, 
+  "generesis.com": 1, 
+  "minimalmac.com": 1, 
+  "yidio.com": 1, 
+  "aolnews.com": 1, 
+  "proxlet.com": 1, 
+  "newcenturymc.com": 1, 
+  "helloqueer.com": 1, 
+  "shaunthesheep.com": 1, 
+  "newsminer.com": 1, 
+  "jwmusic.org": 1, 
+  "socialwhale.com": 1, 
+  "drtuber.com": 1, 
+  "devio.us": 1, 
+  "wikilivres.info": 1, 
+  "gmbd.cn": 1, 
+  "parislemon.com": 1, 
+  "mtw.tl": 1, 
+  "ziddu.com": 1, 
+  "slavasoft.com": 1, 
+  "internationalrivers.org": 1, 
+  "ttv.com.tw": 1, 
+  "tv.com": 1, 
+  "securitykiss.com": 1, 
+  "coolloud.org.tw": 1, 
+  "betvictor.com": 1, 
+  "wikimedia.org": 1, 
+  "qixianglu.cn": 1, 
+  "aculo.us": 1, 
+  "bitly.com": 1, 
+  "breakingtweets.com": 1, 
+  "sinomontreal.ca": 1, 
+  "secretchina.com": 1, 
+  "gradconnection.com": 1, 
+  "scmpchinese.com": 1, 
+  "rfi.my": 1, 
+  "url.tw": 1, 
+  "voagd.com": 1, 
+  "bebo.com": 1, 
+  "mobatek.net": 1, 
+  "atgfw.org": 1, 
+  "listorious.com": 1, 
+  "weiboleak.com": 1, 
+  "osfoora.com": 1, 
+  "hrichina.org": 1, 
+  "tibetwrites.org": 1, 
+  "mingpaony.com": 1, 
+  "chinatweeps.com": 1, 
+  "gcc.org.hk": 1, 
+  "topify.com": 1, 
+  "transgressionism.org": 1, 
+  "linuxreviews.org": 1, 
+  "slickvpn.com": 1, 
+  "stuffimreading.com": 1, 
+  "tsuru-bird.net": 1, 
+  "yzzk.com": 1, 
+  "helplinfen.com": 1, 
+  "lester850.info": 1, 
+  "kendincos.net": 1, 
+  "uyghurcongress.org": 1, 
+  "bullog.org": 1, 
+  "24smile.org": 1, 
+  "megurineluka.com": 1, 
+  "iverycd.com": 1, 
+  "chinainperspective.net": 1, 
+  "portablevpn.nl": 1, 
+  "liudejun.com": 1, 
+  "fanswong.com": 1, 
+  "dnssec.net": 1, 
+  "sexinsex.net": 1, 
+  "thehun.net": 1, 
+  "boxun.com": 1, 
+  "tbsec.org": 1, 
+  "desc.se": 1, 
+  "tiandixing.org": 1, 
+  "oizoblog.com": 1, 
+  "w.org": 1, 
+  "exploader.net": 1, 
+  "roodo.com": 1, 
+  "tbpic.info": 1, 
+  "savetibet.fr": 1, 
+  "putlocker.com": 1, 
+  "eevpn.com": 1, 
+  "dafagood.com": 1, 
+  "sinocast.com": 1, 
+  "opera.com": 1, 
+  "mpfinance.com": 1, 
+  "pornvisit.com": 1, 
+  "taiwannation.com.tw": 1, 
+  "atc.org.au": 1, 
+  "maiplus.com": 1, 
+  "upload4u.info": 1, 
+  "prosiben.de": 1, 
+  "slacker.com": 1, 
+  "bayvoice.net": 1, 
+  "sina.com.tw": 1, 
+  "referer.us": 1, 
+  "convio.net": 1, 
+  "nbc.com": 1, 
+  "fgmtv.net": 1, 
+  "readingtimes.com.tw": 1, 
+  "1pondo.tv": 1, 
+  "xfm.pp.ru": 1, 
+  "chinachange.org": 1, 
+  "zyzc9.com": 1, 
+  "ntd.tv": 1, 
+  "googleplus.com": 1, 
+  "cochina.co": 1, 
+  "newtaiwan.com.tw": 1, 
+  "epochtimes-romania.com": 1, 
+  "4chan.org": 1, 
+  "bbc.in": 1, 
+  "romanandreg.com": 1, 
+  "urlparser.com": 1, 
+  "peopo.org": 1, 
+  "ipicture.ru": 1, 
+  "dotsub.com": 1, 
+  "putty.org": 1, 
+  "mathiew-badimon.com": 1, 
+  "rockmelt.com": 1, 
+  "listentoyoutube.com": 1, 
+  "avast.com": 1, 
+  "twittbot.net": 1, 
+  "sockslist.net": 1, 
+  "keepandshare.com": 1, 
+  "avoision.com": 1, 
+  "coveringweb.com": 1, 
+  "unix100.com": 1, 
+  "lemonde.fr": 1, 
+  "sogoo.org": 1, 
+  "goldenmelody.com.tw": 1, 
+  "us.to": 1, 
+  "wanderinghorse.net": 1, 
+  "vot.org": 1, 
+  "ltn.com.tw": 1, 
+  "chinacomments.org": 1, 
+  "wikileaks.ch": 1, 
+  "ronjoneswriter.com": 1, 
+  "bbsfeed.com": 1, 
+  "facebook.net": 1, 
+  "mymaji.com": 1, 
+  "gravatar.com": 1, 
+  "tubecao.com": 1, 
+  "dontmovetochina.com": 1, 
+  "hidemyass.com": 1, 
+  "myparagliding.com": 1, 
+  "pandora.com": 1, 
+  "x365x.com": 1, 
+  "getcloudapp.com": 1, 
+  "hkchurch.org": 1, 
+  "imagevenue.com": 1, 
+  "htkou.net": 1, 
+  "chinafreepress.org": 1, 
+  "streetvoice.com": 1, 
+  "localpresshk.com": 1, 
+  "newcenturynews.com": 1, 
+  "myeclipseide.com": 1, 
+  "xh4n.cn": 1, 
+  "botanwang.com": 1, 
+  "dropbox.com": 1, 
+  "minghui-b.org": 1, 
+  "hellouk.org": 1, 
+  "animecrazy.net": 1, 
+  "navigeaters.com": 1, 
+  "s8forum.com": 1, 
+  "picturesocial.com": 1, 
+  "bullogger.com": 1, 
+  "888.com": 1, 
+  "whylover.com": 1, 
+  "offbeatchina.com": 1, 
+  "seezone.net": 1, 
+  "frontlinedefenders.org": 1, 
+  "theblemish.com": 1, 
+  "internet.org": 1, 
+  "anthonycalzadilla.com": 1, 
+  "xizang-zhiye.org": 1, 
+  "feelssh.com": 1, 
+  "rsf.org": 1, 
+  "lvhai.org": 1, 
+  "boardreader.com": 1, 
+  "owl.li": 1, 
+  "geocities.com": 1, 
+  "nobelprize.org": 1, 
+  "pornmm.net": 1, 
+  "wuerkaixi.com": 1, 
+  "sina.com.hk": 1, 
+  "heiyo.info": 1, 
+  "tnaflix.com": 1, 
+  "tuidang.org": 1, 
+  "paperb.us": 1, 
+  "billypan.com": 1, 
+  "zvereff.com": 1, 
+  "openvpn.net": 1, 
+  "pastebin.com": 1, 
+  "kaiyuan.de": 1, 
+  "rmjdw.com": 1, 
+  "wetplace.com": 1, 
+  "ameblo.jp": 1, 
+  "findbook.tw": 1, 
+  "ccthere.com": 1, 
+  "markmilian.com": 1, 
+  "goagentplus.com": 1, 
+  "cdpusa.org": 1, 
+  "newgrounds.com": 1, 
+  "xpdo.net": 1, 
+  "rapbull.net": 1, 
+  "innermongolia.org": 1, 
+  "thehots.info": 1, 
+  "tumblweed.org": 1, 
+  "feedzshare.com": 1, 
+  "blogcatalog.com": 1, 
+  "xcritic.com": 1, 
+  "lsmchinese.org": 1, 
+  "davidziegler.net": 1, 
+  "sneakme.net": 1, 
+  "hwinfo.com": 1, 
+  "vpnfire.com": 1, 
+  "law.com": 1, 
+  "tsemtulku.com": 1, 
+  "spb.com": 1, 
+  "i1.hk": 1, 
+  "hkgreenradio.org": 1, 
+  "vimeo.com": 1, 
+  "ixquick.com": 1, 
+  "grandtrial.org": 1, 
+  "holyspiritspeaks.org": 1, 
+  "2008xianzhang.info": 1, 
+  "xmovies.com": 1, 
+  "archive.is": 1, 
+  "android.com": 1, 
+  "tmi.me": 1, 
+  "nobodycanstop.us": 1, 
+  "japan-whores.com": 1, 
+  "starp2p.com": 1, 
+  "dalailamaworld.com": 1, 
+  "lastfm.es": 1, 
+  "hkfront.org": 1, 
+  "pbxes.com": 1, 
+  "dnscrypt.org": 1, 
+  "getfreedur.com": 1, 
+  "eastturkistan-gov.org": 1, 
+  "popvote.hk": 1, 
+  "bobulate.com": 1, 
+  "sevenload.com": 1, 
+  "lockdown.com": 1, 
+  "idsam.com": 1, 
+  "twitter4j.org": 1, 
+  "metacafe.com": 1, 
+  "qidian.ca": 1, 
+  "spankwire.com": 1, 
+  "zaozon.com": 1, 
+  "peeasian.com": 1, 
+  "mixero.com": 1, 
+  "thepiratebay.org": 1, 
+  "toutfr.com": 1, 
+  "tokyo-247.com": 1, 
+  "twitzap.com": 1, 
+  "bignews.org": 1, 
+  "tora.to": 1, 
+  "fileserve.com": 1, 
+  "muzu.tv": 1, 
+  "shitaotv.org": 1, 
+  "tvboxnow.com": 1, 
+  "geek-art.net": 1, 
+  "gongmeng.info": 1, 
+  "china21.com": 1, 
+  "wenhui.ch": 1, 
+  "uni.cc": 1, 
+  "feedburner.com": 1, 
+  "webfee.tk": 1, 
+  "sharecool.org": 1, 
+  "wireshark.org": 1, 
+  "sex-11.com": 1, 
+  "vanemu.cn": 1, 
+  "twitturk.com": 1, 
+  "marc.info": 1, 
+  "fapdu.com": 1, 
+  "verizon.net": 1, 
+  "32red.com": 1, 
+  "imdb.com": 1, 
+  "breakwall.net": 1, 
+  "metarthunter.com": 1, 
+  "bt95.com": 1, 
+  "hackthatphone.net": 1, 
+  "googledrive.com": 1, 
+  "neverforget8964.org": 1, 
+  "yong.hu": 1, 
+  "israbox.com": 1, 
+  "iask.ca": 1, 
+  "duckduckgo.com": 1, 
+  "riku.me": 1, 
+  "prestige-av.com": 1, 
+  "alwaysdata.com": 1, 
+  "ogaoga.org": 1, 
+  "org.uk": 1, 
+  "williamhill.com": 1, 
+  "expatshield.com": 1, 
+  "secureserver.net": 1, 
+  "gardennetworks.com": 1, 
+  "ntdtv.co": 1, 
+  "actimes.com.au": 1, 
+  "tjholowaychuk.com": 1, 
+  "savemedia.com": 1, 
+  "huanghuagang.org": 1, 
+  "vanilla-jp.com": 1, 
+  "nsc.gov.tw": 1, 
+  "ntdtv.ca": 1, 
+  "christiantimes.org.hk": 1, 
+  "wwitv.com": 1, 
+  "storify.com": 1, 
+  "privatetunnel.com": 1, 
+  "kinghost.com": 1, 
+  "cdig.info": 1, 
+  "usgs.gov": 1, 
+  "bic2011.org": 1, 
+  "hkreporter.com": 1, 
+  "cyberghostvpn.com": 1, 
+  "boxunclub.com": 1, 
+  "newscn.org": 1, 
+  "simpleproductivityblog.com": 1, 
+  "box.net": 1, 
+  "freexinwen.com": 1, 
+  "scriptspot.com": 1, 
+  "xuzhuoer.com": 1, 
+  "chenguangcheng.com": 1, 
+  "cdw.com": 1, 
+  "dmcdn.net": 1, 
+  "devpn.com": 1, 
+  "saiq.me": 1, 
+  "heungkongdiscuss.com": 1, 
+  "ggssl.com": 1, 
+  "zhuichaguoji.org": 1, 
+  "china101.com": 1, 
+  "hideipvpn.com": 1, 
+  "sina.com": 1, 
+  "orn.jp": 1, 
+  "gartlive.com": 1, 
+  "clientsfromhell.net": 1, 
+  "allinfa.com": 1, 
+  "ccavtop10.com": 1, 
+  "twittergadget.com": 1, 
+  "cecc.gov": 1, 
+  "frommel.net": 1, 
+  "dns2go.com": 1, 
+  "xskywalker.com": 1, 
+  "paint.net": 1, 
+  "vcfbuilder.org": 1, 
+  "procopytips.com": 1, 
+  "internetdefenseleague.org": 1, 
+  "pidown.com": 1, 
+  "openinkpot.org": 1, 
+  "velkaepocha.sk": 1, 
+  "mingjingnews.com": 1, 
+  "cdnews.com.tw": 1, 
+  "lovequicksilver.com": 1, 
+  "singtao.ca": 1, 
+  "soc.mil": 1, 
+  "woeser.com": 1, 
+  "weijingsheng.org": 1, 
+  "doubleaf.com": 1, 
+  "hanunyi.com": 1, 
+  "tinychat.com": 1, 
+  "mp3ye.eu": 1, 
+  "9bis.com": 1, 
+  "qkshare.com": 1, 
+  "time.com": 1, 
+  "wiredpen.com": 1, 
+  "newspeak.cc": 1, 
+  "tripod.com": 1, 
+  "chevronwp7.com": 1, 
+  "spencertipping.com": 1, 
+  "jackjia.com": 1, 
+  "c-spanvideo.org": 1, 
+  "213.so": 1, 
+  "zonaeuropa.com": 1, 
+  "minghui-school.org": 1, 
+  "qiwen.lu": 1, 
+  "stupidvideos.com": 1, 
+  "mingpaosf.com": 1, 
+  "trouw.nl": 1, 
+  "hongzhi.li": 1, 
+  "hihiforum.com": 1, 
+  "moztw.org": 1, 
+  "slheng.com": 1, 
+  "angularjs.org": 1, 
+  "flnet.org": 1, 
+  "chinayouth.org.hk": 1, 
+  "twitiq.com": 1, 
+  "fbcdn.net": 1, 
+  "vaayoo.com": 1, 
+  "passiontimes.hk": 1, 
+  "bloglines.com": 1, 
+  "whydidyoubuymethat.com": 1, 
+  "pixnet.net": 1, 
+  "venchina.com": 1, 
+  "edgecastcdn.net": 1, 
+  "laomiu.com": 1, 
+  "songjianjun.com": 1, 
+  "genuitec.com": 1, 
+  "com.uk": 1, 
+  "monitorchina.org": 1, 
+  "t66y.com": 1, 
+  "files2me.com": 1, 
+  "wforum.com": 1, 
+  "ustwrap.info": 1, 
+  "bestvpnservice.com": 1, 
+  "killwall.com": 1, 
+  "tchrd.org": 1, 
+  "chinamz.org": 1, 
+  "feministteacher.com": 1, 
+  "shadowsocks.org": 1, 
+  "aiweiwei.com": 1, 
+  "wow-life.net": 1, 
+  "twitvid.com": 1, 
+  "twitter.jp": 1, 
+  "uyghuramerican.org": 1, 
+  "your-freedom.net": 1, 
+  "thebodyshop-usa.com": 1, 
+  "youxu.info": 1, 
+  "lianyue.net": 1, 
+  "youtube.com": 1, 
+  "zhreader.com": 1, 
+  "tcno.net": 1, 
+  "ncn.org": 1, 
+  "12bet.com": 1, 
+  "tweeplike.me": 1, 
+  "analyze-v.com": 1, 
+  "edubridge.com": 1, 
+  "cari.com.my": 1, 
+  "ezpeer.com": 1, 
+  "goagent.biz": 1, 
+  "bnrmetal.com": 1, 
+  "nf.id.au": 1, 
+  "sowers.org.hk": 1, 
+  "tampabay.com": 1, 
+  "danke4china.net": 1, 
+  "epochtimes.co.kr": 1, 
+  "nowtorrents.com": 1, 
+  "atlaspost.com": 1, 
+  "chinaway.org": 1, 
+  "stickam.com": 1, 
+  "dotheyfolloweachother.com": 1, 
+  "asianews.it": 1, 
+  "fmnnow.com": 1, 
+  "9001700.com": 1, 
+  "showtime.jp": 1, 
+  "thetrotskymovie.com": 1, 
+  "vimgolf.com": 1, 
+  "stackfile.com": 1, 
+  "kurtmunger.com": 1, 
+  "igvita.com": 1, 
+  "maruta.be": 1, 
+  "xtube.com": 1, 
+  "qusi8.net": 1, 
+  "hk-pub.com": 1, 
+  "googlegroups.com": 1, 
+  "tablesgenerator.com": 1, 
+  "nurgo-software.com": 1, 
+  "byethost8.com": 1, 
+  "freebearblog.org": 1, 
+  "touch99.com": 1, 
+  "twaud.io": 1, 
+  "graphis.ne.jp": 1, 
+  "hsjp.net": 1, 
+  "linux-engineer.net": 1, 
+  "great-roc.org": 1, 
+  "eyny.com": 1, 
+  "rthk.hk": 1, 
+  "wikiwiki.jp": 1, 
+  "ozchinese.com": 1, 
+  "twilio.com": 1, 
+  "istockphoto.com": 1, 
+  "sinoants.com": 1, 
+  "goodreaders.com": 1, 
+  "asiaharvest.org": 1, 
+  "lidecheng.com": 1, 
+  "t.co": 1, 
+  "twstar.net": 1, 
+  "epochtimes.com": 1, 
+  "ilove80.be": 1, 
+  "new-akiba.com": 1, 
+  "xmusic.fm": 1, 
+  "ntdtv.ru": 1, 
+  "gaeproxy.com": 1, 
+  "wisevid.com": 1, 
+  "hku.hk": 1, 
+  "zsrhao.com": 1, 
+  "dajiyuan.eu": 1, 
+  "honeynet.org": 1, 
+  "power.com": 1, 
+  "ernestmandel.org": 1, 
+  "boxunblog.com": 1, 
+  "geocities.jp": 1, 
+  "tibetonline.tv": 1, 
+  "freeforums.org": 1, 
+  "fanqianghou.com": 1, 
+  "modfetish.com": 1, 
+  "jobso.tv": 1, 
+  "ait.org.tw": 1, 
+  "3boys2girls.com": 1, 
+  "ow.ly": 1, 
+  "ignitedetroit.net": 1, 
+  "topshare.us": 1, 
+  "unholyknight.com": 1, 
+  "cctongbao.com": 1, 
+  "neighborhoodr.com": 1, 
+  "sinocism.com": 1, 
+  "twitthat.com": 1, 
+  "ranyunfei.com": 1, 
+  "sharpdaily.com.hk": 1, 
+  "porn2.com": 1, 
+  "hyperrate.com": 1, 
+  "minzhuhua.net": 1, 
+  "ganges.com": 1, 
+  "ablwang.com": 1, 
+  "tweepmag.com": 1, 
+  "wuguoguang.com": 1, 
+  "ipvanish.com": 1, 
+  "idiomconnection.com": 1, 
+  "bitshare.com": 1, 
+  "iconpaper.org": 1, 
+  "mcfog.com": 1, 
+  "tibet.at": 1, 
+  "bet365.com": 1, 
+  "over-blog.com": 1, 
+  "homeservershow.com": 1, 
+  "khmusic.com.tw": 1, 
+  "dabr.me": 1, 
+  "hiitch.com": 1, 
+  "lsxszzg.com": 1, 
+  "tmagazine.com": 1, 
+  "zuo.la": 1, 
+  "kissbbao.cn": 1, 
+  "tycool.com": 1, 
+  "hotshame.com": 1, 
+  "skyhighpremium.com": 1, 
+  "kui.name": 1, 
+  "eyevio.jp": 1, 
+  "yyii.org": 1, 
+  "proxy.org": 1, 
+  "thomasbernhard.org": 1, 
+  "itweet.net": 1, 
+  "lvv2.com": 1, 
+  "greatzhonghua.org": 1, 
+  "muzi.net": 1, 
+  "alvinalexander.com": 1, 
+  "fingerdaily.com": 1, 
+  "fqrouter.com": 1, 
+  "amnesty.org": 1, 
+  "xys.org": 1, 
+  "duckmylife.com": 1, 
+  "twitter.com": 1, 
+  "lenwhite.com": 1, 
+  "epochtimes.se": 1, 
+  "etaa.org.au": 1, 
+  "asdfg.jp": 1, 
+  "wnacg.com": 1, 
+  "cnd.org": 1, 
+  "imageshack.us": 1, 
+  "getjetso.com": 1, 
+  "pubu.com.tw": 1, 
+  "yymaya.com": 1, 
+  "seesmic.com": 1, 
+  "videomo.com": 1, 
+  "hotpotato.com": 1, 
+  "retweeteffect.com": 1, 
+  "warehouse333.com": 1, 
+  "sproutcore.com": 1, 
+  "getsmartlinks.com": 1, 
+  "heix.pp.ru": 1, 
+  "puffinbrowser.com": 1, 
+  "aboluowang.com": 1, 
+  "jayparkinsonmd.com": 1, 
+  "fuckgfw.org": 1, 
+  "wangafu.net": 1, 
+  "bralio.com": 1, 
+  "sourceforge.net": 1, 
+  "pornstarclub.com": 1, 
+  "wordboner.com": 1, 
+  "jqueryui.com": 1, 
+  "mcadforums.com": 1, 
+  "freegao.com": 1, 
+  "twibs.com": 1, 
+  "ccue.com": 1, 
+  "wanglixiong.com": 1, 
+  "chinagate.com": 1, 
+  "ctfriend.net": 1, 
+  "zhanbin.net": 1, 
+  "aol.com": 1, 
+  "himemix.net": 1, 
+  "kompozer.net": 1, 
+  "plusbb.com": 1, 
+  "tweetymail.com": 1, 
+  "simplecd.org": 1, 
+  "sndcdn.com": 1, 
+  "greasespot.net": 1, 
+  "jbtalks.cc": 1, 
+  "privatepaste.com": 1, 
+  "xbabe.com": 1, 
+  "lalulalu.com": 1, 
+  "cthlo.github.io": 1, 
+  "globaljihad.net": 1, 
+  "nuexpo.com": 1, 
+  "businessweek.com": 1, 
+  "ssh91.com": 1, 
+  "futureme.org": 1, 
+  "isgreat.org": 1, 
+  "livestation.com": 1, 
+  "rapidgator.net": 1, 
+  "hrw.org": 1, 
+  "tidyread.com": 1, 
+  "speckleapp.com": 1, 
+  "caobian.info": 1, 
+  "keso.cn": 1, 
+  "incredibox.fr": 1, 
+  "twibbon.com": 1, 
+  "isuntv.com": 1, 
+  "tvider.com": 1, 
+  "helpeachpeople.com": 1, 
+  "hutianyi.net": 1, 
+  "hua-yue.net": 1, 
+  "skimtube.com": 1, 
+  "namsisi.com": 1, 
+  "redtube.com": 1, 
+  "goldbetsports.com": 1, 
+  "teamseesmic.com": 1, 
+  "utom.us": 1, 
+  "xcafe.in": 1, 
+  "tibet.org.tw": 1, 
+  "md-t.org": 1, 
+  "torrentproject.se": 1, 
+  "zhongguotese.net": 1, 
+  "msguancha.com": 1, 
+  "mypopescu.com": 1, 
+  "perlhowto.com": 1, 
+  "heartyit.com": 1, 
+  "wengewang.com": 1, 
+  "sexhu.com": 1, 
+  "0rz.tw": 1, 
+  "zonble.net": 1, 
+  "jkforum.net": 1, 
+  "sis001.us": 1, 
+  "whatblocked.com": 1, 
+  "cotweet.com": 1, 
+  "xuite.net": 1, 
+  "citizenlab.org": 1, 
+  "faststone.org": 1, 
+  "vapurl.com": 1, 
+  "value-domain.com": 1, 
+  "tokyo-hot.com": 1, 
+  "erights.net": 1, 
+  "anobii.com": 1, 
+  "pign.net": 1, 
+  "thestandnews.com": 1, 
+  "mog.com": 1, 
+  "fsurf.com": 1, 
+  "fredwilson.vc": 1, 
+  "chicagoncmtv.com": 1, 
+  "hechaji.com": 1, 
+  "x-berry.com": 1, 
+  "tkforum.tk": 1, 
+  "pagodabox.com": 1, 
+  "thegioitinhoc.vn": 1, 
+  "dl-laby.jp": 1, 
+  "thesartorialist.com": 1, 
+  "soup.io": 1, 
+  "youporn.com": 1, 
+  "nasa.gov": 1, 
+  "wrchina.org": 1, 
+  "dailidaili.com": 1, 
+  "data-vocabulary.org": 1, 
+  "mx981.com": 1, 
+  "chinaaid.us": 1, 
+  "powercx.com": 1, 
+  "9bis.net": 1, 
+  "duplicati.com": 1, 
+  "141hongkong.com": 1, 
+  "bonjourlesgeeks.com": 1, 
+  "interestinglaugh.com": 1, 
+  "ippotv.com": 1, 
+  "peerpong.com": 1, 
+  "7capture.com": 1, 
+  "uyghur-j.org": 1, 
+  "uhrp.org": 1, 
+  "freewallpaper4.me": 1, 
+  "marco.org": 1, 
+  "trtc.com.tw": 1, 
+  "here4news.com": 1, 
+  "mixpod.com": 1, 
+  "fengzhenghu.com": 1, 
+  "taiwan-sex.com": 1, 
+  "xiaod.in": 1, 
+  "packetix.net": 1, 
+  "hopto.org": 1, 
+  "im88.tw": 1, 
+  "epochtimes.ru": 1, 
+  "chinatimes.com": 1, 
+  "j.mp": 1, 
+  "voachinese.com": 1, 
+  "fc2china.com": 1, 
+  "codeshare.io": 1, 
+  "dailymotion.com": 1, 
+  "new-3lunch.net": 1, 
+  "bcc.com.tw": 1, 
+  "news100.com.tw": 1, 
+  "voachineseblog.com": 1, 
+  "eamonnbrennan.com": 1, 
+  "topstyle4.com": 1, 
+  "wpoforum.com": 1, 
+  "freealim.com": 1, 
+  "vpngate.net": 1, 
+  "x1949x.com": 1, 
+  "twitterfeed.com": 1, 
+  "palacemoon.com": 1, 
+  "cams.com": 1, 
+  "mhradio.org": 1, 
+  "webworkerdaily.com": 1, 
+  "fillthesquare.org": 1, 
+  "dadazim.com": 1, 
+  "thehousenews.com": 1, 
+  "yvesgeleyn.com": 1, 
+  "altrec.com": 1, 
+  "dontfilter.us": 1, 
+  "venbbs.com": 1, 
+  "catholic.org.tw": 1, 
+  "civicparty.hk": 1, 
+  "on.cc": 1, 
+  "zarias.com": 1, 
+  "ccue.ca": 1, 
+  "lushstories.com": 1, 
+  "web2project.net": 1, 
+  "aisex.com": 1, 
+  "curvefish.com": 1, 
+  "savetibet.org": 1, 
+  "marxists.org": 1, 
+  "chubun.com": 1, 
+  "liuhanyu.com": 1, 
+  "boxun.tv": 1, 
+  "ettoday.net": 1, 
+  "xuzhiyong.net": 1, 
+  "qtrac.eu": 1, 
+  "dynawebinc.com": 1, 
+  "jbtalks.com": 1, 
+  "iu45.com": 1, 
+  "w3.org": 1, 
+  "davidslog.com": 1, 
+  "tv-intros.com": 1, 
+  "dafahao.com": 1, 
+  "mingpaotor.com": 1, 
+  "nekoslovakia.net": 1, 
+  "epochtimes.de": 1, 
+  "zhong.pp.ru": 1, 
+  "chinalawtranslate.com": 1, 
+  "watchmygf.net": 1, 
+  "freessh.us": 1, 
+  "cuhkacs.org": 1, 
+  "fanglizhi.info": 1, 
+  "sadpanda.us": 1, 
+  "ozyoyo.com": 1, 
+  "panluan.net": 1, 
+  "shenzhoufilm.com": 1, 
+  "cafepress.com": 1, 
+  "chrome.com": 1, 
+  "fanyue.info": 1, 
+  "worldcat.org": 1, 
+  "dtiserv2.com": 1, 
+  "mgstage.com": 1, 
+  "xnxx.com": 1, 
+  "co.hk": 1, 
+  "twitpic.com": 1, 
+  "path.com": 1, 
+  "nicovideo.jp": 1, 
+  "zeutch.com": 1, 
+  "newchen.com": 1, 
+  "lrfz.com": 1, 
+  "freeopenvpn.com": 1, 
+  "pbs.org": 1, 
+  "goodreads.com": 1, 
+  "idaiwan.com": 1, 
+  "foxsub.com": 1, 
+  "tiffanyarment.com": 1, 
+  "get-digital-help.com": 1, 
+  "secretgarden.no": 1, 
+  "mixx.com": 1, 
+  "twibase.com": 1, 
+  "iphone4hongkong.com": 1, 
+  "ialmostlaugh.com": 1, 
+  "pornhd.com": 1, 
+  "thechinabeat.org": 1, 
+  "co.tv": 1, 
+  "jingpin.org": 1, 
+  "facebook.com": 1, 
+  "space-scape.com": 1, 
+  "dadi360.com": 1, 
+  "thechinastory.org": 1, 
+  "tomsc.com": 1, 
+  "4sq.com": 1, 
+  "babynet.com.hk": 1, 
+  "greenpeace.org": 1, 
+  "friendfeed-media.com": 1, 
+  "nodesnoop.com": 1, 
+  "newyorktimes.com": 1, 
+  "rxhj.net": 1, 
+  "qienkuen.org": 1, 
+  "uwants.net": 1, 
+  "culture.tw": 1, 
+  "talk853.com": 1, 
+  "identi.ca": 1, 
+  "list.ly": 1, 
+  "duckload.com": 1, 
+  "videobam.com": 1, 
+  "stoweboyd.com": 1, 
+  "zkaip.com": 1, 
+  "googlelabs.com": 1, 
+  "vpnpronet.com": 1, 
+  "nps.gov": 1, 
+  "enewstree.com": 1, 
+  "wqyd.org": 1, 
+  "tpi.org.tw": 1, 
+  "togetter.com": 1, 
+  "taipeisociety.org": 1, 
+  "torproject.org": 1, 
+  "tw": 1, 
+  "isunaffairs.com": 1, 
+  "gclooney.com": 1, 
+  "googlesyndication.com": 1, 
+  "hkej.com": 1, 
+  "blog.de": 1, 
+  "koolsolutions.com": 1, 
+  "mmmca.com": 1, 
+  "great-firewall.com": 1, 
+  "chrlcg-hk.org": 1, 
+  "movabletype.com": 1, 
+  "cuhk.edu.hk": 1, 
+  "immigration.gov.tw": 1, 
+  "dw-world.de": 1, 
+  "anchorfree.com": 1, 
+  "gospelherald.com": 1, 
+  "purevpn.com": 1, 
+  "voacantonese.com": 1, 
+  "biantailajiao.in": 1, 
+  "djangosnippets.org": 1, 
+  "hasaowall.com": 1, 
+  "startpage.com": 1, 
+  "nyaa.se": 1, 
+  "tweetwally.com": 1, 
+  "pokerstrategy.com": 1, 
+  "xing.com": 1, 
+  "xinshijue.com": 1, 
+  "podictionary.com": 1, 
+  "stickeraction.com": 1, 
+  "derekhsu.homeip.net": 1, 
+  "sis.xxx": 1, 
+  "wzyboy.im": 1, 
+  "answering-islam.org": 1, 
+  "buzzurl.jp": 1, 
+  "twistar.cc": 1, 
+  "taa-usa.org": 1, 
+  "appledaily.com": 1, 
+  "nysingtao.com": 1, 
+  "tuxtraining.com": 1, 
+  "cz.cc": 1, 
+  "xbookcn.com": 1, 
+  "witopia.net": 1, 
+  "wenyunchao.com": 1, 
+  "travelinlocal.com": 1, 
+  "thetibetpost.com": 1, 
+  "softlayer.net": 1, 
+  "xyy69.com": 1, 
+  "szbbs.net": 1, 
+  "free-hada-now.org": 1, 
+  "canadameet.com": 1, 
+  "backpackers.com.tw": 1, 
+  "cgdepot.org": 1, 
+  "helloandroid.com": 1, 
+  "greatfirewallofchina.net": 1, 
+  "tibetanyouthcongress.org": 1, 
+  "alabout.com": 1, 
+  "sexandsubmission.com": 1, 
+  "pbxes.org": 1, 
+  "hutong9.net": 1, 
+  "verybs.com": 1, 
+  "avidemux.org": 1, 
+  "alkasir.com": 1, 
+  "shinychan.com": 1, 
+  "yasukuni.or.jp": 1, 
+  "shenshou.org": 1, 
+  "baidu.jp": 1, 
+  "typepad.com": 1, 
+  "galenwu.com": 1, 
+  "areca-backup.org": 1, 
+  "friendfeed.com": 1, 
+  "bao.li": 1, 
+  "multiupload.com": 1, 
+  "greenvpn.net": 1, 
+  "robustnessiskey.com": 1, 
+  "thedieline.com": 1, 
+  "berlintwitterwall.com": 1, 
+  "contactmagazine.net": 1, 
+  "dfanning.com": 1, 
+  "molihua.org": 1, 
+  "hungerstrikeforaids.org": 1, 
+  "npa.go.jp": 1, 
+  "10musume.com": 1, 
+  "wet123.com": 1, 
+  "newlandmagazine.com.au": 1, 
+  "gather.com": 1, 
+  "ggpht.com": 1, 
+  "eastturkistangovernmentinexile.us": 1, 
+  "bcchinese.net": 1, 
+  "loved.hk": 1, 
+  "usejump.com": 1, 
+  "funp.com": 1, 
+  "mh4u.org": 1, 
+  "wukangrui.net": 1, 
+  "jeanyim.com": 1, 
+  "chinaworker.info": 1, 
+  "fastpic.ru": 1, 
+  "maxgif.com": 1, 
+  "pixelqi.com": 1, 
+  "sjum.cn": 1, 
+  "mgoon.com": 1, 
+  "cbsnews.com": 1, 
+  "chengmingmag.com": 1, 
+  "all-that-is-interesting.com": 1, 
+  "soumo.info": 1, 
+  "xfiles.to": 1, 
+  "naacoalition.org": 1, 
+  "hao123.com": 1, 
+  "anyu.org": 1, 
+  "freetibetanheroes.org": 1, 
+  "latelinenews.com": 1, 
+  "s1heng.com": 1, 
+  "e-info.org.tw": 1, 
+  "freetibet.org": 1, 
+  "wenku.com": 1, 
+  "nytimg.com": 1, 
+  "instagram.com": 1, 
+  "mitbbs.com": 1, 
+  "trendsmap.com": 1, 
+  "upholdjustice.org": 1, 
+  "kakao.com": 1, 
+  "wiredbytes.com": 1, 
+  "qxbbs.org": 1, 
+  "yx51.net": 1, 
+  "popyard.org": 1, 
+  "state.gov": 1, 
+  "yunchao.net": 1, 
+  "dolc.de": 1, 
+  "ironpython.net": 1, 
+  "osmdroid.net": 1, 
+  "alasbarricadas.org": 1, 
+  "oxid.it": 1, 
+  "wufi.org.tw": 1, 
+  "rerouted.org": 1, 
+  "disp.cc": 1, 
+  "aiweiweiblog.com": 1, 
+  "123rf.com": 1, 
+  "macrovpn.com": 1, 
+  "badoo.com": 1, 
+  "memrijttm.org": 1, 
+  "mycould.com": 1, 
+  "mixedmedialabs.com": 1, 
+  "beeg.com": 1, 
+  "mininova.org": 1, 
+  "666kb.com": 1, 
+  "shahamat-english.com": 1, 
+  "yegle.net": 1, 
+  "teck.in": 1, 
+  "bbsland.com": 1, 
+  "blogtd.net": 1, 
+  "zuobiao.me": 1, 
+  "twister.net.co": 1, 
+  "savevid.com": 1, 
+  "pornoxo.com": 1, 
+  "lsmkorean.org": 1, 
+  "tiney.com": 1, 
+  "netme.cc": 1, 
+  "squarespace.com": 1, 
+  "hkgolden.com": 1, 
+  "voatibetan.com": 1, 
+  "g.co": 1, 
+  "newtalk.tw": 1, 
+  "shkspr.mobi": 1, 
+  "politicalchina.org": 1, 
+  "ddc.com.tw": 1, 
+  "tt-rss.org": 1, 
+  "cdp1998.org": 1, 
+  "twisternow.com": 1, 
+  "881903.com": 1, 
+  "moby.to": 1, 
+  "woopie.tv": 1, 
+  "uighurbiz.net": 1, 
+  "nch.com.tw": 1, 
+  "dojin.com": 1, 
+  "ilovelongtoes.com": 1, 
+  "ned.org": 1, 
+  "ibiblio.org": 1, 
+  "fakku.net": 1, 
+  "wuala.com": 1, 
+  "daxa.cn": 1, 
+  "lightbox.com": 1, 
+  "yhcw.net": 1, 
+  "iphonix.fr": 1, 
+  "twit2d.com": 1, 
+  "netflix.com": 1, 
+  "vjmedia.com.hk": 1, 
+  "gutteruncensored.com": 1, 
+  "hdtvb.net": 1, 
+  "shapeservices.com": 1, 
+  "westernwolves.com": 1, 
+  "usus.cc": 1, 
+  "psiphon.ca": 1, 
+  "rthk.org.hk": 1, 
+  "washeng.net": 1, 
+  "lotuslight.org.tw": 1, 
+  "efmoe.com": 1, 
+  "klip.me": 1, 
+  "purepdf.com": 1, 
+  "larsgeorge.com": 1, 
+  "hloli.net": 1, 
+  "co.uk": 1, 
+  "twbbs.net.tw": 1, 
+  "zgzcjj.net": 1, 
+  "linkideo.com": 1, 
+  "softether.co.jp": 1, 
+  "phuquocservices.com": 1, 
+  "drgan.net": 1, 
+  "pcdiscuss.com": 1, 
+  "sitemaps.org": 1, 
+  "abc.pp.ru": 1, 
+  "linuxtoy.org": 1, 
+  "thedailywh.at": 1, 
+  "addictedtocoffee.de": 1, 
+  "getchu.com": 1, 
+  "geekerhome.com": 1, 
+  "greatroc.org": 1, 
+  "alternate-tools.com": 1, 
+  "marxist.com": 1, 
+  "kanzhongguo.com": 1, 
+  "greatroc.tw": 1, 
+  "pk.com": 1, 
+  "palmislife.com": 1, 
+  "dlsite.com": 1, 
+  "qooza.hk": 1, 
+  "crossthewall.net": 1, 
+  "twbbs.org": 1, 
+  "fuyin.net": 1, 
+  "shvoong.com": 1, 
+  "ndr.de": 1, 
+  "woopie.jp": 1, 
+  "hqcdp.org": 1, 
+  "freenewscn.com": 1, 
+  "hkjp.org": 1, 
+  "stoneip.info": 1, 
+  "googleusercontent.com": 1, 
+  "amazon.com": 1, 
+  "old-cat.net": 1, 
+  "gvt1.com": 1, 
+  "shadow.ma": 1, 
+  "himemix.com": 1, 
+  "eastturkestan.com": 1, 
+  "ht.ly": 1, 
+  "sydneytoday.com": 1, 
+  "olympicwatch.org": 1, 
+  "whippedass.com": 1, 
+  "tafaward.com": 1, 
+  "woesermiddle-way.net": 1, 
+  "newstapa.org": 1, 
+  "zhe.la": 1, 
+  "falunart.org": 1, 
+  "unknownspace.org": 1, 
+  "tono-oka.jp": 1, 
+  "jyxf.net": 1, 
+  "radiovncr.com": 1, 
+  "uushare.com": 1, 
+  "wikileaks.de": 1, 
+  "flickrhivemind.net": 1, 
+  "sis001.com": 1, 
+  "workatruna.com": 1, 
+  "memedia.cn": 1, 
+  "digg.com": 1, 
+  "pikchur.com": 1, 
+  "dev102.com": 1, 
+  "zengjinyan.org": 1, 
+  "centralnation.com": 1, 
+  "pandora.tv": 1, 
+  "amiblockedornot.com": 1, 
+  "zhinengluyou.com": 1, 
+  "bannedbook.org": 1, 
+  "chinesenewsnet.com": 1, 
+  "nokogiri.org": 1, 
+  "wolfax.com": 1, 
+  "ifcss.org": 1, 
+  "pwned.com": 1, 
+  "thumbzilla.com": 1, 
+  "icerocket.com": 1, 
+  "koornk.com": 1, 
+  "leecheukyan.org": 1, 
+  "theqii.info": 1, 
+  "chromercise.com": 1, 
+  "blip.tv": 1, 
+  "tweetbackup.com": 1, 
+  "updatestar.com": 1, 
+  "gzone-anime.info": 1, 
+  "1984bbs.org": 1, 
+  "thywords.com": 1, 
+  "penthouse.com": 1, 
+  "ff.im": 1, 
+  "uploadstation.com": 1, 
+  "expofutures.com": 1, 
+  "alliance.org.hk": 1, 
+  "chinaaffairs.org": 1, 
+  "wearn.com": 1, 
+  "taup.org.tw": 1, 
+  "efcc.org.hk": 1, 
+  "zattoo.com": 1, 
+  "askynz.net": 1, 
+  "zaobao.com.sg": 1, 
+  "deviantart.com": 1, 
+  "multiproxy.org": 1, 
+  "weekmag.info": 1, 
+  "bettween.com": 1, 
+  "lamenhu.com": 1, 
+  "gun-world.net": 1, 
+  "kenengba.com": 1, 
+  "iphone-dev.org": 1, 
+  "china5000.us": 1, 
+  "crackle.com": 1, 
+  "twftp.org": 1, 
+  "zlib.net": 1, 
+  "multiply.com": 1, 
+  "lipuman.com": 1, 
+  "monlamit.org": 1, 
+  "porntube.com": 1, 
+  "tunein.com": 1, 
+  "uwants.com": 1, 
+  "gotw.ca": 1, 
+  "tumutanzi.com": 1, 
+  "opera-mini.net": 1, 
+  "dizhidizhi.com": 1, 
+  "pbwiki.com": 1, 
+  "ruyiseek.com": 1, 
+  "sidelinessportseatery.com": 1, 
+  "12vpn.com": 1, 
+  "eltondisney.com": 1, 
+  "free.fr": 1, 
+  "1bao.org": 1, 
+  "extremetube.com": 1, 
+  "yeelou.com": 1, 
+  "corumcollege.com": 1, 
+  "merit-times.com.tw": 1, 
+  "google.cn": 1, 
+  "hkheadline.com": 1, 
+  "uocn.org": 1, 
+  "wikileaks.org": 1, 
+  "taiwanyes.com": 1, 
+  "chinesepen.org": 1, 
+  "itaboo.info": 1, 
+  "thisiswhyyouarefat.com": 1, 
+  "mmaaxx.com": 1, 
+  "theinternetwishlist.com": 1, 
+  "twitgether.com": 1, 
+  "hecaitou.net": 1, 
+  "chromium.org": 1, 
+  "collateralmurder.com": 1, 
+  "baixing.me": 1, 
+  "lesscss.org": 1, 
+  "webmproject.org": 1, 
+  "tibet.org": 1, 
+  "uk.to": 1, 
+  "wikisource.org": 1, 
+  "nanyang.com": 1, 
+  "wikia.com": 1, 
+  "v7976888.info": 1, 
+  "michaelanti.com": 1, 
+  "2shared.com": 1, 
+  "my-addr.com": 1, 
+  "chinagreenparty.org": 1, 
+  "ranxiang.com": 1, 
+  "fireofliberty.org": 1, 
+  "isohunt.com": 1, 
+  "ibtimes.com": 1, 
+  "meirixiaochao.com": 1, 
+  "rutube.ru": 1, 
+  "erepublik.com": 1, 
+  "briefdream.com": 1, 
+  "vocn.tv": 1, 
+  "ironicsoftware.com": 1, 
+  "htxt.it": 1, 
+  "mayimayi.com": 1, 
+  "businesstimes.com.cn": 1, 
+  "dayoneapp.com": 1, 
+  "beijing1989.com": 1, 
+  "kingdomsalvation.org": 1, 
+  "vpnbook.com": 1, 
+  "ping.fm": 1, 
+  "pentalogic.net": 1, 
+  "wan-press.org": 1, 
+  "hudatoriq.web.id": 1, 
+  "gigacircle.com": 1, 
+  "url.com.tw": 1, 
+  "sesawe.net": 1, 
+  "duihua.org": 1, 
+  "bowenpress.com": 1, 
+  "fotop.net": 1, 
+  "liveleak.com": 1, 
+  "tvb.com": 1, 
+  "ulike.net": 1, 
+  "365singles.com.ar": 1, 
+  "calebelston.com": 1, 
+  "pao-pao.net": 1, 
+  "turbobit.net": 1, 
+  "liujianshu.com": 1, 
+  "daylife.com": 1, 
+  "tuitui.info": 1, 
+  "lsd.org.hk": 1, 
+  "mingjinglishi.com": 1, 
+  "qx.net": 1, 
+  "waselpro.com": 1, 
+  "tenacy.com": 1, 
+  "parade.com": 1, 
+  "mobile01.com": 1, 
+  "cynscribe.com": 1, 
+  "lockestek.com": 1, 
+  "dtic.mil": 1, 
+  "jinhai.de": 1, 
+  "rotten.com": 1, 
+  "x-art.com": 1, 
+  "lematin.ch": 1, 
+  "atchinese.com": 1, 
+  "gazotube.com": 1, 
+  "nownews.com": 1, 
+  "64wiki.com": 1, 
+  "bloglovin.com": 1, 
+  "v-state.org": 1, 
+  "popyard.com": 1, 
+  "easyweb.hk": 1, 
+  "oiktv.com": 1, 
+  "t88.ca": 1, 
+  "willw.net": 1, 
+  "voy.com": 1, 
+  "chinahush.com": 1, 
+  "eyespirit.info": 1, 
+  "wangjinbo.org": 1, 
+  "dowei.org": 1, 
+  "tianhuayuan.com": 1, 
+  "ncol.com": 1, 
+  "mthruf.com": 1, 
+  "memehk.com": 1, 
+  "orzdream.com": 1, 
+  "noobbox.com": 1, 
+  "gongminliliang.com": 1, 
+  "heywire.com": 1, 
+  "cdjp.org": 1, 
+  "code1984.com": 1, 
+  "gzm.tv": 1, 
+  "uyghurcanadiansociety.org": 1, 
+  "zacebook.com": 1, 
+  "sharebee.com": 1, 
+  "who.is": 1, 
+  "chinadigitaltimes.net": 1, 
+  "hxwq.org": 1, 
+  "chinagfw.org": 1, 
+  "sylfoundation.org": 1, 
+  "wenxuecity.com": 1, 
+  "veoh.com": 1, 
+  "dongyangjing.com": 1, 
+  "revocationcheck.com": 1, 
+  "lizhizhuangbi.com": 1, 
+  "tangben.com": 1, 
+  "logbot.net": 1, 
+  "fc2blog.net": 1, 
+  "techlifeweb.com": 1, 
+  "junefourth-20.net": 1, 
+  "seapuff.com": 1, 
+  "sftuk.org": 1, 
+  "twiggit.org": 1, 
+  "waikeung.org": 1, 
+  "nvquan.org": 1, 
+  "jinbushe.org": 1, 
+  "my-proxy.com": 1, 
+  "kun.im": 1, 
+  "shodanhq.com": 1, 
+  "kimy.com.tw": 1, 
+  "fflick.com": 1, 
+  "sino-monthly.com": 1, 
+  "slutload.com": 1, 
+  "postadult.com": 1, 
+  "falundafa.org": 1, 
+  "gaozhisheng.org": 1, 
+  "ifttt.com": 1, 
+  "yi.org": 1, 
+  "savetibet.nl": 1, 
+  "tube8.com": 1, 
+  "epochtimes.ie": 1, 
+  "sonidodelaesperanza.org": 1, 
+  "opnir.com": 1, 
+  "marguerite.su": 1, 
+  "chenpokong.com": 1, 
+  "2-hand.info": 1, 
+  "dit-inc.us": 1, 
+  "wikibooks.org": 1, 
+  "longhair.hk": 1, 
+  "kcsoftwares.com": 1, 
+  "plixi.com": 1, 
+  "ntu.edu.tw": 1, 
+  "googlecommerce.com": 1, 
+  "img.ly": 1, 
+  "facebookquotes4u.com": 1, 
+  "tuanzt.com": 1, 
+  "bit.ly": 1, 
+  "dayabook.com": 1, 
+  "pornhub.com": 1, 
+  "mihua.org": 1, 
+  "ck101.com": 1, 
+  "wikileaks.eu": 1, 
+  "wallornot.org": 1, 
+  "studentsforafreetibet.org": 1, 
+  "softether.org": 1, 
+  "joeyrobert.org": 1, 
+  "twapperkeeper.com": 1, 
+  "rushbee.com": 1, 
+  "cfhks.org.hk": 1, 
+  "zoho.com": 1, 
+  "sendspace.com": 1, 
+  "proxomitron.info": 1, 
+  "allmovie.com": 1, 
+  "readmoo.com": 1, 
+  "google.com": 1, 
+  "tibetsun.com": 1, 
+  "badassjs.com": 1, 
+  "howtoforge.com": 1, 
+  "fanqiangyakexi.net": 1, 
+  "googlevideo.com": 1, 
+  "xml-training-guide.com": 1, 
+  "torvpn.com": 1, 
+  "qvodzy.org": 1, 
+  "hacken.cc": 1, 
+  "ismprofessional.net": 1, 
+  "gmail.com": 1, 
+  "presentationzen.com": 1, 
+  "huping.net": 1, 
+  "wengewang.org": 1, 
+  "civilmedia.tw": 1, 
+  "fdbox.com": 1, 
+  "chinamule.com": 1, 
+  "trulyergonomic.com": 1, 
+  "atnext.com": 1, 
+  "nccwatch.org.tw": 1, 
+  "globalmuseumoncommunism.org": 1, 
+  "streamingthe.net": 1, 
+  "qanote.com": 1, 
+  "falunhr.org": 1, 
+  "radicalparty.org": 1, 
+  "wordpress.com": 1, 
+  "nexttv.com.tw": 1, 
+  "discuss.com.hk": 1, 
+  "usmc.mil": 1, 
+  "awardwinningfjords.com": 1, 
+  "oauth.net": 1, 
+  "wetpussygames.com": 1, 
+  "zshare.net": 1, 
+  "89-64.org": 1, 
+  "taiwanonline.cc": 1, 
+  "linglingfa.com": 1, 
+  "juziyue.com": 1, 
+  "ruanyifeng.com": 1, 
+  "cnyes.com": 1, 
+  "aiph.net": 1, 
+  "skybet.com": 1, 
+  "tbsseattle.org": 1, 
+  "vatn.org": 1, 
+  "hypeshell.com": 1, 
+  "megavideo.com": 1, 
+  "rojo.com": 1, 
+  "tibetfund.org": 1, 
+  "falundafamuseum.org": 1, 
+  "jiepang.com": 1, 
+  "eulam.com": 1, 
+  "pchome.com.tw": 1, 
+  "agoogleaday.com": 1, 
+  "tistory.com": 1, 
+  "blingblingsquad.net": 1, 
+  "nakido.com": 1, 
+  "fzh999.net": 1, 
+  "creaders.net": 1, 
+  "hkbf.org": 1, 
+  "wqlhw.com": 1, 
+  "keontech.net": 1, 
+  "overlapr.com": 1, 
+  "printfriendly.com": 1, 
+  "tl.gd": 1, 
+  "ancsconf.org": 1, 
+  "ourdearamy.com": 1, 
+  "epochtimes.fr": 1, 
+  "wapedia.mobi": 1, 
+  "allaboutalpha.com": 1, 
+  "hkptu.org": 1, 
+  "kwcg.ca": 1, 
+  "gigporno.ru": 1, 
+  "moviefap.com": 1, 
+  "twtkr.com": 1, 
+  "rferl.org": 1, 
+  "shwchurch3.com": 1, 
+  "sysadmin1138.net": 1, 
+  "electionsmeter.com": 1, 
+  "cyberctm.com": 1, 
+  "rsf-chinese.org": 1, 
+  "sparrowmailapp.com": 1, 
+  "sex.com": 1, 
+  "uploaded.net": 1, 
+  "recaptcha.net": 1, 
+  "duoweitimes.com": 1, 
+  "rapidshare8.com": 1, 
+  "chingcheong.com": 1, 
+  "xhamster.com": 1, 
+  "moegirl.org": 1, 
+  "freemoren.com": 1, 
+  "pornbase.org": 1, 
+  "blogblog.com": 1, 
+  "danwei.org": 1, 
+  "greenparty.org.tw": 1, 
+  "van698.com": 1, 
+  "mlcool.com": 1, 
+  "omgili.com": 1, 
+  "sharpdaily.hk": 1, 
+  "jiehua.cz": 1, 
+  "livevideo.com": 1, 
+  "weblagu.com": 1, 
+  "nlfreevpn.com": 1, 
+  "e123.hk": 1, 
+  "sopcast.org": 1, 
+  "mysinablog.com": 1, 
+  "sogrady.me": 1, 
+  "teashark.com": 1, 
+  "etizer.org": 1, 
+  "westca.com": 1, 
+  "forums-free.com": 1, 
+  "oikos.com.tw": 1, 
+  "315lz.com": 1, 
+  "letscorp.net": 1, 
+  "tube.com": 1, 
+  "powerapple.com": 1, 
+  "hk32168.com": 1, 
+  "51.ca": 1, 
+  "salvation.org.hk": 1, 
+  "joeedelman.com": 1, 
+  "rfi.fr": 1, 
+  "getiton.com": 1, 
+  "awflasher.com": 1, 
+  "getlantern.org": 1, 
+  "chhongbi.org": 1, 
+  "i2runner.com": 1, 
+  "hidecloud.com": 1, 
+  "gcpnews.com": 1, 
+  "marxist.net": 1, 
+  "vegorpedersen.com": 1, 
+  "exblog.co.jp": 1, 
+  "twifan.com": 1, 
+  "tweetphoto.com": 1, 
+  "ovi.com": 1, 
+  "cubicle17.com": 1, 
+  "greatfire.org": 1, 
+  "gabocorp.com": 1, 
+  "tibetonline.com": 1, 
+  "change.org": 1, 
+  "turbotwitter.com": 1, 
+  "chinaaid.me": 1, 
+  "thisav.com": 1, 
+  "fail.hk": 1, 
+  "free-ssh.com": 1, 
+  "tubewolf.com": 1, 
+  "xgmyd.com": 1, 
+  "gfw.org.ua": 1, 
+  "chinesedailynews.com": 1, 
+  "viki.com": 1, 
+  "ecministry.net": 1, 
+  "mooo.com": 1, 
+  "sinoquebec.com": 1, 
+  "cnitter.com": 1, 
+  "slandr.net": 1, 
+  "rhcloud.com": 1, 
+  "sthoo.com": 1, 
+  "softwarebychuck.com": 1, 
+  "illusionfactory.com": 1, 
+  "efksoft.com": 1, 
+  "staticflickr.com": 1, 
+  "freenet-china.org": 1, 
+  "avdb.in": 1, 
+  "21andy.com": 1, 
+  "greatfirewall.biz": 1, 
+  "islam.org.hk": 1, 
+  "tiananmenmother.org": 1, 
+  "cw.com.tw": 1, 
+  "mirrorbooks.com": 1, 
+  "chinageeks.org": 1, 
+  "dongtaiwang.com": 1, 
+  "twimg.com": 1, 
+  "hardsextube.com": 1, 
+  "soundcloud.com": 1, 
+  "4bluestones.biz": 1, 
+  "tweepguide.com": 1, 
+  "twitlonger.com": 1, 
+  "falunasia.info": 1, 
+  "googledomains.com": 1, 
+  "revleft.com": 1, 
+  "october-review.org": 1, 
+  "drsunacademy.com": 1, 
+  "visiontimes.com": 1, 
+  "codeboxapp.com": 1, 
+  "zinio.com": 1, 
+  "snaptu.com": 1, 
+  "laoyang.info": 1, 
+  "mrdoob.com": 1, 
+  "sendoid.com": 1, 
+  "giganews.com": 1, 
+  "huaglad.com": 1, 
+  "youthwant.com.tw": 1, 
+  "eventful.com": 1, 
+  "yeeyi.com": 1, 
+  "yibada.com": 1, 
+  "istef.info": 1, 
+  "playboy.com": 1, 
+  "youjizz.com": 1, 
+  "metrolife.ca": 1, 
+  "thelius.org": 1, 
+  "imkev.com": 1, 
+  "realraptalk.com": 1, 
+  "panoramio.com": 1, 
+  "zaobao.com": 1, 
+  "open.com.hk": 1, 
+  "youversion.com": 1, 
+  "rlwlw.com": 1, 
+  "twitcause.com": 1, 
+  "flickr.com": 1, 
+  "ajsands.com": 1, 
+  "softether-download.com": 1, 
+  "waiwaier.com": 1, 
+  "site90.net": 1, 
+  "hootsuite.com": 1, 
+  "dongtaiwang.net": 1, 
+  "telecomspace.com": 1, 
+  "livestream.com": 1, 
+  "delcamp.net": 1, 
+  "wenweipo.com": 1, 
+  "skyvegas.com": 1, 
+  "dalailama.ru": 1, 
+  "vpnpop.com": 1, 
+  "301works.org": 1, 
+  "chinaeweekly.com": 1, 
+  "hola.com": 1, 
+  "youpai.org": 1, 
+  "mpettis.com": 1, 
+  "nokola.com": 1, 
+  "tsctv.net": 1, 
+  "aol.ca": 1, 
+  "tsunagarumon.com": 1, 
+  "hinet.net": 1, 
+  "dropboxusercontent.com": 1, 
+  "cherrysave.com": 1, 
+  "mondex.org": 1, 
+  "dwnews.com": 1, 
+  "hjclub.info": 1, 
+  "h1n1china.org": 1, 
+  "raidcall.com.tw": 1, 
+  "goofind.com": 1, 
+  "perfectgirls.net": 1, 
+  "greenpeace.com.tw": 1, 
+  "weiming.info": 1, 
+  "hotspotshield.com": 1, 
+  "taiwantp.net": 1, 
+  "sopcast.com": 1, 
+  "aobo.com.au": 1, 
+  "fangongheike.com": 1, 
+  "i2p2.de": 1, 
+  "kingstone.com.tw": 1, 
+  "proxifier.com": 1, 
+  "twilog.org": 1, 
+  "oursteps.com.au": 1, 
+  "twittermail.com": 1, 
+  "deviantart.net": 1, 
+  "reflectivecode.com": 1, 
+  "freechal.com": 1, 
+  "liansi.org": 1, 
+  "tt1069.com": 1, 
+  "6park.com": 1, 
+  "piring.com": 1, 
+  "internetpopculture.com": 1, 
+  "vpngate.jp": 1, 
+  "ub0.cc": 1, 
+  "zootool.com": 1, 
+  "huaxin.ph": 1, 
+  "melon-peach.com": 1, 
+  "d0z.net": 1, 
+  "cenci.tk": 1, 
+  "tianzhu.org": 1, 
+  "graylog2.org": 1, 
+  "gamer.com.tw": 1, 
+  "wellplacedpixels.com": 1, 
+  "recordhistory.org": 1, 
+  "exblog.jp": 1, 
+  "tsquare.tv": 1, 
+  "foxtang.com": 1, 
+  "brucewang.net": 1, 
+  "sesawe.org": 1, 
+  "vincnd.com": 1, 
+  "edoors.com": 1, 
+  "southnews.com.tw": 1, 
+  "etaiwannews.com": 1, 
+  "malaysiakini.com": 1, 
+  "udn.com": 1, 
+  "am730.com.hk": 1, 
+  "xpud.org": 1, 
+  "wexiaobo.org": 1, 
+  "unicode.org": 1, 
+  "goo.gl": 1, 
+  "soifind.com": 1, 
+  "favstar.fm": 1, 
+  "zomobo.net": 1, 
+  "braumeister.org": 1, 
+  "sammyjs.org": 1, 
+  "wujieliulan.com": 1, 
+  "revver.com": 1, 
+  "twitturly.com": 1, 
+  "wowlegacy.ml": 1, 
+  "renminbao.com": 1, 
+  "getsocialscope.com": 1, 
+  "compython.net": 1, 
+  "webbang.net": 1, 
+  "citizensradio.org": 1, 
+  "pcij.org": 1, 
+  "gowalla.com": 1, 
+  "paper.li": 1, 
+  "nighost.org": 1, 
+  "sejie.com": 1, 
+  "meteorshowersonline.com": 1, 
+  "faydao.com": 1, 
+  "nobel.se": 1, 
+  "trialofccp.org": 1, 
+  "fb.com": 1, 
+  "sun1911.com": 1, 
+  "comedycentral.com": 1, 
+  "linksalpha.com": 1, 
+  "zmw.cn": 1, 
+  "tweetmylast.fm": 1, 
+  "now.com": 1, 
+  "6v6dota.com": 1, 
+  "omnitalk.com": 1, 
+  "idlcoyote.com": 1, 
+  "ning.com": 1, 
+  "libertytimes.com.tw": 1, 
+  "democrats.org": 1, 
+  "orchidbbs.com": 1, 
+  "furl.net": 1, 
+  "china21.org": 1, 
+  "bbcchinese.com": 1, 
+  "af.mil": 1, 
+  "pin6.com": 1, 
+  "sankaizok.com": 1, 
+  "gmodules.com": 1, 
+  "feer.com": 1, 
+  "avaaz.org": 1, 
+  "iask.bz": 1, 
+  "sfileydy.com": 1, 
+  "nanyangpost.com": 1, 
+  "python.com": 1, 
+  "sandnoble.com": 1, 
+  "azubu.tv": 1, 
+  "classicalguitarblog.net": 1, 
+  "buugaa.com": 1, 
+  "amnestyusa.org": 1, 
+  "thereallove.kr": 1, 
+  "antiwave.net": 1, 
+  "fawanghuihui.org": 1, 
+  "x-wall.org": 1, 
+  "daolan.net": 1, 
+  "taiwanus.net": 1, 
+  "seraph.me": 1, 
+  "szetowah.org.hk": 1, 
+  "maturejp.com": 1, 
+  "yuanming.net": 1, 
+  "geekmanuals.com": 1, 
+  "guancha.org": 1, 
+  "chinayuanmin.org": 1, 
+  "nga.mil": 1, 
+  "barenakedislam.com": 1, 
+  "my903.com": 1, 
+  "archive.org": 1, 
+  "tamiaode.tk": 1, 
+  "ritouki.jp": 1, 
+  "netlog.com": 1, 
+  "onmoon.com": 1, 
+  "jiaoyou8.com": 1, 
+  "twibble.de": 1, 
+  "gaymap.cc": 1, 
+  "xinhuanet.org": 1, 
+  "yorkbbs.ca": 1, 
+  "scribd.com": 1, 
+  "unblocksit.es": 1, 
+  "taragana.com": 1, 
+  "kl.am": 1, 
+  "fscked.org": 1, 
+  "17t17p.com": 1, 
+  "rti.org.tw": 1, 
+  "relaxbbs.com": 1, 
+  "dwnews.net": 1, 
+  "cellulo.info": 1, 
+  "owind.com": 1, 
+  "ucam.org": 1, 
+  "phonegap.com": 1, 
+  "navy.mil": 1, 
+  "tibet.net": 1, 
+  "uncyclomedia.org": 1, 
+  "vpncup.com": 1, 
+  "oopsforum.com": 1, 
+  "skype.com": 1, 
+  "hkbc.net": 1, 
+  "youtube-nocookie.com": 1, 
+  "winwhispers.info": 1, 
+  "slime.com.tw": 1, 
+  "sohfrance.org": 1, 
+  "hsselite.com": 1, 
+  "thegatesnotes.com": 1, 
+  "netcolony.com": 1, 
+  "kechara.com": 1, 
+  "savetibet.ru": 1, 
+  "break.com": 1, 
+  "cenews.eu": 1, 
+  "xxxx.com.au": 1, 
+  "muouju.com": 1, 
+  "h-china.org": 1, 
+  "voanews.com": 1, 
+  "gstatic.com": 1, 
+  "proxyroad.com": 1, 
+  "s-cute.com": 1, 
+  "tttan.com": 1, 
+  "dpp.org.tw": 1, 
+  "gdbt.net": 1, 
+  "hnjhj.com": 1, 
+  "thkphoto.com": 1, 
+  "la-forum.org": 1, 
+  "weiquanwang.org": 1, 
+  "nabble.com": 1, 
+  "aomiwang.com": 1, 
+  "tweetedtimes.com": 1, 
+  "okayfreedom.com": 1, 
+  "twimbow.com": 1, 
+  "cclife.org": 1, 
+  "zhenlibu.info": 1, 
+  "hkday.net": 1, 
+  "1984bbs.com": 1, 
+  "iphonehacks.com": 1, 
+  "atebits.com": 1, 
+  "solozorro.tk": 1, 
+  "justtristan.com": 1, 
+  "pmates.com": 1, 
+  "waigaobu.com": 1, 
+  "naol.ca": 1, 
+  "adultfriendfinder.com": 1, 
+  "collateralmurder.org": 1, 
+  "al-qimmah.net": 1, 
+  "twitbrowser.net": 1, 
+  "jbtalks.my": 1, 
+  "discogs.com": 1, 
+  "mediafire.com": 1, 
+  "theatrum-belli.com": 1, 
+  "geocities.co.jp": 1, 
+  "snapchat.com": 1, 
+  "36rain.com": 1, 
+  "somee.com": 1, 
+  "yahoo.com.hk": 1, 
+  "sexhuang.com": 1, 
+  "stonegames.net": 1, 
+  "dzze.com": 1, 
+  "python.com.tw": 1, 
+  "throughnightsfire.com": 1, 
+  "liuxiaotong.com": 1, 
+  "blogs.com": 1, 
+  "artsy.net": 1, 
+  "axureformac.com": 1, 
+  "64tianwang.com": 1, 
+  "domain.club.tw": 1, 
+  "imageflea.com": 1, 
+  "wangruoshui.net": 1, 
+  "dougscripts.com": 1, 
+  "yogichen.org": 1, 
+  "bewww.net": 1, 
+  "gongm.in": 1, 
+  "shenyunperformingarts.org": 1, 
+  "sheikyermami.com": 1, 
+  "pekingduck.org": 1, 
+  "radiotime.com": 1, 
+  "heqinglian.net": 1, 
+  "kwongwah.com.my": 1, 
+  "blinw.com": 1, 
+  "2000fun.com": 1, 
+  "sacom.hk": 1, 
+  "atj.org.tw": 1, 
+  "aenhancers.com": 1, 
+  "ytimg.com": 1, 
+  "br.st": 1, 
+  "freevpn.nl": 1, 
+  "netfirms.com": 1, 
+  "windowsphoneme.com": 1, 
+  "xiaochuncnjp.com": 1, 
+  "chinainterimgov.org": 1, 
+  "xysblogs.org": 1, 
+  "epochtimes-bg.com": 1, 
+  "samair.ru": 1, 
+  "taiwankiss.com": 1, 
+  "hotpot.hk": 1, 
+  "wepn.info": 1, 
+  "books.com.tw": 1, 
+  "tibetjustice.org": 1, 
+  "gyalwarinpoche.com": 1, 
+  "focusvpn.com": 1, 
+  "dphk.org": 1, 
+  "lrip.org": 1, 
+  "yahoo.co.jp": 1, 
+  "ifanr.com": 1, 
+  "urlborg.com": 1, 
+  "minzhuzhongguo.org": 1, 
+  "fb.me": 1, 
+  "icij.org": 1, 
+  "twindexx.com": 1, 
+  "twitreferral.com": 1, 
+  "linuxconfig.org": 1, 
+  "cts.com.tw": 1, 
+  "sanmin.com.tw": 1, 
+  "bloomfortune.com": 1, 
+  "logmike.com": 1, 
+  "ultraxs.com": 1, 
+  "highrockmedia.com": 1, 
+  "theappleblog.com": 1, 
+  "taiwannews.com.tw": 1, 
+  "tacem.org": 1, 
+  "percy.in": 1, 
+  "apigee.com": 1, 
+  "itshidden.com": 1, 
+  "birdhouseapp.com": 1, 
+  "dongde.com": 1, 
+  "mefeedia.com": 1, 
+  "embr.in": 1, 
+  "clb.org.hk": 1, 
+  "chaturbate.com": 1, 
+  "strongvpn.com": 1, 
+  "asianwomensfilm.de": 1, 
+  "bugclub.org": 1, 
+  "websitepulse.com": 1, 
+  "xvedios.com": 1, 
+  "mpinews.com": 1, 
+  "wsj.net": 1, 
+  "arctosia.com": 1, 
+  "tiantibooks.org": 1, 
+  "read100.com": 1, 
+  "worstthingieverate.com": 1, 
+  "kodingen.com": 1, 
+  "hung-ya.com": 1, 
+  "twyac.org": 1, 
+  "shizhao.org": 1, 
+  "budaedu.org": 1, 
+  "mimivv.com": 1, 
+  "xlfmwz.info": 1, 
+  "rcinet.ca": 1, 
+  "soh.tw": 1, 
+  "date.fm": 1, 
+  "izihost.org": 1, 
+  "threatchaos.com": 1, 
+  "paper-replika.com": 1, 
+  "mychat.to": 1, 
+  "cftfc.com": 1, 
+  "farwestchina.com": 1, 
+  "inxian.com": 1, 
+  "xxbbx.com": 1, 
+  "taiwantt.org.tw": 1, 
+  "debian.org": 1, 
+  "voa.mobi": 1, 
+  "huaren.us": 1, 
+  "twblogger.com": 1, 
+  "penchinese.com": 1, 
+  "everyday-carry.com": 1, 
+  "sitetag.us": 1, 
+  "dscn.info": 1, 
+  "singtao.com": 1, 
+  "idemocracy.asia": 1, 
+  "chinainperspective.org": 1, 
+  "soundofhope.org": 1, 
+  "cattt.com": 1, 
+  "toonel.net": 1, 
+  "city9x.com": 1, 
+  "ufreevpn.com": 1, 
+  "veempiire.com": 1, 
+  "delicious.com": 1, 
+  "thebcomplex.com": 1, 
+  "noypf.com": 1, 
+  "radiovaticana.org": 1, 
+  "igfw.net": 1, 
+  "chandoo.org": 1, 
+  "tomayko.com": 1, 
+  "tonyyan.net": 1, 
+  "zuola.com": 1, 
+  "hkjc.com": 1, 
+  "xiaoma.org": 1, 
+  "so-ga.net": 1, 
+  "sapikachu.net": 1, 
+  "pacificpoker.com": 1, 
+  "unpo.org": 1, 
+  "sitebro.tw": 1, 
+  "blockcn.com": 1, 
+  "prayforchina.net": 1, 
+  "gmhz.org": 1, 
+  "spotify.com": 1, 
+  "gunsamerica.com": 1, 
+  "epochtimes.jp": 1, 
+  "liu.lu": 1, 
+  "muselinks.co.jp": 1, 
+  "lesoir.be": 1, 
+  "peacefire.org": 1, 
+  "cytode.us": 1, 
+  "yahoo.com": 1, 
+  "hongmeimei.com": 1, 
+  "waffle1999.com": 1, 
+  "globalvoicesonline.org": 1, 
+  "minzhuzhanxian.com": 1, 
+  "vft.com.tw": 1, 
+  "huluim.com": 1, 
+  "pastie.org": 1, 
+  "onmoon.net": 1, 
+  "pixnet.in": 1, 
+  "nanzao.com": 1, 
+  "tiananmenuniv.net": 1, 
+  "sinica.edu.tw": 1, 
+  "wezone.net": 1, 
+  "ucdc1998.org": 1, 
+  "cochina.org": 1, 
+  "astonmartinnews.com": 1, 
+  "ytht.net": 1, 
+  "baywords.com": 1, 
+  "twitoaster.com": 1, 
+  "thewgo.org": 1, 
+  "hkwcc.org.hk": 1, 
+  "iredmail.org": 1, 
+  "fring.com": 1, 
+  "nytco.com": 1, 
+  "fofg.org": 1, 
+  "sciencemag.org": 1, 
+  "proxypy.net": 1, 
+  "tweepml.org": 1, 
+  "izles.net": 1, 
+  "cactusvpn.com": 1, 
+  "blogger.com": 1, 
+  "have8.com": 1, 
+  "retweetrank.com": 1, 
+  "mychinamyhome.com": 1, 
+  "hellotxt.com": 1, 
+  "myspace.com": 1, 
+  "cjb.net": 1, 
+  "andfaraway.net": 1, 
+  "weisuo.ws": 1, 
+  "cdp2006.org": 1, 
+  "xyy69.info": 1, 
+  "youthnetradio.org": 1, 
+  "ftchinese.com": 1, 
+  "forum4hk.com": 1, 
+  "chinalawandpolicy.com": 1, 
+  "civisec.org": 1, 
+  "clipfish.de": 1, 
+  "junauza.com": 1, 
+  "mihk.hk": 1, 
+  "palm.com": 1, 
+  "student.tw": 1, 
+  "svwind.com": 1, 
+  "chrlawyers.hk": 1, 
+  "pinoy-n.com": 1, 
+  "girlbanker.com": 1, 
+  "usacn.com": 1, 
+  "privateinternetaccess.com": 1, 
+  "hgseav.com": 1, 
+  "advertfan.com": 1, 
+  "omnitalk.org": 1, 
+  "xiaohexie.com": 1, 
+  "lazarsearlymusic.com": 1, 
+  "chinesetalks.net": 1, 
+  "savetibet.de": 1, 
+  "bloomberg.com": 1, 
+  "fleshbot.com": 1, 
+  "higfw.com": 1, 
+  "vinniev.com": 1, 
+  "cmoinc.org": 1, 
+  "adultkeep.net": 1, 
+  "jieshibaobao.com": 1, 
+  "bfsh.hk": 1, 
+  "treemall.com.tw": 1, 
+  "bfnn.org": 1, 
+  "faiththedog.info": 1, 
+  "googlemail.com": 1, 
+  "picidae.net": 1, 
+  "epochweekly.com": 1, 
+  "btdigg.org": 1, 
+  "free-gate.org": 1, 
+  "javbus.com": 1, 
+  "taup.net": 1, 
+  "freelotto.com": 1, 
+  "xinyubbs.net": 1, 
+  "tweetree.com": 1, 
+  "rfachina.com": 1, 
+  "truthcn.com": 1, 
+  "xcity.jp": 1, 
+  "newsancai.com": 1, 
+  "game735.com": 1, 
+  "caochangqing.com": 1, 
+  "liberal.org.hk": 1, 
+  "uploaded.to": 1, 
+  "mrtweet.com": 1, 
+  "gamez.com.tw": 1, 
+  "qi-gong.me": 1, 
+  "steel-storm.com": 1, 
+  "turntable.fm": 1, 
+  "aamacau.com": 1, 
+  "couchdbwiki.com": 1, 
+  "flecheinthepeche.fr": 1, 
+  "swift-tools.net": 1, 
+  "martincartoons.com": 1, 
+  "fdc89.jp": 1, 
+  "emory.edu": 1, 
+  "youthbao.com": 1, 
+  "tzangms.com": 1, 
+  "eic-av.com": 1, 
+  "topsy.com": 1, 
+  "ift.tt": 1, 
+  "kyohk.net": 1, 
+  "pose.com": 1, 
+  "neolee.cn": 1, 
+  "standupfortibet.org": 1, 
+  "edicypages.com": 1, 
+  "designerol.com": 1, 
+  "knowledgerush.com": 1, 
+  "ebookee.com": 1, 
+  "so-news.com": 1, 
+  "boobstagram.com": 1, 
+  "getfoxyproxy.org": 1, 
+  "elpais.com": 1, 
+  "wav.tv": 1, 
+  "pathtosharepoint.com": 1, 
+  "logiqx.com": 1, 
+  "doxygen.org": 1, 
+  "say2.info": 1, 
+  "deutsche-welle.de": 1, 
+  "dabr.mobi": 1, 
+  "catch22.net": 1, 
+  "digitalnomadsproject.org": 1, 
+  "github.com": 1, 
+  "pcdvd.com.tw": 1, 
+  "getyouram.com": 1, 
+  "compileheart.com": 1, 
+  "hidden-advent.org": 1, 
+  "megaporn.com": 1, 
+  "playpcesor.com": 1, 
+  "hougaige.com": 1, 
+  "karayou.com": 1, 
+  "parkansky.com": 1, 
+  "aboutgfw.com": 1, 
+  "soul-plus.net": 1, 
+  "comefromchina.com": 1, 
+  "e-spacy.com": 1, 
+  "funf.tw": 1, 
+  "worldjournal.com": 1, 
+  "olumpo.com": 1, 
+  "finler.net": 1, 
+  "zoozle.net": 1, 
+  "vcf-online.org": 1, 
+  "wikimedia.org.mo": 1, 
+  "de-sci.org": 1, 
+  "stuffimreading.net": 1, 
+  "googlecode.com": 1, 
+  "state168.com": 1, 
+  "cantonese.asia": 1, 
+  "fzh999.com": 1, 
+  "ipobar.com": 1, 
+  "topshareware.com": 1, 
+  "pokerstars.com": 1, 
+  "bloomberg.cn": 1, 
+  "qstatus.com": 1, 
+  "muzi.com": 1, 
+  "martau.com": 1, 
+  "syx86.cn": 1, 
+  "changp.com": 1, 
+  "tagwalk.com": 1, 
+  "techparaiso.com": 1, 
+  "googlesource.com": 1, 
+  "posterous.com": 1, 
+  "interfaceaddiction.com": 1, 
+  "chinaaid.net": 1, 
+  "hola.org": 1, 
+  "freeyoutubeproxy.net": 1, 
+  "storagenewsletter.com": 1, 
+  "chromeexperiments.com": 1, 
+  "guishan.org": 1, 
+  "christusrex.org": 1, 
+  "syncback.com": 1, 
+  "tweetboard.com": 1, 
+  "powerpointninja.com": 1, 
+  "orient-doll.com": 1, 
+  "navicat.com": 1, 
+  "twittercounter.com": 1, 
+  "git-scm.com": 1, 
+  "tibetcorps.org": 1, 
+  "backtotiananmen.com": 1, 
+  "uncyclopedia.tw": 1, 
+  "springboardplatform.com": 1, 
+  "lingvodics.com": 1, 
+  "inmediahk.net": 1, 
+  "aliengu.com": 1, 
+  "taweet.com": 1, 
+  "0to255.com": 1, 
+  "duping.net": 1, 
+  "tkcs-collins.com": 1, 
+  "trustedbi.com": 1, 
+  "dtiblog.com": 1, 
+  "myaudiocast.com": 1, 
+  "mmdays.com": 1, 
+  "appspot.com": 1, 
+  "dollf.com": 1, 
+  "epochtimestr.com": 1, 
+  "islamicity.com": 1, 
+  "hellonewyork.us": 1, 
+  "1eew.com": 1, 
+  "taiwannation.com": 1, 
+  "wezhiyong.org": 1, 
+  "surrenderat20.net": 1, 
+  "csuchen.de": 1, 
+  "wahas.com": 1, 
+  "lookingglasstheatre.org": 1, 
+  "furinkan.com": 1, 
+  "observechina.net": 1, 
+  "chinachannel.hk": 1, 
+  "buzzhand.com": 1, 
+  "sysresccd.org": 1, 
+  "yourepeat.com": 1, 
+  "renyurenquan.org": 1, 
+  "chinese-memorial.org": 1, 
+  "canyu.org": 1, 
+  "jgoodies.com": 1, 
+  "zdnet.com.tw": 1, 
+  "china-week.com": 1, 
+  "pureconcepts.net": 1, 
+  "sowiki.net": 1, 
+  "kangye.org": 1, 
+  "sex3.com": 1, 
+  "yfrog.com": 1, 
+  "msn.com.tw": 1, 
+  "mingpao.com": 1, 
+  "crd-net.org": 1, 
+  "opendemocracy.net": 1, 
+  "hk": 1, 
+  "uymaarip.com": 1, 
+  "googleapis.com": 1, 
+  "ydy.com": 1, 
+  "bipic.net": 1, 
+  "tibet.com": 1, 
+  "naitik.net": 1, 
+  "cuihua.org": 1, 
+  "gs-discuss.com": 1, 
+  "googleearth.com": 1, 
+  "diaoyuislands.org": 1, 
+  "wozy.in": 1, 
+  "initiativesforchina.org": 1, 
+  "myopenid.com": 1, 
+  "hkdailynews.com.hk": 1, 
+  "glennhilton.com": 1, 
+  "christianstudy.com": 1, 
+  "freenetproject.org": 1, 
+  "ebookbrowse.com": 1, 
+  "gaoming.net": 1, 
+  "madmenunbuttoned.com": 1, 
+  "laptoplockdown.com": 1, 
+  "piposay.com": 1, 
+  "freakshare.com": 1, 
+  "minghui-a.org": 1, 
+  "vmixcore.com": 1, 
+  "e-traderland.net": 1, 
+  "twtrland.com": 1, 
+  "huhaitai.com": 1, 
+  "askstudent.com": 1, 
+  "yipub.com": 1, 
+  "truveo.com": 1, 
+  "tabtter.jp": 1, 
+  "franklc.com": 1, 
+  "weigegebyc.dreamhosters.com": 1, 
+  "iblogserv-f.net": 1, 
+  "kanzhongguo.eu": 1, 
+  "freewebs.com": 1, 
+  "ig.com.br": 1, 
+  "book.com.tw": 1, 
+  "dwheeler.com": 1, 
+  "famunion.com": 1, 
+  "173ng.com": 1, 
+  "minghui.org": 1, 
+  "isaacmao.com": 1, 
+  "perfectvpn.net": 1, 
+  "freeman2.com": 1, 
+  "sinonet.ca": 1, 
+  "jpopforum.net": 1, 
+  "sobees.com": 1, 
+  "free4u.com.ar": 1, 
+  "oyax.com": 1, 
+  "littlebigdetails.com": 1, 
+  "mobypicture.com": 1, 
+  "sharkdolphin.com": 1, 
+  "limiao.net": 1, 
+  "xthost.info": 1, 
+  "icu-project.org": 1, 
+  "dribbble.com": 1, 
+  "njactb.org": 1, 
+  "openwebster.com": 1, 
+  "darpa.mil": 1, 
+  "91porn.com": 1, 
+  "wtfpeople.com": 1, 
+  "1-apple.com.tw": 1
+};
+
+var direct = 'DIRECT;';
+
+var hasOwnProperty = Object.hasOwnProperty;
+
+function FindProxyForURL(url, host) {
+    var suffix;
+    var pos = host.lastIndexOf('.');
+    pos = host.lastIndexOf('.', pos - 1);
+    while(1) {
+        if (pos <= 0) {
+            if (hasOwnProperty.call(domains, host)) {
+                return proxy;
+            } else {
+                return direct;
+            }
+        }
+        suffix = host.substring(pos + 1);
+        if (hasOwnProperty.call(domains, suffix)) {
+            return proxy;
+        }
+        pos = host.lastIndexOf('.', pos - 1);
     }
-});
+}
