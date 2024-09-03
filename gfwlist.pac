@@ -1,10 +1,3 @@
-/**
- * genpac 2.0.1 https://github.com/JinnLynn/genpac
- * Generated: Tue, 03 Sep 2024 13:39:11 +0000
- * GFWList Last-Modified: -
- * GFWList From: -
- */
-
 var proxy = '__PROXY__';
 var rules = [
     [
