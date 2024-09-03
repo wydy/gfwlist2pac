@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '37 19 * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   update:
@@ -24,10 +27,10 @@ jobs:
           ref: v2.0.1
           path: genpac
 
-      - uses: actions/checkout@v4
-        with:
-          repository: gfwlist/gfwlist
-          path: gfwlist
+#      - uses: actions/checkout@v4
+#        with:
+#          repository: gfwlist/gfwlist
+#          path: gfwlist
 
       - uses: petronny/git-config-user@master
         with:
@@ -42,7 +45,8 @@ jobs:
         run: |
           set -x
 
-          genpac --pac-proxy "SOCKS5 127.0.0.1:1080; SOCKS 127.0.0.1:1080; DIRECT;" --gfwlist-url - --gfwlist-local gfwlist/gfwlist.txt -o gfwlist.pac
+          wget https://gist.githubusercontent.com/wydy/3b186c67185317233c19e92905dd2656/raw/gfw.list
+          genpac --pac-proxy="__PROXY__" --gfwlist-disabled --user-rule-from="gfw.list" -o gfwlist.pac
           sed '1,7d' -i gfwlist.pac
 
           git add gfwlist.pac
