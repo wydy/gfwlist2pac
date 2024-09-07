@@ -14396,6 +14396,7 @@ var rules = [
             "mindrolling.org",
             "minecraft.net",
             "minecraft.wiki",
+            "minecraftservices.com",
             "minecraftshop.com",
             "mingdemedia.org",
             "minghui-a.org",
