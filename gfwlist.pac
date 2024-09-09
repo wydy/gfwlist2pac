@@ -10399,6 +10399,7 @@ var rules = [
             "herringnetwork.com",
             "hetzner.cloud",
             "hetzner.com",
+            "hetzner.company",
             "hetzner.de",
             "heungkongdiscuss.com",
             "hex.pm",
