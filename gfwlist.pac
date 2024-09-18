@@ -16812,6 +16812,7 @@ var rules = [
             "passion.com",
             "passiontimes.hk",
             "passport.net",
+            "passwords.google",
             "pastahealth.com",
             "paste.ee",
             "pastebin.com",
