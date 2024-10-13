@@ -27370,6 +27370,7 @@ var rules = [
             "v2ph.com",
             "v2ray.com",
             "v2ray.cool",
+            "v2raya.org",
             "v2raycn.com",
             "v2raytech.com",
             "v7hds.com",
