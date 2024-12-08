@@ -13069,6 +13069,7 @@ var rules = [
             "hotzxgirl.com",
             "hougaige.com",
             "houghall.ac.uk",
+            "house.gov",
             "housefraserarchive.ac.uk",
             "housing.com",
             "housingcdn.com",
