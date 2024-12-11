@@ -22046,6 +22046,8 @@ var rules = [
             "pulsebrowser.app",
             "punishbang.com",
             "punishworld.com",
+            "punjab.gov.in",
+            "punjab.gov.pk",
             "punyu.com",
             "puppiesofourtime.ac.uk",
             "pure18.com",
