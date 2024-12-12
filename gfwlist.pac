@@ -24537,6 +24537,7 @@ var rules = [
             "sopcast.org",
             "sophos.com",
             "soporn.com",
+            "sora.com",
             "sora6.com",
             "sorazone.net",
             "sorcerersarena.com",
