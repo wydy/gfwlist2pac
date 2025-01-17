@@ -19622,6 +19622,7 @@ var rules = [
             "nocs.ac.uk",
             "nodejs.org",
             "nodes.ac.uk",
+            "nodeseek.com",
             "nodesnoop.com",
             "nodesource.com",
             "noellabo.jp",
