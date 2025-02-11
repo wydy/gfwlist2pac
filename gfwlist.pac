@@ -1099,7 +1099,6 @@ var rules = [
             "ahxxx.club",
             "ai-kan.net",
             "ai-wen.net",
-            "ai.com",
             "ai.google",
             "ai3sd.ac.uk",
             "ai7995.site",
