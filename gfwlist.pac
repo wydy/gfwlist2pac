@@ -12692,6 +12692,7 @@ var rules = [
             "hentaivn.de",
             "hentaivn.la",
             "hentaivn.net",
+            "hentaivox.com",
             "hentaivvz.com",
             "hentaiworld.eu",
             "hentaiworld.tv",
