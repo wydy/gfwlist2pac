@@ -4903,7 +4903,6 @@ var rules = [
             "rotten.com",
             "rou.video",
             "roucdn.link",
-            "rpglogs.com",
             "rsdlmonitor.com",
             "rsf-chinese.org",
             "rsf.org",
