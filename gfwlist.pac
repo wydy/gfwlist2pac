@@ -5788,6 +5788,7 @@ var rules = [
             "ticket.com.tw",
             "tigervpn.com",
             "tiktok.com",
+            "tiktokcdn-eu.com",
             "tiktokcdn-us.com",
             "tiktokcdn.com",
             "tiktokv.com",
