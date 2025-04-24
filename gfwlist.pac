@@ -5337,6 +5337,7 @@ var rules = [
             "startuplivingchina.com",
             "stat.gov.tw",
             "state.gov",
+            "statearmor.org",
             "static-economist.com",
             "statically.io",
             "staticflickr.com",
