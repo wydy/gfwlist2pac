@@ -5004,6 +5004,7 @@ var rules = [
             "sciencemag.org",
             "sciencenets.com",
             "scieron.com",
+            "sclub.com.tw",
             "scmp.com",
             "scmpchinese.com",
             "scramble.io",
