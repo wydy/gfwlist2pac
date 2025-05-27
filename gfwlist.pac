@@ -2179,6 +2179,7 @@ var rules = [
             "gekikame.com",
             "gelbooru.com",
             "gemini.com",
+            "gemini.google",
             "generated.photos",
             "genius.com",
             "geocities.co.jp",
