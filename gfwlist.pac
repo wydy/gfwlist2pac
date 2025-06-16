@@ -2193,6 +2193,7 @@ var rules = [
             "githubassets.com",
             "githubcopilot.com",
             "githubusercontent.com",
+            "gitlab.net",
             "gizlen.net",
             "gjczz.com",
             "glarity.app",
