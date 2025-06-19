@@ -4276,7 +4276,6 @@ var rules = [
             "opera-mini.net",
             "opera.com",
             "opus-gaming.com",
-            "oraclecloud.com",
             "organcare.org.tw",
             "organharvestinvestigation.net",
             "organiccrap.com",
