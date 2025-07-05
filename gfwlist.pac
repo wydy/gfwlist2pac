@@ -6580,6 +6580,7 @@ var rules = [
             "yinlei.org",
             "yipub.com",
             "yizhihongxing.com",
+            "ylive.jp",
             "yobit.net",
             "yobt.com",
             "yobt.tv",
