@@ -1569,6 +1569,7 @@ var rules = [
             "e-traderland.net",
             "e-zone.com.hk",
             "e123.hk",
+            "e621.net",
             "earlytibet.com",
             "earthcam.com",
             "earthvpn.com",
