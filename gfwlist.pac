@@ -375,6 +375,7 @@ var rules = [
             "aplusvpn.com",
             "appadvice.com",
             "appbrain.com",
+            "appdefensealliance.dev",
             "appdownloader.net",
             "appledaily.com",
             "appledaily.com.hk",
