@@ -5660,6 +5660,7 @@ var rules = [
             "tiktokcdn.com",
             "tiktokv.com",
             "tiktokv.us",
+            "tiktokw.us",
             "tiltbrush.com",
             "timdir.com",
             "time.com",
