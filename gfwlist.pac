@@ -6212,6 +6212,7 @@ var rules = [
             "wailaike.net",
             "wainao.me",
             "waiwaier.com",
+            "walletconnect.com",
             "wallhaven.cc",
             "wallmama.com",
             "wallornot.org",
