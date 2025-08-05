@@ -4272,6 +4272,7 @@ var rules = [
             "openai.com",
             "openallweb.com",
             "opendemocracy.net",
+            "opendesktop.org",
             "opendn.xyz",
             "openervpn.in",
             "openid.net",
