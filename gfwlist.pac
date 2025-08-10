@@ -3991,6 +3991,7 @@ var rules = [
             "nekoslovakia.net",
             "nengcard.com",
             "neo-miracle.com",
+            "neoforged.net",
             "neowin.net",
             "nesnode.com",
             "netalert.me",
