@@ -5958,6 +5958,7 @@ var rules = [
             "udn.com.tw",
             "udnbkk.com",
             "udndata.com",
+            "udomain.hk",
             "uforadio.com.tw",
             "ufreevpn.com",
             "ugo.com",
