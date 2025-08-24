@@ -2055,6 +2055,8 @@ var rules = [
             "ftx.com",
             "fucd.com",
             "fuchsia.dev",
+            "fuckccp.com",
+            "fuckccp.xyz",
             "fuckcnnic.net",
             "fuckgfw.org",
             "fuckgfw233.org",
