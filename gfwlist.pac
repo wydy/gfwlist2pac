@@ -1501,7 +1501,6 @@ var rules = [
             "doujincafe.com",
             "dowei.org",
             "dowjones.com",
-            "dpdns.org",
             "dphk.org",
             "dpool.top",
             "dpp.org.tw",
