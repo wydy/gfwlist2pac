@@ -5436,6 +5436,7 @@ var rules = [
             "tanc.org",
             "tangben.com",
             "tangren.us",
+            "tanks.gg",
             "taoism.net",
             "taolun.info",
             "tapanwap.com",
