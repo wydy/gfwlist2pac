@@ -4599,6 +4599,7 @@ var rules = [
             "presentationzen.com",
             "president.ir",
             "presidentlee.tw",
+            "pressreader.com",
             "prestige-av.com",
             "prettyvirgin.com",
             "primevideo.com",
