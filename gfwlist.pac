@@ -2324,6 +2324,7 @@ var rules = [
             "google.cl",
             "google.cm",
             "google.cn",
+            "google.co",
             "google.co.ao",
             "google.co.bw",
             "google.co.ck",
