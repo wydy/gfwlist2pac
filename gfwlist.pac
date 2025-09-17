@@ -816,6 +816,7 @@ var rules = [
             "btguard.com",
             "btku.me",
             "btku.org",
+            "btloader.com",
             "btspread.com",
             "btsynckeys.com",
             "budaedu.org",
