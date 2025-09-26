@@ -6390,6 +6390,7 @@ var rules = [
             "wikimedia.org",
             "wikinews.org",
             "wikipedia-on-ipfs.org",
+            "wikipedia.com",
             "wikipedia.org",
             "wikiquote.org",
             "wikisource.org",
