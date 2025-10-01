@@ -869,6 +869,7 @@ var rules = [
             "cachefly.com",
             "cachefly.net",
             "cachinese.com",
+            "cacnews.ca",
             "cacnw.com",
             "cactusvpn.com",
             "cafepress.com",
