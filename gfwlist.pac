@@ -467,6 +467,7 @@ var rules = [
             "avmoo.net",
             "avmoo.pw",
             "avoision.com",
+            "avple.tv",
             "avyahoo.com",
             "axios.com",
             "axureformac.com",
