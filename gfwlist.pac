@@ -5160,6 +5160,7 @@ var rules = [
             "solana.com",
             "solidaritetibet.org",
             "solidfiles.com",
+            "solscan.io",
             "solv.finance",
             "somee.com",
             "songjianjun.com",
