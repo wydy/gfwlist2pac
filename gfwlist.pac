@@ -4286,6 +4286,7 @@ var rules = [
             "old-cat.net",
             "olehdtv.com",
             "olelive.com",
+            "olemovienews.com",
             "olevod.com",
             "olumpo.com",
             "olympicwatch.org",
