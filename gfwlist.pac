@@ -1507,6 +1507,7 @@ var rules = [
             "doc.new",
             "docker.com",
             "docker.io",
+            "dockerstatus.com",
             "docs.new",
             "doctorvoice.org",
             "documentingreality.com",
