@@ -225,6 +225,7 @@ var rules = [
             "agro.hk",
             "ai-kan.net",
             "ai-wen.net",
+            "ai.dev",
             "ai.google",
             "ai.ls",
             "aiosearch.com",
