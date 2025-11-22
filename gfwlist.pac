@@ -5488,6 +5488,7 @@ var rules = [
             "sustainability.google",
             "suyangg.com",
             "svsfx.com",
+            "swag.live",
             "swagbucks.com",
             "swapspace.co",
             "swbusdev.com",
