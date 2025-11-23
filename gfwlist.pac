@@ -4543,6 +4543,7 @@ var rules = [
             "picasaweb.com",
             "picgo.net",
             "picidae.net",
+            "picsart.com",
             "picturedip.com",
             "picturesocial.com",
             "picuki.com",
