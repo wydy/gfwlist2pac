@@ -3485,6 +3485,7 @@ var rules = [
             "ldplayer.tw",
             "le-vpn.com",
             "leafyvpn.net",
+            "league-funny.com",
             "learning.google",
             "lecloud.net",
             "ledger.com",
