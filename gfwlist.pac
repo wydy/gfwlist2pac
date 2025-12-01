@@ -6857,6 +6857,7 @@ var rules = [
             "zamimg.com",
             "zannel.com",
             "zaobao.com.sg",
+            "zaochenbao.com",
             "zaozon.com",
             "zapto.org",
             "zattoo.com",
