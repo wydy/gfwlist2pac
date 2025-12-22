@@ -4612,6 +4612,7 @@ var rules = [
             "po18.tw",
             "po2b.com",
             "pobieramy.top",
+            "pocketcasts.com",
             "podbean.com",
             "podcast.app",
             "podcast.co",
