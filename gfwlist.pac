@@ -3617,6 +3617,7 @@ var rules = [
             "lotuslight.org.hk",
             "lotuslight.org.tw",
             "loukky.com",
+            "lovart.ai",
             "loved.hk",
             "lovetvshow.com",
             "lpsg.com",
