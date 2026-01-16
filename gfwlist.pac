@@ -1443,8 +1443,6 @@ var rules = [
             "deja.com",
             "delcamp.net",
             "demosisto.hk",
-            "deno.com",
-            "deno.dev",
             "depositphotos.com",
             "derekhsu.homeip.net",
             "derpibooru.org",
