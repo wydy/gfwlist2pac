@@ -6831,6 +6831,7 @@ var rules = [
             "youjizz.com",
             "youlucky.com",
             "youmaker.com",
+            "youmind.com",
             "youngpornvideos.com",
             "youngspiration.hk",
             "youpai.org",
