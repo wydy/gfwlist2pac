@@ -1301,6 +1301,7 @@ var rules = [
             "creativelab5.com",
             "crisisresponse.google",
             "cristyli.com",
+            "crixet.com",
             "crocotube.com",
             "crossfire.co.kr",
             "crossthewall.net",
