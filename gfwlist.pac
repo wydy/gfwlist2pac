@@ -6805,6 +6805,7 @@ var rules = [
             "yesasia.com.hk",
             "yespornplease.com",
             "yeyeclub.com",
+            "yfsp.tv",
             "ygto.com",
             "yhcw.net",
             "yibada.com",
