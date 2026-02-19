@@ -3546,6 +3546,7 @@ var rules = [
             "moresci.sale",
             "morningsun.org",
             "mos.ru",
+            "mosavi.io",
             "motherless.com",
             "mousebreaker.com",
             "movements.org",
