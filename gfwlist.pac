@@ -2039,6 +2039,7 @@ var rules = [
             "geti2p.net",
             "getiton.com",
             "getlantern.org",
+            "getliner.com",
             "getmalus.com",
             "getmdl.io",
             "getoutline.org",
