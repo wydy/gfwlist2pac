@@ -4693,6 +4693,7 @@ var rules = [
             "shiksha.ws",
             "shipcamouflage.com",
             "shireyishunjian.com",
+            "shitjournal.org",
             "shixiao.org",
             "shizhao.org",
             "shodanhq.com",
