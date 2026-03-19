@@ -151,6 +151,7 @@ var rules = [
             "a5vpn.com",
             "aamacau.com",
             "aastocks.com",
+            "aave.com",
             "abc.com",
             "abc.net.au",
             "abc.xyz",
