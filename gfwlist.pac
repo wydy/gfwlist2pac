@@ -3936,6 +3936,7 @@ var rules = [
             "okex.com",
             "okinawatimes.co.jp",
             "okk.tw",
+            "oklink.com",
             "okpool.me",
             "okx.com",
             "olehdtv.com",
