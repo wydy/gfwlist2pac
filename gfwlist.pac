@@ -2508,6 +2508,7 @@ var rules = [
             "handcraftedsoftware.org",
             "handelsblatt.com",
             "hanime.tv",
+            "hanime1.com",
             "hanime1.me",
             "hanminzu.org",
             "hao.news",
