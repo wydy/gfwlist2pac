@@ -4511,6 +4511,7 @@ var rules = [
             "rlcdn.com",
             "rlwlw.com",
             "rmbl.ws",
+            "rmimg.com",
             "rmjdw.com",
             "roadshow.hk",
             "roboforex.com",
