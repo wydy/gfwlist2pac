@@ -6022,6 +6022,7 @@ var rules = [
             "xchina.co",
             "xcity.jp",
             "xcritic.com",
+            "xda-developers.com",
             "xdaforums.com",
             "xerotica.com",
             "xfiles.to",
