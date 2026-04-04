@@ -3999,6 +3999,7 @@ var rules = [
             "orn.jp",
             "osfoora.com",
             "osm.tw",
+            "osmand.net",
             "otcbtc.com",
             "otto.de",
             "otzo.com",
