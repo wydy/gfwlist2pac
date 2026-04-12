@@ -5603,6 +5603,7 @@ var rules = [
             "unpo.org",
             "unseen.is",
             "unstable.icu",
+            "unun.dev",
             "unwire.hk",
             "uocn.org",
             "up.audio",
