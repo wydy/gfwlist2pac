@@ -5615,6 +5615,7 @@ var rules = [
             "upmedia.mg",
             "upornia.com",
             "uproxy.org",
+            "upsangel.com",
             "uptodown.com",
             "upwill.org",
             "ur7s.com",
