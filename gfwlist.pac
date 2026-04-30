@@ -6250,6 +6250,7 @@ var rules = [
             "zdnet.com.tw",
             "zdns.google",
             "zello.com",
+            "zendesk.com",
             "zengjinyan.org",
             "zenmate.com",
             "zenmate.com.ru",
