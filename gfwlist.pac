@@ -5805,7 +5805,6 @@ var rules = [
             "vtunnel.com",
             "vultryhw.com",
             "vyprvpn.com",
-            "vzw.com",
             "w-pool.com",
             "w.wiki",
             "w3s.link",
