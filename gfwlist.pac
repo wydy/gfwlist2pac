@@ -4023,6 +4023,7 @@ var rules = [
             "openleaks.org",
             "opensea.io",
             "opensource.google",
+            "openstreetmap.fr",
             "openstreetmap.org",
             "opentech.fund",
             "openvpn.net",
