@@ -1055,6 +1055,7 @@ var rules = [
             "chinman.net",
             "chithu.org",
             "chobit.cc",
+            "chonglangtv.org",
             "chosun.com",
             "chped.com",
             "chrdnet.com",
