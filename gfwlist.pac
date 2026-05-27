@@ -5208,6 +5208,7 @@ var rules = [
             "thehousenews.com",
             "thehun.net",
             "theinitium.com",
+            "thelallantop.com",
             "thenewslens.com",
             "thepiratebay.ee",
             "thepiratebay.org",
