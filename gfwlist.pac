@@ -5003,6 +5003,7 @@ var rules = [
             "streamingthe.net",
             "streema.com",
             "strikingly.com",
+            "stripchat.cam",
             "strongvpn.com",
             "strongwindpress.com",
             "student.tw",
