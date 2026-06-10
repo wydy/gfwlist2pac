@@ -5668,6 +5668,7 @@ var rules = [
             "usembassy.gov",
             "usercontent.goog",
             "usfk.mil",
+            "ushmm.org",
             "usma.edu",
             "usmart.hk",
             "usmc.mil",
