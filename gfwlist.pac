@@ -4791,6 +4791,7 @@ var rules = [
             "sinomontreal.ca",
             "sinoquebec.com",
             "sinovision.net",
+            "sinyalee.com",
             "sipml5.org",
             "sis.xxx",
             "sis001.com",
