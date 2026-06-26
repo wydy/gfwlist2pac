@@ -1226,6 +1226,7 @@ var rules = [
             "crbug.com",
             "crchina.org",
             "crd-net.org",
+            "creader.com",
             "creaders.net",
             "creadersnet.com",
             "creativelab5.com",
