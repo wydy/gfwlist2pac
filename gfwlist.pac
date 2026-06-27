@@ -2578,6 +2578,7 @@ var rules = [
             "hanime.tv",
             "hanime1.com",
             "hanime1.me",
+            "hanimeone.me",
             "hanminzu.org",
             "hao.news",
             "happy-vpn.com",
