@@ -3269,6 +3269,7 @@ var rules = [
             "kusocity.com",
             "kwcg.ca",
             "kwongwah.com.my",
+            "kx139.com",
             "kxsw.life",
             "kyofun.com",
             "kyohk.net",
