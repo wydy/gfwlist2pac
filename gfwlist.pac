@@ -3,6 +3,7 @@ var rules = [
     [
         [],
         [
+            "000aa.com",
             "000webhost.com",
             "0rz.tw",
             "1-apple.com.tw",
@@ -2852,7 +2853,6 @@ var rules = [
             "huobipool.com",
             "huobipro.com",
             "huping.net",
-            "hurgokbayrak.com",
             "hurriyet.com.tr",
             "hustler.com",
             "hustlercash.com",
@@ -3718,7 +3718,6 @@ var rules = [
             "mozilla.ai",
             "mozilla.org",
             "moztw.org",
-            "mp3buscador.com",
             "mp3ye.eu",
             "mpettis.com",
             "mpfinance.com",
@@ -4558,6 +4557,7 @@ var rules = [
             "qxbbs.org",
             "qycz.org",
             "qz.com",
+            "r-art.com",
             "r-pool.net",
             "r0.ru",
             "r10s.jp",
