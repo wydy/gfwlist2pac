@@ -1126,6 +1126,7 @@ var rules = [
             "ck101.com",
             "clarionproject.org",
             "clashverge.dev",
+            "clashyun.com",
             "classicalguitarblog.net",
             "claude.ai",
             "claude.com",
