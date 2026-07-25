@@ -1108,6 +1108,7 @@ var rules = [
             "cienen.com",
             "cineastentreff.de",
             "cipfg.org",
+            "circle19.org",
             "cirosantilli.com",
             "citizencn.com",
             "citizenlab.ca",
