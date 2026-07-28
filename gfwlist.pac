@@ -5583,6 +5583,7 @@ var rules = [
             "trustwallet.com",
             "truthsocial.com",
             "truveo.com",
+            "tryai.dev",
             "tryheart.jp",
             "tsctv.net",
             "tsemtulku.com",
