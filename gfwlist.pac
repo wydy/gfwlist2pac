@@ -4015,6 +4015,7 @@ var rules = [
             "ntdtv.org",
             "ntdtv.ru",
             "ntdtvla.com",
+            "nthlink.com",
             "ntl.edu.tw",
             "ntrfun.com",
             "ntu.edu.tw",
