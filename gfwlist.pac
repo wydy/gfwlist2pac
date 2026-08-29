@@ -6199,6 +6199,7 @@ var rules = [
             "wpoforum.com",
             "wrchina.org",
             "wretch.cc",
+            "write.as",
             "writesonic.com",
             "wsimg.com",
             "wsj.com",
