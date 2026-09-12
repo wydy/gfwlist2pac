@@ -4553,6 +4553,7 @@ var rules = [
             "qq.co.za",
             "qstatus.com",
             "qtrac.eu",
+            "quakemachinex.com",
             "quantumai.google",
             "questvisual.com",
             "quitccp.org",
