@@ -1076,6 +1076,7 @@ var rules = [
             "chinesen.de",
             "chinesenews.net.au",
             "chinesepen.org",
+            "chineseposters.net",
             "chineseradioseattle.com",
             "chineseupress.com",
             "chingcheong.com",
